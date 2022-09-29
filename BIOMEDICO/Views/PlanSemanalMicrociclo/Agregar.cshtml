@@ -1,0 +1,285 @@
+﻿
+@{
+    ViewBag.Title = "Agregar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<style>
+     
+    h1 {
+        text-align: center;
+        color: cadetblue
+    }
+
+
+    .boton_personalizado {
+        text-decoration: none;
+        padding: 5px;
+        /**/ font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        background-color: #1883ba;
+        border: 1px solid #0016b0;
+        /**/
+    }
+
+        .boton_personalizado:hover {
+            color: #1883ba;
+            background-color: #ffffff;
+        }
+</style>
+<script defer src="~/Scripts/APP/PlanSemanalMicrociclo/PlanSemanalMicrociclo.js"></script>
+<h1>
+    <strong>
+        SECRETARIA DE RECREACION Y DEPORTES
+        ÁREA TÉCNICA METODOLOGÍCA
+        PLAN SEMANAL
+    </strong>
+
+</h1>
+
+<h2><strong>MICROCICLO</strong>  </h2>
+
+<div class="row m-0">
+
+    <form id="FormPlanEntrenamineto" name="FormPlanEntrenamineto">
+
+        <div class="row m-0">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Deporte</strong></label>
+                @{
+                    var ListaDeporte = BIOMEDICO.Controllers.DeporteController.ListDeporte();
+
+                    <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="DeportePlan" name="DeportePlan">
+                        <option value="">Seleccionar</option>
+                        @foreach (var item in ListaDeporte)
+                        {
+                            <option value="@item.CodDeporte">@item.NombreDeporte</option>
+                        }
+
+
+                    </select>
+                }
+            </div>
+
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong> Nombre Deportista</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="Deportista" name="Deportista" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong> Nombre Entrenador</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="EntrenadorPlan" name="EntrenadorPlan" />
+            </div>
+            
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong> Agrupacion </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="Agrupacion" name="Agrupacion" />
+            </div>
+            @*<div class="col-xs-4 col-sm-4 col-md-4">
+            <label><strong> Categoria </strong></label>
+            <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="Categoria" name="Categoria" />
+        </div>*@
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Categorias</strong></label>
+                @{
+                    var listaCategoria = BIOMEDICO.Controllers.CategoriaController.ListCategoria();
+
+                    <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="Categoria" name="Categoria">
+                        <option value="">Seleccionar</option>
+                        @foreach (var item in listaCategoria)
+                        {
+                            <option value="@item.IdCategoria">@item.NomCategoria</option>
+                        }
+
+
+                    </select>
+                }
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Numero MicroCiclo</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="MicroCicloNum" name="MicroCicloNum" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Tipo MicroCiclo</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="TipoMicroCiclo" name="TipoMicroCiclo" />
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Meso Ciclo</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="MesoCiclo" name="MesoCiclo" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Tipo Mesociclo</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="TipoMesociclo" name="TipoMesociclo" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Objetivos Fisicos</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="ObjetivosFisicos" name="ObjetivosFisicos" />
+            </div>
+
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Objetivos Tecnicos </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="ObjetivosTecnicos" name="ObjetivosTecnicos" />
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Elementos Microciclo </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="ElementosMicrociclo" name="ElementosMicrociclo" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Hora Inicio</strong></label>
+                <input type="time" style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="HoraInicioPlan" name="HoraInicioPlan" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Hora Final </strong></label>
+                <input type="time" style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="HoraFinalPlan" name="HoraFinalPlan" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Fecha Entrega Acta </strong></label>
+                <input type="date" style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="FechaMicrociclo" name="FechaMicrociclo" />
+            </div>
+
+        </div>
+
+
+
+
+
+
+    </form>
+</div>
+<hr width=100% align="right" size=200 color="black">
+<div class="row m-0">
+
+    <form id="FormAntecedentesFisioterapia" name="FormAntecedentesFisioterapia">
+
+        <div class="row m-0">
+            <table align="center" border="1" class="col-xs-12 col-sm-12 col-md-12" id="PlanillaTable">
+
+                <tr>
+
+                    <th colspan="12">ELEMENTOS</th>
+
+                    @*<th colspan="4">NUMERO MICROCICLO</th>
+                    <th colspan="4">NUMERO MICROCICLO</th>
+                    <th colspan="4">NUMERO MICROCICLO</th>
+                    <th colspan="4">NUMERO MICROCICLO</th>
+                    <th colspan="4">TOTALES MICROCICLO</th>*@
+
+
+                </tr>
+                <tr>
+                    <td colspan="12">
+                        @*@{
+            var ListElemento = BIOMEDICO.Controllers.MesocicloController.ListElemento();
+
+            <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="ElementoSemanalDias" name="ElementoSemanalDias">
+                <option value="">Seleccionar</option>
+                @foreach (var item in ListElemento)
+                {
+                    <option value="@item.IdElemento">@item.NombreElemento</option>
+                }
+
+
+            </select>
+        }*@
+                        <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="ElementoSemanalDias" name="ElementoSemanalDias">
+
+                            <optgroup label="Preparacion fisica">
+                                <option value="">Seleccionar</option>
+                                <option value="Fuerza Maxima">Fuerza Maxima</option>
+                                <option value="Fuerza Explosiva">Fuerza Explosiva</option>
+                                <option value="Fuerza Resistencia">Fuerza Resistencia</option>
+                                <option value="Fuerza Relativa">Fuerza Relativa</option>
+                                <option value="Resistencia Aerobica">Resistencia Aerobica</option>
+                                <option value="Resistencia Anaerobica">Resistencia Anaerobica</option>
+                                <option value="Flexibilidad">Flexibilidad</option>
+                                <option value="Volumen en repeticiones">Volumen en repeticiones</option>
+                                <option value="Volumen en kilometros,metros">Volumen en kilometros,metros</option>
+                                <option value="Volumen en kilogramos">Volumen en kilogramos</option>
+                                <option value="Volumen flechas, asaltos, lanzamientos, combates">Volumen flechas, asaltos, lanzamientos, combates</option>
+                                <option value="Volumen en tiempo">Volumen en tiempo</option>
+                                <option value="Volumen en repeticiones">Volumen en repeticiones</option>
+                            </optgroup>
+                            <optgroup label="Preparación Tecnica">
+                                <option value="Acoplamiento">Acoplamiento</option>
+                                <option value="Diferenciación">Diferenciación</option>
+                                <option value="Ritmo">Ritmo</option>
+                                <option value="Orientación">Orientación</option>
+                                <option value="Volumen en repeticiones">Volumen en repeticiones</option>
+                                <option value="Volumen en kilometros,metros">Volumen en kilometros,metros</option>
+                                <option value="Volumen en kilogramos">Volumen en kilogramos</option>
+                                <option value="Volumen flechas, asaltos, lanzamientos, combates">Volumen flechas, asaltos, lanzamientos, combates</option>
+                                <option value="Volumen en tiempo">Volumen en tiempo</option>
+                                <option value="Volumen en repeticiones">Volumen en repeticiones</option>
+
+                            </optgroup>
+                            <optgroup label="Preparación Tactica">
+                                <option value="Sistema de Juegos">Sistema de Juegos</option>
+                                <option value="Ataque">Ataque</option>
+                                <option value="Defensa">Defensa</option>
+                            </optgroup>
+                            <optgroup label="Preparación Teorica">
+                                <option value="Charlas">Charlas</option>
+                                <option value="Videos">Videos</option>
+                                <option value="Anagramas">Anagramas</option>
+                            </optgroup>
+                            <optgroup label="Preparación Mental">
+                                <option value="Motivación">Motivación</option>
+                                <option value="Compromiso">Compromiso</option>
+                                <option value="Responsabilidad">Responsabilidad</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                 
+
+                </tr>
+
+                <tr>
+
+                    <td align="center" colspan="3">
+
+                    <td align="center" colspan="1">LUNES</td>
+
+                    <td align="center" colspan="1">MARTES</td>
+
+                    <td align="center" colspan="1">MIERCOLES</td>
+
+                    <td align="center" colspan="1">JUEVES</td>
+
+
+                    <td align="center" colspan="1">VIERNES</td>
+
+                    <td align="center" colspan="1">SABADO</td>
+
+                    <td align="center" colspan="1">DOMINGO</td>
+
+                   
+
+
+
+
+            </table>
+            <br />
+            <br />
+            <br />
+            <br />
+            <button class="boton_personalizado" type="button" onclick="AgregarRow()">Agregar</button>
+
+        </div>
+
+    </form>
+    <div class="col-xs-4 col-sm-4 col-md-4">
+        <label><strong>Firma Entrenador </strong></label>
+        <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="FirmaEntrenador" name="FirmaEntrenador" />
+    </div>
+</div>
+
+
+<div class="col-xs-4 col-sm-4 col-md-4">
+    <button type="button" onclick="Createobj()" class="btn btn-block btn-outline-primary btn-rounded btn-outline mt-4" id="SavePlanSemanalMicrociclo">Guardar </button>
+</div>

@@ -1,0 +1,708 @@
+﻿
+@{
+    ViewBag.Title = "Agregar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    h1, h2 {
+        text-align: center;
+        color: cadetblue
+    }
+</style>
+<script defer src="~/Scripts/APP/AnalisisMacroCiclo/AnalisisMacroCiclo.js"></script>
+<h1>
+    <strong>
+        SECRETARIA DE RECREACION Y DEPORTES
+        ÁREA TÉCNICA METODOLOGÍCA
+        ACTA ASESORIAS TÉCNICA A ENTRENADORES
+    </strong>
+
+</h1>
+<h2><strong>Datos Generales</strong>  </h2>
+
+<div class="row m-0">
+
+    <form id="FormPlanEntrenamineto" name="FormPlanEntrenamineto">
+
+        <div class="row m-0">
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Número Identificación</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" type="text" class="form-control" id="NumIdentificacionDeportist" name="NumIdentificacionDeportist" />
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong> Nombre Deportista</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="NombreDeportist" name="NombreDeportist" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong> Nombre Entrenador</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="Entrenador" name="Entrenador" />
+            </div>
+
+
+
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Deporte</strong></label>
+                @{
+                    var ListaDeporte = BIOMEDICO.Controllers.DeporteController.ListDeporte();
+
+                    <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="Deporte" name="Deporte">
+                        <option value="">Seleccionar</option>
+                        @foreach (var item in ListaDeporte)
+                        {
+                            <option value="@item.CodDeporte">@item.NombreDeporte</option>
+                        }
+
+
+                    </select>
+                }
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Agrupacion </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="Agrupacion" name="Agrupacion" />
+            </div>
+          
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Categorias</strong></label>
+                @{
+                    var listaCategoria = BIOMEDICO.Controllers.CategoriaController.ListCategoria();
+
+                    <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="Categoria" name="Categoria">
+                        <option value="">Seleccionar</option>
+                        @foreach (var item in listaCategoria)
+                        {
+                            <option value="@item.IdCategoria">@item.NomCategoria</option>
+                        }
+
+
+                    </select>
+                }
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Modalidad</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="Modalidad" name="Modalidad" />
+            </div>
+
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Género</strong></label>
+                <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="Genero" name="Genero">
+                    <option value="">Seleccionar</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                </select>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Año</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="Año" name="Año" />
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Mes</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="Mes" name="Mes" />
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Fecha Evaluacion</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" type="date" class="form-control" id="FechaEvaluacion" name="FechaEvaluacion" />
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+
+    </form>
+</div>
+
+<br />
+
+<br />
+
+<br />
+
+<div class="row m-0">
+    <h2><strong>ANÁLISIS DE CARGAS  DE ENTRENAMIENTO POR MESOCICLO LO REAL CONTRA LO PLANIFICADO  DEL MACRO ANTERIOR</strong> </h2>
+    <hr width=100% align="right" size=200 color="black">
+
+    <br />
+    <form id="FormDeportistaPadre" name="FormDeportistaPadre">
+
+        <div class="row m-0">
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Objetivo General </strong></label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="ObjetivoGeneral"></textarea>
+
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Objetivos Especificos </strong> </label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="ObjetivosEspecificos"></textarea>
+
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Preparacion Fisica </strong></label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="PreparacionFisica"></textarea>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Preparación Tecnica </strong></label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="PreparacionTecnica"></textarea>
+
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Preparación Tactica </strong></label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="PreparacionTactica"></textarea>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Resultados Competencia </strong></label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="ResultadosCompetencia"></textarea>
+
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Pronostico Macrociclo </strong></label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="PronosticoMacrociclo"></textarea>
+
+            </div>
+
+
+
+        </div>
+
+        <br />
+    </form>
+
+</div>
+<br />
+
+<br />
+
+<br />
+
+
+<div class="row m-0">
+    <h2><strong>ESTRUCTURACIÓN PLAN DE ENTRENAMIENTO ACTUAL</strong> </h2>
+    <hr width=100% align="right" size=200 color="black">
+
+    <br />
+    <form id="FormPlanEntrenamineto" name="FormPlanEntrenamineto">
+
+        <div class="row m-0">
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Competencia Principal</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="CompetenciaPrincipal" name="CompetenciaPrincipal" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong> Tipo Planificacion</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="TipoPlanificacion" name="TipoPlanificacion" />
+            </div>
+
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Numero Macrociclo </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="NumMacrociclo" name="NumMacrociclo" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Fecha Inicio   </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" type="date" class="form-control" id="FechaInicioMacro" name="FechaInicioMacro" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Fecha Fin   </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" type="date" class="form-control" id="FechaFinMacro" name="FechaFinMacro" />
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Sede Competencia</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="SedeCompetencia" name="SedeCompetencia" />
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Condiciones Climaticas</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="CondicionesClimaticas" name="CondicionesClimaticas" />
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Objetivos Nueva Competencia</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="ObjetivosNuevaCompetencia" name="ObjetivosNuevaCompetencia" />
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Objetivos Especificos Nueva Competencia</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="ObjetivosEspecificosNuevaCompetencia" name="ObjetivosEspecificosNuevaCompetencia" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Pronostico Competencia </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="PronosticoCompetencia" name="PronosticoCompetencia" />
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+
+
+    </form>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12">
+
+    <div>
+        <br />
+        <table align="center" border="1" class="col-xs-12 col-sm-12 col-md-12">
+
+            <tr align="center">
+
+                <td><strong>Mesosiclos</strong>  </td>
+                <td><strong>Tareas por Mesociclos</strong> </td>
+
+            </tr>
+            <tr>
+            </tr>
+
+            <tr>
+
+                <th>
+                    <input class="form-control" id="MesosicloGeneral" name="MesosicloGeneral" />
+                </th>
+                <th>
+                    <input class="form-control" id="TareaMesosicloGeneral" name="TareaMesosicloGeneral" />
+                </th>
+
+
+            </tr>
+            <tr>
+
+                <th>
+                    <input class="form-control" id="MesosicloEspecial" name="MesosicloEspecial" />
+                </th>
+                <th>
+                    <input class="form-control" id="TareaMesosicloEspecial" name="TareaMesosicloEspecial" />
+                </th>
+
+
+            </tr>
+            <tr>
+
+
+                <th>
+                    <input class="form-control" id="MesosicloCompeticion" name="MesosicloCompeticion" />
+                </th>
+                <th>
+                    <input class="form-control" id="TareaMesosicloCompeticion" name="TareaMesosicloCompeticion" />
+                </th>
+
+
+            </tr>
+        </table>
+    </div>
+</div>
+<br />
+<br />
+<div class="row m-0">
+    <h2><strong>MEDIOS Y MÉTODOS A EMPLEAR EN EL NUEVO MACROCICLO</strong> </h2>
+    <hr width=100% align="right" size=200 color="black">
+
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12">
+
+    <div>
+        <br />
+        <table align="center" border="1" class="col-xs-12 col-sm-12 col-md-12">
+
+            <tr align="center">
+
+                <td><strong>Capaciades</strong>  </td>
+                <td><strong>Metodos</strong> </td>
+                <td><strong>Medios</strong> </td>
+
+            </tr>
+            <tr>
+            </tr>
+
+            <tr>
+
+                <th>
+                    <input class="form-control" id="Capacidades01" name="Capacidades01" />
+                </th>
+                <th>
+                    <input class="form-control" id="Metodos01" name="Metodos01" />
+                </th>
+                <th>
+                    <input class="form-control" id="Medios01" name="Medios01" />
+                </th>
+
+            </tr>
+            <tr>
+
+                <th>
+                    <input class="form-control" id="Capacidades02" name="Capacidades02" />
+                </th>
+                <th>
+                    <input class="form-control" id="Metodos02" name="Metodos02" />
+                </th>
+                <th>
+                    <input class="form-control" id="Medios02" name="Medios02" />
+                </th>
+
+            </tr>
+            <tr>
+
+                <th>
+                    <input class="form-control" id="Capacidades03" name="Capacidades03" />
+                </th>
+                <th>
+                    <input class="form-control" id="Metodos03" name="Metodos03" />
+                </th>
+                <th>
+                    <input class="form-control" id="Medios03" name="Medios03" />
+                </th>
+
+            </tr>
+            <tr>
+
+                <th>
+                    <input class="form-control" id="Capacidades04" name="Capacidades04" />
+                </th>
+                <th>
+                    <input class="form-control" id="Metodos04" name="Metodos04" />
+                </th>
+                <th>
+                    <input class="form-control" id="Medios04" name="Medios04" />
+                </th>
+
+            </tr>
+            <tr>
+
+                <th>
+                    <input class="form-control" id="Capacidades05" name="Capacidades05" />
+                </th>
+                <th>
+                    <input class="form-control" id="Metodos05" name="Metodos05" />
+                </th>
+                <th>
+                    <input class="form-control" id="Medios05" name="Medios05" />
+                </th>
+
+            </tr>
+            <tr>
+
+                <th>
+                    <input class="form-control" id="Capacidades06" name="Capacidades06" />
+                </th>
+                <th>
+                    <input class="form-control" id="Metodos06" name="Metodos06" />
+                </th>
+                <th>
+                    <input class="form-control" id="Medios06" name="Medios06" />
+                </th>
+
+            </tr>
+
+            <tr>
+
+                <th>
+                    <input class="form-control" id="Capacidades07" name="Capacidades07" />
+                </th>
+                <th>
+                    <input class="form-control" id="Metodos07" name="Metodos07" />
+                </th>
+                <th>
+                    <input class="form-control" id="Medios07" name="Medios07" />
+                </th>
+
+            </tr>
+            <tr>
+
+                <th>
+                    <input class="form-control" id="Capacidades08" name="Capacidades08" />
+                </th>
+                <th>
+                    <input class="form-control" id="Metodos08" name="Metodos08" />
+                </th>
+                <th>
+                    <input class="form-control" id="Medios08" name="Medios08" />
+                </th>
+
+            </tr>
+            <tr>
+
+                <th>
+                    <input class="form-control" id="Capacidades09" name="Capacidades09" />
+                </th>
+                <th>
+                    <input class="form-control" id="Metodos09" name="Metodos09" />
+                </th>
+                <th>
+                    <input class="form-control" id="Medios09" name="Medios09" />
+                </th>
+
+            </tr>
+            <tr>
+
+                <th>
+                    <input class="form-control" id="Capacidades10" name="Capacidades10" />
+                </th>
+                <th>
+                    <input class="form-control" id="Metodos10" name="Metodos10" />
+                </th>
+                <th>
+                    <input class="form-control" id="Medios10" name="Medios10" />
+                </th>
+
+            </tr>
+        </table>
+    </div>
+</div>
+<br />
+<br />
+<div class="row m-0">
+    <h2><strong>RECURSOS DISPONIBLES</strong> </h2>
+    <hr width=100% align="right" size=200 color="black">
+
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12">
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+
+        <div>
+            <br />
+            <table align="center" border="1" class="col-xs-12 col-sm-12 col-md-12">
+
+                <tr align="center">
+
+                    <td><strong>Recursos</strong>  </td>
+                    <td><strong>Disponibles</strong> </td>
+
+                </tr>
+                <tr>
+                </tr>
+
+                <tr>
+
+                    <th>
+                        <input class="form-control" id="RecursosHumanos" name="RecursosHumanos" />
+                    </th>
+                    <th>
+                        <input class="form-control" id="DisponibleHumanos" name="DisponibleHumanos" />
+                    </th>
+
+
+                </tr>
+
+                <tr>
+
+                    <th>
+                        <input class="form-control" id="RecursosFisicos" name="RecursosFisicos" />
+                    </th>
+                    <th>
+                        <input class="form-control" id="DisponibleFisicos" name="DisponibleFisicos" />
+                    </th>
+
+
+                </tr>
+                <tr>
+
+
+                    <th>
+                        <input class="form-control" id="Recursosfinancieros" name="Recursosfinancieros" />
+                    </th>
+                    <th>
+                        <input class="form-control" id="DisponibleFinanciero" name="DisponibleFinanciero" />
+                    </th>
+
+
+                </tr>
+                <tr>
+
+
+                    <th>
+                        <input class="form-control" id="RecursoDeportivo" name="RecursoDeportivo" />
+                    </th>
+                    <th>
+                        <input class="form-control" id="DisponibleDeportivo" name="DisponibleDeportivo" />
+                    </th>
+
+
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<div class="row m-0">
+    <h2><strong>NECESIDADES MATERIALES Y OPERATIVAS PARA ALCANZAR LOS OBJETIVOS PROPUESTOS</strong> </h2>
+    <hr width=100% align="right" size=200 color="black">
+
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12">
+
+    <div>
+        <br />
+        <table align="center" border="1" class="col-xs-12 col-sm-12 col-md-12">
+
+            <tr align="center">
+
+                <td><strong>Recursos</strong>  </td>
+                <td><strong>Mesociclos</strong> </td>
+                <td><strong>Cantidad</strong> </td>
+
+            </tr>
+            <tr>
+            </tr>
+
+            <tr>
+
+                <th>
+                    <input class="form-control" id="ObjetivosHumanos" name="ObjetivosHumanos" />
+                </th>
+                <th>
+                    <input class="form-control" id="MesocicloHumano" name="MesocicloHumano" />
+                </th>
+                <th>
+                    <input class="form-control" id="PropuestoHumano" name="PropuestoHumano" />
+                </th>
+
+            </tr>
+            <tr>
+
+                <th>
+                    <input class="form-control" id="ObjetivosFisicos" name="ObjetivosFisicos" />
+                </th>
+                <th>
+                    <input class="form-control" id="MesocicloFisico" name="MesocicloFisico" />
+                </th>
+                <th>
+                    <input class="form-control" id="PropuestoFisico" name="PropuestoFisico" />
+                </th>
+
+            </tr>
+
+            <tr>
+
+                <th>
+                    <input class="form-control" id="ObjetivosFinancieros" name="ObjetivosFinancieros" />
+                </th>
+                <th>
+                    <input class="form-control" id="MesocicloFinanciero" name="MesocicloFinanciero" />
+                </th>
+                <th>
+                    <input class="form-control" id="PropuestoFinanciero" name="PropuestoFinanciero" />
+                </th>
+
+            </tr>
+            <tr>
+
+                <th>
+                    <input class="form-control" id="ObjetivosDeportivos" name="ObjetivosDeportivos" />
+                </th>
+                <th>
+                    <input class="form-control" id="MesocicloDeportivo" name="MesocicloDeportivo" />
+                </th>
+                <th>
+                    <input class="form-control" id="PropuestoDeportivo" name="PropuestoDeportivo" />
+                </th>
+
+            </tr>
+            <tr>
+
+                <th>
+                    <input class="form-control" id="MedicinaDelDeporte" name="MedicinaDelDeporte" />
+                </th>
+                <th>
+                    <input class="form-control" id="MesocicloDeporte" name="MesocicloDeporte" />
+                </th>
+                <th>
+                    <input class="form-control" id="PropuestoDeporte" name="PropuestoDeporte" />
+                </th>
+
+            </tr>
+
+
+        </table>
+    </div>
+</div>
+<br />
+
+<br />
+
+<br />
+
+<div class="row m-0">
+    <h2><strong>DISTRIBUCIÓN PERCENTIL POR PERIODOS MACROCICLO</strong> </h2>
+    <hr width=100% align="right" size=200 color="black">
+
+    <br />
+    <form id="FormDeportistaPadre" name="FormDeportistaPadre">
+
+        <div class="row m-0">
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Distribución</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="DistribucionMacrociclo" name="DistribucionMacrociclo" />
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Preparación </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="PreparacionMacrociclo" name="PreparacionMacrociclo" />
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>CompetenciaMacrociclo</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="CompetenciaMacrociclo" name="CompetenciaMacrociclo" />
+            </div>
+
+            
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Diasrabajo </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="DiasTrabajoMacrociclo" name="DiasTrabajoMacrociclo" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Otros Dias </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="OtrosDiasMacrociclo" name="OtrosDiasMacrociclo" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Año</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="Año" name="Año" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Acumulacion </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="AcumulacionMacrociclo" name="AcumulacionMacrociclo" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Transformacion </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="TransformacionMacrocilo" name="TransformacionMacrocilo" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Realizacion Macrociclo</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="RealizacionMacrociclo" name="RealizacionMacrociclo" />
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Firma Metodologo</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="Metodologo" name="Metodologo" />
+            </div>
+
+        </div>
+
+        <br />
+    </form>
+
+</div>
+<div class="col-xs-4 col-sm-4 col-md-4">
+    <button type="button" onclick="Createobj()" class="btn btn-block btn-outline-primary btn-rounded btn-outline mt-4" id="SaveAnalisMacrociclo">Guardar </button>
+</div>

@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Agregar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script defer src="~/Scripts/APP/RolDeporte/RolDeporte.js"></script>
+<h2>Agregar</h2>
+
+<hr width=100% align="right" size=200 color="black">
+
+<div class="row m-0">
+
+    <hr width=100% align="right" size=200 color="black">
+
+    <div class="row m-0">
+
+        <form id="FormNutricionDeportiva" name="FormNutricionDeportiva">
+
+            <div class="row m-0">
+
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <label><strong>Deporte</strong></label>
+                    @{
+                        var ListaDeporte = BIOMEDICO.Controllers.DeporteController.ListDeporte();
+
+                        <select style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="NombreDeporte" name="NombreDeporte">
+                            <option value="">Seleccionar</option>
+                            @foreach (var item in ListaDeporte)
+                            {
+                                <option value="@item.NombreDeporte">@item.NombreDeporte</option>
+                            }
+
+
+                        </select>
+                    }
+                </div>
+
+
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <label><strong>Rol</strong></label>
+                    @{
+                        var ListaRoles = BIOMEDICO.Controllers.RolDeporteController.ListRoles();
+
+                        <select style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="NomRol" name="NomRol">
+                            <option value="">Seleccionar</option>
+                            @foreach (var item in ListaRoles)
+                            {
+                                <option value="@item.NomRol">@item.NomRol</option>
+                            }
+
+
+                        </select>
+                    }
+                </div>
+
+                @*<div class="col-xs-4 col-sm-4 col-md-4">
+                    <label><strong>Rol Deporte</strong></label>
+                    @{
+                        var ListRolDeporte = BIOMEDICO.Controllers.RolDeporteController.ListRolDeporte();
+
+                        <select style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="NomRol" name="NomRol">
+                            <option value="">Seleccionar</option>
+                            @foreach (var item in ListRolDeporte)
+                            {
+                                <option value="@item.NombreDeporte">@item.NombreDeporte  @item.NomRol</option>
+                            }
+
+
+                        </select>
+                    }
+                </div>*@
+            </div>
+        </form>
+
+
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <button type="button" onclick="Createobj()" class="btn btn-block btn-outline-primary btn-rounded btn-outline mt-4" id="SaveRolDeporte">Guardar</button>
+    </div>
+</div>

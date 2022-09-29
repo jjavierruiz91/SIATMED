@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "Agregar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script defer src="~/Scripts/APP/CuadroMedallero/CuadroMedallero.js"></script>
+<h2>CUADRO MEDALLERO</h2>
+
+
+
+<div class="row m-0">
+
+    <form id="FormDeportista" name="FormDeportista">
+
+        <div class="row m-0">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Deporte</strong></label>
+                @{
+                    var ListaDeporte = BIOMEDICO.Controllers.DeporteController.ListDeporte();
+
+                    <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="DeporteMedallero" name="DeporteMedallero">
+                        <option value="">Seleccionar</option>
+                        @foreach (var item in ListaDeporte)
+                        {
+                            <option value="@item.NombreDeporte">@item.NombreDeporte</option>
+                        }
+
+
+                    </select>
+                }
+            </div>
+          
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Medalla Oro</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" type="text" class="form-control" id="MedallaOro" name="MedallaOro" onkeypress="return soloNumeros(event)" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Medalla Plata</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" type="text" class="form-control" id="MedallaPlata" name="MedallaPlata" onkeypress="return soloNumeros(event)" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Medalla Bronce</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" type="text" class="form-control" id="MedallaBronce" name="MedallaBronce" onkeypress="return soloNumeros(event)" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Categoria</strong></label>
+                @{
+                    var listaCategoria = BIOMEDICO.Controllers.CategoriaController.ListCategoria();
+
+                    <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="CategoriaMedallero" name="CategoriaMedallero">
+                        <option value="">Seleccionar</option>
+                        @foreach (var item in listaCategoria)
+                        {
+                            <option value="@item.NomCategoria">@item.NomCategoria</option>
+                        }
+
+
+                    </select>
+                }
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Nombre Deportista</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="DeportistaMedallero" name="DeportistaMedallero" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Evento</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="EventoMedallero" name="EventoMedallero" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Fecha</strong></label>
+                <input type="date" style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="FechaMedallero" name="FechaMedallero" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Prueba</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="PruebaMedallero" name="PruebaMedallero" />
+            </div>
+
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Marca</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="Marca" name="Marca" />
+            </div>
+
+        </div>
+
+
+
+
+
+    </form>
+</div>
+
+
+
+
+<div class="col-xs-4 col-sm-4 col-md-4">
+    <button type="button" onclick="Createobj()" class="btn btn-block btn-outline-primary btn-rounded btn-outline mt-4" id="SaveCuadroMedallero">Guardar </button>
+</div>
+

@@ -1,0 +1,488 @@
+﻿@{ 
+    string V = "1";
+    List<BIOMEDICO.Models.ASignarPermisos> listapermisosasignados = new List<BIOMEDICO.Models.ASignarPermisos>();
+    if (BIOMEDICO.Clases.Utilidades.ActiveUser.IdUsuario != null)
+    {
+        listapermisosasignados = BIOMEDICO.Clases.Utilidades.Getlistapermisos();
+    }
+
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SIATMED</title>
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="~/images/Gober.png" />
+    <link href="~/Content/css/icons/icomoon/styles.css" rel="stylesheet" />
+    <link href="~/Content/css/icons/fontawesome/styles.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap_limitless.css" rel="stylesheet" />
+    <link href="~/Content/css/layout.css" rel="stylesheet" />
+    <link href="~/Content/css/components.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/css/colors.css" rel="stylesheet" />
+
+    <link href="~/Content/css/plugins/iCheck/custom.css" rel="stylesheet" />
+    <link href="~/Content/css/plugins/fullcalendar/fullcalendar.css" rel="stylesheet" />
+    <link href="~/Content/css/plugins/fullcalendar/fullcalendar.print.css" rel="stylesheet" />
+
+    <link href="~/Content/css/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    @*<link href="~/Content/css/plugins/dataTables/datatables.min.css" rel="stylesheet" />*@
+    <!-- /global stylesheets -->
+    <!-- Core JS files -->
+    <script src="~/Content/js/main/jquery.min.js?@V"></script>
+    <script src="~/Content/js/main/bootstrap.bundle.min.js?@V"></script>
+    <script src="~/Content/js/plugins/loaders/blockui.min.js?@V"></script>
+    <!-- /core JS files -->
+    <!-- Theme JS files -->
+    <script src="~/Content/js/plugins/visualization/d3/d3.min.js?@V"></script>
+    <script src="~/Content/js/plugins/visualization/d3/d3_tooltip.js?@V"></script>
+    <script src="~/Content/js/plugins/forms/styling/switchery.min.js?@V"></script>
+    <script src="~/Content/js/plugins/forms/selects/bootstrap_multiselect.js?@V"></script>
+    <script src="~/Content/js/plugins/ui/moment/moment.min.js?@V"></script>
+    <script src="~/Content/js/plugins/pickers/daterangepicker.js?@V"></script>
+
+    <script src="~/Content/js/demo_pages/dashboard.js?@V"></script>
+    <script src="~/Content/js/app.js?@V"></script>
+    <!-- /theme JS files -->
+
+    <script src="~/Content/js/plugins/forms/validation/validate.min.js?@V"></script>
+    <script src="~/Content/js/plugins/forms/validation/localization/messages_es.js?@V"></script>
+    <script src="~/Content/js/plugins/sweetalert/sweetalert.min.js?@V"></script>
+    <script src="~/Content/js/plugins/dataTables/datatables.min.js?@V"></script>
+    <script src="~/Content/js/plugins/select2/select2.full.min.js?@V"></script>
+
+
+    <script src="~/Content/js/plugins/forms/styling/uniform.min.js?@V"></script>
+    <script src="~/Content/js/demo_pages/form_inputs.js?@V"></script>
+
+
+    <script defer src="~/Content/js/plugins/fullcalendar/moment.min.js"></script>
+    <script defer src="~/Content/js/plugins/iCheck/icheck.min.js"></script>
+    <script defer src="~/Content/js/plugins/fullcalendar/fullcalendar.min.js"></script>
+    <script defer src="~/Content/js/plugins/fullcalendar/es.js"></script>
+
+
+
+
+    <script src="~/Scripts/Utilitis.js"></script>
+    <script src="~/Scripts/FuncionesAjax/FuncionesAjax.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Main navbar -->
+    <div class="navbar navbar-expand-md navbar-dark">
+        <div class="navbar-brand">
+            <a href="/Home/Index" class="d-inline-block">
+
+                @{
+                    var sesion = BIOMEDICO.Clases.Utilidades.ActiveUser;
+                    if (sesion != null)
+                    {
+                        <h1 style="margin:0; color:white">
+                            @sesion.NomUsuario @sesion.ApeUsuario
+                        </h1>
+                    }
+
+                }
+                @*<h1 style="margin:0; color:white">@NombrePagina</h1>
+                    <input hidden id="CodigoPagina" value="@CodigoPagina" />
+                    <input hidden id="IdUser" value="@user.Id_Usuario" />*@
+            </a>
+        </div>
+        <div class="d-md-none">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
+                <i class="icon-tree5"></i>
+            </button>
+            <button class="navbar-toggler sidebar-mobile-main-toggle" type="button">
+                <i class="icon-paragraph-justify3"></i>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-mobile">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="#" class="navbar-nav-link sidebar-control sidebar-main-toggle d-none d-md-block">
+                        <i class="icon-paragraph-justify3"></i>
+                    </a>
+                </li>
+            </ul>
+            @*<span class="badge bg-success ml-md-3 mr-md-auto">Online</span>*@
+            <ul class="navbar-nav ml-md-auto">
+
+                <li class="nav-item dropdown dropdown-user">
+                    <a href="#" class="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-users4"></i>
+                        <span class="NameUser"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        @*<a href="#" class="dropdown-item"><i class="icon-user-plus"></i> Mi Perfil</a>*@
+                        <div class="dropdown-divider"></div>
+                        <a href="~/Login/Login" id="IdCerrarSesion" class="dropdown-item"><i class="icon-users4"></i> Cerrar sesión</a>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <!-- /main navbar -->
+    <!-- Page content -->
+    <div class="page-content">
+        <!-- Main sidebar -->
+        <div class="sidebar sidebar-dark sidebar-main sidebar-expand-md">
+            <!-- Sidebar mobile toggler -->
+            <div class="sidebar-mobile-toggler text-center">
+                <a href="#" class="sidebar-mobile-main-toggle">
+                    <i class="icon-arrow-left8"></i>
+                </a>
+                Navigation
+                <a href="#" class="sidebar-mobile-expand">
+                    <i class="icon-screen-full"></i>
+                    <i class="icon-screen-normal"></i>
+                </a>
+            </div>
+            <!-- /sidebar mobile toggler -->
+            <!-- Sidebar content -->
+            <div class="sidebar-content">
+                <!-- User menu -->
+                <div class="sidebar-user">
+                    <div class="card-body">
+                        <div class="d-flex  align-items-center mr-3">
+                            <img src="~/images/Gober.png" class="img-fluid" />
+                            <div class="media-body">
+                                <div class="media-title font-weight-semibold NameUser"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /user menu -->
+                <!-- Main navigation -->
+                <div class="card card-sidebar-mobile">
+                    <ul class="nav nav-sidebar" data-nav-type="accordion">
+                        <!-- Main -->
+
+                        <li class="nav-item">
+                            <a href="~/Home/Index" class="nav-link active">
+                                <i class="icon-home7"></i>
+                                <span>
+                                    Inicio
+                                </span>
+                            </a>
+                        </li>
+                        @{
+                            var permisoasignado = listapermisosasignados.FirstOrDefault(w => w.Permisos.NomPermiso == "USUARIOS");
+                            if (permisoasignado != null)
+                            {
+
+                                <li id="C0003" class="nav-item nav-item-submenu">
+                                    <a href="#" class="nav-link"><i class="icon-users4"></i> <span>GESTIÓN USUARIOS</span></a>
+                                    <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                        <li class="nav-item"><a href="~/TipoPermiso/Permisos" class="nav-link">PERMISOS</a></li>
+                                        <li class="nav-item"><a href="~/Usuarios/Usuarios" class="nav-link">USUARIOS</a></li>
+                                        <li class="nav-item"><a href="~/Rol/Rol" class="nav-link">ROLES</a></li>
+                                        <li class="nav-item"><a href="~/AsignarPermisos/AsignarPermisos" class="nav-link">ASIGNAR PERMISOS</a></li>
+                                    </ul>
+                                </li>
+                            }
+                        }
+                        @{
+                            if (listapermisosasignados.FirstOrDefault(w => w.Permisos.NomPermiso == "DEPORTES") != null)
+                            {
+                                <li id="C0001" class="nav-item nav-item-submenu">
+                                    <a href="#" class="nav-link"><i class="icon-users"></i> <span>CUADRO MEDALLERO</span></a>
+                                    <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                        <li class="nav-item"><a href="~/CuadroMedallero/PanelMedallero" class="nav-link">CUADRO MEDALLERO</a></li>
+                                        <li class="nav-item"><a href="~/CuadroMedallero/Agregar" class="nav-link">AGREGAR</a></li>
+                                        <li class="nav-item"><a href="~/CuadroMedallero/ListaCuadroMedallero" class="nav-link">LISTADO</a></li>
+
+                                    </ul>
+                                </li>
+                            }
+                        }
+                        @{
+                            if (listapermisosasignados.FirstOrDefault(w => w.Permisos.NomPermiso == "DEPORTES") != null)
+                            {
+                                <li id="C0001" class="nav-item nav-item-submenu">
+                                    <a href="#" class="nav-link"><i class="icon-users"></i> <span>DEPORTES</span></a>
+                                    <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                        <li class="nav-item"><a href="~/Deporte/Agregar" class="nav-link">AGREGAR</a></li>
+                                        <li class="nav-item"><a href="~/Deporte/ListaDeporte" class="nav-link">LISTADO</a></li>
+
+                                    </ul>
+                                </li>
+                            }
+                        }
+                        @{
+                            if (listapermisosasignados.FirstOrDefault(w => w.Permisos.NomPermiso == "DEPORTES") != null)
+                            {
+                                <li id="C0001" class="nav-item nav-item-submenu">
+                                    <a href="#" class="nav-link"><i class="icon-users"></i> <span>ROL DEPORTES</span></a>
+                                    <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                        <li class="nav-item"><a href="~/RolDeporte/Agregar" class="nav-link">AGREGAR</a></li>
+                                        <li class="nav-item"><a href="~/RolDeporte/ListaRolDeporte" class="nav-link">LISTADO</a></li>
+
+                                    </ul>
+                                </li>
+                            }
+                        }
+
+
+                        @{
+                            var ListaDeporte = BIOMEDICO.Controllers.DeporteController.ListDeporte();
+                            var ListarolDeporte = BIOMEDICO.Controllers.RolDeporteController.ListRolDeporte();
+                            ListaDeporte = ListaDeporte.Where(item =>
+                                                        ListarolDeporte.Any(rolde => rolde.NombreDeporte.Equals(item.NombreDeporte))).ToList();
+
+                            foreach (var item in ListaDeporte)
+                            {
+                                <li id="C0001" class="nav-item nav-item-submenu">
+                                    <a href="#" class="nav-link"><i class="icon-vcard"></i> <span>@item.NombreDeporte</span></a>
+                                    <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+
+                                        <li class="nav-item"><a href="~/Deportista/Agregar?opcion=@item.CodDeporte" class="nav-link">AGREGAR DEPORTISTA @item.NombreDeporte</a></li>
+                                        <li class="nav-item"><a href="~/Deportista/ListaDeportista?opcion=@item.CodDeporte" class="nav-link">LISTADO DEPORTISTAS @item.NombreDeporte</a></li>
+
+                                        <li class="nav-item"><a href="~/Categoria/Agregar?opcion=@item.CodDeporte" class="nav-link">AGREGAR CATEGORIA @item.NombreDeporte</a></li>
+                                        <li class="nav-item"><a href="~/Categoria/ListaCategoria?opcion=@item.CodDeporte" class="nav-link">LISTADO CATEGORIA @item.NombreDeporte</a></li>
+
+                                        <li class="nav-item"><a href="~/Entrenadores/Agregar?opcion=@item.CodDeporte" class="nav-link">AGREGAR ENTRENADORES @item.NombreDeporte</a></li>
+                                        <li class="nav-item"><a href="~/Entrenadores/ListaEntrenadores?opcion=@item.CodDeporte" class="nav-link">LISTADO ENTRENADORES @item.NombreDeporte</a></li>
+
+                                        <li class="nav-item"><a href="~/EntrenamientoMensual/Agregar?opcion=@item.CodDeporte" class="nav-link">AGREGAR PLAN ENTRENAMIENTO @item.NombreDeporte</a></li>
+                                        <li class="nav-item"><a href="~/EntrenamientoMensual/ListaEntrenamientoMensual?opcion=@item.CodDeporte" class="nav-link">LISTADO PLAN ENTRENAMIENTO @item.NombreDeporte</a></li>
+
+                                        <li class="nav-item"><a href="~/AsesoriasEntrenadores/Agregar?opcion=@item.CodDeporte" class="nav-link">AGREGAR ASESORIAS ENTRENAMIENTO @item.NombreDeporte</a></li>
+                                        <li class="nav-item"><a href="~/AsesoriasEntrenadores/ListaAsesoriasEntrenadores?opcion=@item.CodDeporte" class="nav-link">LISTADO ASESORIAS ENTRENAMIENTO @item.NombreDeporte</a></li>
+
+                                        <li class="nav-item"><a href="~/UnidadEntrenamiento/Agregar?opcion=@item.CodDeporte" class="nav-link">AGREGAR UNIDAD ENTRENAMIENTO @item.NombreDeporte</a></li>
+                                        <li class="nav-item"><a href="~/UnidadEntrenamiento/ListaUnidaEntrenamiento?opcion=@item.CodDeporte" class="nav-link">LISTADO UNIDAD ENTRENAMIENTO @item.NombreDeporte</a></li>
+
+                                        <li class="nav-item"><a href="~/VisitaCompetencias/Agregar?opcion=@item.CodDeporte" class="nav-link">AGREGAR VISITA COMPETENCIA @item.NombreDeporte</a></li>
+                                        <li class="nav-item"><a href="~/VisitaCompetencias/ListaVisitaCompetenciaDeportiva?opcion=@item.CodDeporte" class="nav-link">LISTADO VISITA COMPETENCIA @item.NombreDeporte</a></li>
+
+
+                                        <li class="nav-item"><a href="~/AnalisisMacroCiclo/Agregar?opcion=@item.CodDeporte" class="nav-link">AGREGAR ANALISIS MACROCICLO @item.NombreDeporte</a></li>
+                                        <li class="nav-item"><a href="~/AnalisisMacroCiclo/ListAnalisisMacroCiclo?opcion=@item.CodDeporte" class="nav-link">LISTADO MACROCICLO @item.NombreDeporte</a></li>
+
+
+                                        <li class="nav-item"><a href="~/PlanSemanalMicrociclo/Agregar?opcion=@item.CodDeporte" class="nav-link">AGREGAR PLAN SEMANAL MICROCICLO @item.NombreDeporte</a></li>
+                                        <li class="nav-item"><a href="~/PlanSemanalMicrociclo/ListaPlanSemanalMicrociclo?opcion=@item.CodDeporte" class="nav-link">LISTADO PLAN SEMANAL MICROCICLO @item.NombreDeporte</a></li>
+
+
+                                        <li class="nav-item"><a href="~/GymColiseo/Agregar?opcion=@item.CodDeporte" class="nav-link">AGREGAR GYM COLISEO @item.NombreDeporte</a></li>
+                                        <li class="nav-item"><a href="~/GymColiseo/ListaGymColiseo?opcion=@item.CodDeporte" class="nav-link">LISTADO HORARIO GYM COLISEO @item.NombreDeporte</a></li>
+
+
+                                        <li class="nav-item"><a href="~/GymEstadio/Agregar?opcion=@item.CodDeporte" class="nav-link">AGREGAR GYM ESTADIO @item.NombreDeporte</a></li>
+                                        <li class="nav-item"><a href="~/GymEstadio/ListaGymEstadio?opcion=@item.CodDeporte" class="nav-link">LISTADO HORARIO GYM ESTADIO @item.NombreDeporte</a></li>
+
+
+                                        <li class="nav-item"><a href="~/HorarioEntrenadores/Agregar?opcion=@item.CodDeporte" class="nav-link">AGREGAR HORARIO ENTRENADORES @item.NombreDeporte</a></li>
+                                        <li class="nav-item"><a href="~/HorarioEntrenadores/ListaHorarioEntrenadores?opcion=@item.CodDeporte" class="nav-link">LISTADO HORARIO ENTRENADORES @item.NombreDeporte</a></li>
+
+
+
+                                        <li class="nav-item"><a href="~/CronogramaActividades/Agregar?opcion=@item.CodDeporte" class="nav-link">AGREGAR CRONOGRAMA ACTIVIDADES @item.NombreDeporte</a></li>
+                                        <li class="nav-item"><a href="~/CronogramaActividades/ListaCronogramaActividades?opcion=@item.CodDeporte" class="nav-link">LISTADO CRONOGRAMA ACTIVIDADES @item.NombreDeporte</a></li>
+
+
+                                        <li class="nav-item"><a href="~/Mesociclo/Agregar?opcion=@item.CodDeporte" class="nav-link">AGREGAR PLAN MESOCICLO @item.NombreDeporte</a></li>
+                                        <li class="nav-item"><a href="~/Mesociclo/ListaMesociclo?opcion=@item.CodDeporte" class="nav-link">LISTADO PLAN MESOCICLO  @item.NombreDeporte</a></li>
+
+                                        <li class="nav-item"><a href="~/PlanGrafico/Agregar?opcion=@item.CodDeporte" class="nav-link">AGREGAR PLAN GRAFICO @item.NombreDeporte</a></li>
+                                        <li class="nav-item"><a href="~/PlanGrafico/ListaPlanGrafico?opcion=@item.CodDeporte" class="nav-link">LISTADO PLAN GRAFICO  @item.NombreDeporte</a></li>
+
+                                    </ul>
+                                </li>
+                            }
+
+
+                        }
+
+                        @*@{
+            if (listapermisosasignados.FirstOrDefault(w => w.Permisos.NomPermiso == "MEDICINA") != null)
+            {
+                <li id="C0001" class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link"><i class="icon-folder-open2"></i> <span>MEDICINA DEL DEPORTE</span></a>
+                    <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                        @if (listapermisosasignados.FirstOrDefault(w => w.Permisos.NomPermiso == "MEDICINAAGREGAR") != null)
+                        {
+                            <li class="nav-item"><a href="~/MedicinaDeportiva/Agregar" class="nav-link">AGREGAR</a></li>
+                        }
+                        @if (listapermisosasignados.FirstOrDefault(w => w.Permisos.NomPermiso == "MEDICINALISTADO") != null)
+                        {
+                            <li class="nav-item"><a href="~/MedicinaDeportiva/ListaMedicinaDeportiva" class="nav-link">LISTADO</a></li>
+                        }
+
+                        @if (listapermisosasignados.FirstOrDefault(w => w.Permisos.NomPermiso == "MEDICINACONTROL") != null)
+                        {
+                            <li class="nav-item"><a href="~/ControlMedicinaDeporte/Agregar" class="nav-link">CONTROL</a></li>
+                        }
+                        @if (listapermisosasignados.FirstOrDefault(w => w.Permisos.NomPermiso == "MEDICINALISTADOCONTROL") != null)
+                        {
+                            <li class="nav-item"><a href="~/ControlMedicinaDeporte/ListaControlMedicinaDeportiva" class="nav-link">LISTADO CONTROL</a></li>
+                        }
+                    </ul>
+                </li>
+            }
+        }
+        @{
+            if (listapermisosasignados.FirstOrDefault(w => w.Permisos.NomPermiso == "FISIOTERAPIA") != null)
+            {
+                <li id="C0001" class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link"><i class="icon-folder-open2"></i> <span>FISIOTERAPIA</span></a>
+                    <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                        <li class="nav-item"><a href="~/Fisioterapia/Agregar" class="nav-link">VALORACIÓN INTERDISCIPLINARIA</a></li>
+                        <li class="nav-item"><a href="~/Fisioterapia/ListaFisioterapiaDeportiva" class="nav-link">LISTADO INTERDISCIPLINARIA</a></li>
+                        <li class="nav-item"><a href="~/ControlFisioterapia/Agregar" class="nav-link">EVALUACIÓN</a></li>
+                        <li class="nav-item"><a href="~/ControlFisioterapia/ListaControlFisioterapiaDeportiva" class="nav-link">LISTADO EVALUACION</a></li>
+                    </ul>
+                </li>
+            }
+        }
+        @{
+            if (listapermisosasignados.FirstOrDefault(w => w.Permisos.NomPermiso == "NUTRICIÓN") != null)
+            {
+                <li id="C0001" class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link"><i class="icon-folder-open2"></i> <span>NUTRICIÓN</span></a>
+                    <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                        <li class="nav-item"><a href="~/Nutricion/Agregar" class="nav-link">FICHA TECNICA</a></li>
+                        <li class="nav-item"><a href="~/Nutricion/ListaNutricionDeportiva" class="nav-link">LISTADO FICHA</a></li>
+                        <li class="nav-item"><a href="~/ControlNutricion/Agregar" class="nav-link">CONTROL</a></li>
+                        <li class="nav-item"><a href="~/ControlNutricion/ListaControlNutricionDeportiva" class="nav-link">LISTADO CONTROL</a></li>
+
+                    </ul>
+                </li>
+            }
+        }
+        @{
+            if (listapermisosasignados.FirstOrDefault(w => w.Permisos.NomPermiso == "PSICOLOGIA") != null)
+            {
+                <li id="C0001" class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link"><i class="icon-folder-open2"></i> <span>PSICOLOGIA</span></a>
+                    <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+
+                        <li class="nav-item"><a href="~/Psicologia/Agregar" class="nav-link">AGREGAR</a></li>
+                        <li class="nav-item"><a href="~/Psicologia/ListaPsicologiaDeportiva" class="nav-link">LISTADO</a></li>
+                        <li class="nav-item"><a href="~/ControlPsicologiaDeportiva/Agregar" class="nav-link">CONTROL</a></li>
+                        <li class="nav-item"><a href="~/ControlPsicologiaDeportiva/ListaControlPsicologiaDeportiva" class="nav-link">LISTADO CONTROL</a></li>
+                    </ul>
+                </li>
+            }
+        }
+        @{
+            if (listapermisosasignados.FirstOrDefault(w => w.Permisos.NomPermiso == "VERCITAS") != null)
+            {
+                <li id="C0001" class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link"><i class="icon-aid-kit"></i> <span>CITAS MEDICAS</span></a>
+                    <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                        <li class="nav-item"><a href="~/CitasMedicas/Agregar" class="nav-link">CITAS</a></li>
+                        <li class="nav-item"><a href="~/CitasMedicas/ListaCitasMedicasDeportiva" class="nav-link">LISTADO</a></li>
+                        <li class="nav-item"><a href="~/CitasMedicas/ListaConsultaCitasMedicas" class="nav-link">REGISTRO EXTENDIDO</a></li>
+
+                    </ul>
+                </li>
+            }
+        }
+        @{
+            if (listapermisosasignados.FirstOrDefault(w => w.Permisos.NomPermiso == "REMISIONES") != null)
+            {
+                <li id="C0001" class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link"><i class="fa fa-ambulance"></i> <span>REMISIONES</span></a>
+                    <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+
+                        <li class="nav-item"><a href="~/Remision/Agregar" class="nav-link">REMISIONES</a></li>
+                        <li class="nav-item"><a href="~/Remision/ListaRemisionMedicasDeportiva" class="nav-link">LISTADO REMISIONES</a></li>
+
+
+                    </ul>
+                </li>
+            }
+        }
+        @{
+            if (listapermisosasignados.FirstOrDefault(w => w.Permisos.NomPermiso == "VERCITAS") != null)
+            {
+                <li id="C0001" class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link"><i class="icon-calendar"></i> <span>HORARIO DE TRABAJO</span></a>
+                    <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+
+                        <li class="nav-item"><a href="~/AgendarCitas/Agregar" class="nav-link">HORARIO TRABAJO</a></li>
+                        <li class="nav-item"><a href="~/AgendarCitas/ListaAgendaDeportiva" class="nav-link">LISTADO HORARIO</a></li>
+                    </ul>
+                </li>
+            }*@
+
+                    </ul>
+
+                </div>
+                <!-- /main navigation -->
+            </div>
+            <!-- /sidebar content -->
+
+        </div>
+        <!-- /main sidebar -->
+        <!-- Main content -->
+        <br />
+        <br />
+        <br />
+        <div class="" style="margin:1%">
+
+            @RenderBody()
+
+            <!-- /content area -->
+            <!-- Footer -->
+            <div class="navbar navbar-expand-lg navbar-light">
+                <div class="text-center d-lg-none w-100">
+                    <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
+                        <i class="icon-unfold mr-2"></i>
+                        Footer
+                    </button>
+                </div>
+                <div style="padding-left: 1.25rem;" class="navbar-collapse collapse" id="navbar-footer">
+                    <span class="navbar-text">
+                        &copy;  @DateTime.Now.Year - GOBERNACION DEL CESAR
+                        <br />
+                        <a href="http://cesar.gov.co/d/index.php/es/"> OFICINA DE SISTEMAS</a>
+
+                    </span>
+
+                </div>
+
+            </div>
+            <!-- /footer -->
+        </div>
+        <!-- /main content -->
+    </div>
+
+    <div class="modal fade" id="pleaseWaitDialog" style="background-color: transparent !important; border: none !important;" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" style="margin-top: 250px; background-color: transparent !important; border: none !important;">
+            <div class="modal-content" style="background-color: transparent !important; border: none !important; box-shadow: 0px 0px 0px rgba(0, 0, 0, 0); -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0); -moz-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            @*<label style="color:white; font-size:40px;font-weight:bold;font-family:'Century Gothic'">Construye</label><br />*@
+                            <div class="pace-demo">
+                                <div class="theme_perspective">
+                                    <div class="pace-progress"></div>
+                                    <div class="pace_activity"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+ 
+    <!-- /page content -->
+</body>
+</html>
+

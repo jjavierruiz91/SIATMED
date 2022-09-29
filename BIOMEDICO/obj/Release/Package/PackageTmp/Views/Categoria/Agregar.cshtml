@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Agregar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script defer src="~/Scripts/APP/Categoria/Categoria.js"></script>
+<h2>Agregar Categoria</h2>
+
+<div class="row m-0">
+
+    <form id="FormDeportista" name="FormDeportista">
+
+        <div class="row m-0">
+             <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Deporte</strong></label>
+                @{
+                    var ListaDeporte = BIOMEDICO.Controllers.DeporteController.ListDeporte();
+
+                    <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="Deporte" name="Deporte">
+                        <option value="">Seleccionar</option>
+                        @foreach (var item in ListaDeporte)
+                        {
+                            <option value="@item.CodDeporte">@item.NombreDeporte</option>
+                        }
+
+
+                    </select>
+                }
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Nombre Categoria </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="NomCategoria" name="NomCategoria" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Descripcion Categoria </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="DescripcionCategoria" name="DescripcionCategoria" />
+            </div>
+        </div>
+
+
+
+
+
+    </form>
+</div>
+
+
+<div class="col-xs-4 col-sm-4 col-md-4">
+    <button type="button" onclick="Createobj()" class="btn btn-block btn-outline-primary btn-rounded btn-outline mt-4" id="SaveCategoria">Guardar </button>
+</div>

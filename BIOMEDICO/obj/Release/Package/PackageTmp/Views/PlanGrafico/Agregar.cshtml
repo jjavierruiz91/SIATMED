@@ -1,0 +1,528 @@
+﻿
+@{
+    ViewBag.Title = "Agregar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    h1 {
+        text-align: center;
+        color: cadetblue
+    }
+
+
+    .boton_personalizado {
+        text-decoration: none;
+        padding: 5px;
+        /**/ font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        background-color: #1883ba;
+        border: 1px solid #0016b0;
+        /**/
+    }
+
+        .boton_personalizado:hover {
+            color: #1883ba;
+            background-color: #ffffff;
+        }
+</style>
+<script defer src="~/Scripts/APP/PlanGrafico/PlanGrafico.js"></script>
+<h1>
+    <strong>
+        SECRETARIA DE RECREACION Y DEPORTES
+        ÁREA TÉCNICA METODOLOGÍCA
+        PLAN GRAFICO
+    </strong>
+
+</h1>
+
+<div class="row m-0">
+
+    <form id="FormPlanEntrenamineto" name="FormPlanEntrenamineto">
+
+        <div class="col-xs-4 col-sm-4 col-md-4">
+            <label><strong>Deporte</strong></label>
+            @{
+                var ListaDeporte = BIOMEDICO.Controllers.DeporteController.ListDeporte();
+
+                <select style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="Deporte" name="Deporte">
+                    <option value="">Seleccionar</option>
+                    @foreach (var item in ListaDeporte)
+                    {
+                        <option value="@item.CodDeporte">@item.NombreDeporte</option>
+                    }
+
+
+                </select>
+            }
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+
+            <div>
+                <br />
+                <table align="center" border="1" class="col-xs-12 col-sm-12 col-md-12">
+
+
+                    <tr>
+
+                        <td align="center"><strong>Macrociclo</strong> </td>
+
+                        <th colspan="16">
+                            <input class="form-control" id="NombreMacrociclo" name="NombreMacrociclo" />
+                        </th>
+
+                    </tr>
+                    <tr>
+
+                        <td align="center"><strong>Meses</strong> </td>
+
+                        <th colspan="4">
+                            <input class="form-control" id="Mes1" name="Mes1" />
+                        </th>
+                        <th colspan="4">
+                            <input class="form-control" id="Mes2" name="Mes2" />
+                        </th>
+                        <th colspan="4">
+                            <input class="form-control" id="Mes3" name="Mes3" />
+                        </th>
+                        <th colspan="4">
+                            <input class="form-control" id="mes4" name="mes4" />
+                        </th>
+
+                    </tr>
+                    <tr>
+
+                        <td align="center"><strong>Mesos C.</strong> </td>
+
+                        <th colspan="4">
+                            <input class="form-control" id="Mesociclos1" name="Mesociclos1" />
+                        </th>
+                        <th colspan="4">
+                            <input class="form-control" id="Mesociclos2" name="Mesociclos2" />
+                        </th>
+                        <th colspan="4">
+                            <input class="form-control" id="Mesociclos3" name="Mesociclos3" />
+                        </th>
+                        <th colspan="4">
+                            <input class="form-control" id="Mesociclos4" name="Mesociclos4" />
+                        </th>
+
+                    </tr>
+                    <tr>
+
+                        <td align="center"><strong>Numero Microciclos</strong> </td>
+
+                        <th>
+                            <input class="form-control" id="NumeroMicrociclo1" name="NumeroMicrociclo1" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroMicrociclo2" name="NumeroMicrociclo2" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroMicrociclo3" name="NumeroMicrociclo3" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroMicrociclo4" name="NumeroMicrociclo4" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroMicrociclo5" name="NumeroMicrociclo5" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroMicrociclo6" name="NumeroMicrociclo6" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroMicrociclo7" name="NumeroMicrociclo7" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroMicrociclo8" name="NumeroMicrociclo8" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroMicrociclo9" name="NumeroMicrociclo9" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroMicrociclo10" name="NumeroMicrociclo10" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroMicrociclo11" name="NumeroMicrociclo11" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroMicrociclo12" name="NumeroMicrociclo12" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroMicrociclo13" name="NumeroMicrociclo13" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroMicrociclo14" name="NumeroMicrociclo14" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroMicrociclo15" name="NumeroMicrociclo15" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroMicrociclo16" name="NumeroMicrociclo16" />
+                        </th>
+
+                    </tr>
+                    <tr>
+
+                        <td align="center"><strong>Tipo Microciclo</strong> </td>
+
+                        <th>
+                            <input class="form-control" id="TipoMicrociclo1" name="TipoMicrociclo1" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="TipoMicrociclo2" name="TipoMicrociclo2" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="TipoMicrociclo3" name="TipoMicrociclo3" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="TipoMicrociclo4" name="TipoMicrociclo4" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="TipoMicrociclo5" name="TipoMicrociclo5" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="TipoMicrociclo6" name="TipoMicrociclo6" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="TipoMicrociclo7" name="TipoMicrociclo7" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="TipoMicrociclo8" name="TipoMicrociclo8" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="TipoMicrociclo9" name="TipoMicrociclo9" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="TipoMicrociclo10" name="TipoMicrociclo10" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="TipoMicrociclo11" name="TipoMicrociclo11" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="TipoMicrociclo12" name="TipoMicrociclo12" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="TipoMicrociclo13" name="TipoMicrociclo13" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="TipoMicrociclo14" name="TipoMicrociclo14" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="TipoMicrociclo15" name="TipoMicrociclo15" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="TipoMicrociclo16" name="TipoMicrociclo16" />
+                        </th>
+
+                    </tr>
+
+                    <tr>
+
+                        <td align="center" ROWSPAN=2><strong>Fecha</strong> </td>
+
+                        <th>
+                            <input class="form-control" id="FechaMesUno" name="FechaMesUno" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesUno2" name="FechaMesUno2" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesUno3" name="FechaMesUno3" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesUno4" name="FechaMesUno4" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesUno5" name="FechaMesUno5" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesUno6" name="FechaMesUno6" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesUno7" name="FechaMesUno7" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesUno8" name="FechaMesUno8" />
+                        </th>
+
+                        <th>
+                            <input class="form-control" id="FechaMesDos" name="FechaMesDos" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesDos2" name="FechaMesDos2" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesDos3" name="FechaMesDos3" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesDos4" name="FechaMesDos4" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesDos5" name="FechaMesDos5" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesDos6" name="FechaMesDos6" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesDos7" name="FechaMesDos7" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesDos8" name="FechaMesDos8" />
+                        </th>
+
+                    </tr>
+
+                    <tr>
+
+
+                        <th>
+                            <input class="form-control" id="FechaMesTres" name="FechaMesTres" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesTres2" name="FechaMesTres2" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesTres3" name="FechaMesTres3" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesTres4" name="FechaMesTres4" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesTres5" name="FechaMesTres5" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesTres6" name="FechaMesTres6" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesTres7" name="FechaMesTres7" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesTres8" name="FechaMesTres8" />
+                        </th>
+
+                        <th>
+                            <input class="form-control" id="FechaMesCuatro" name="FechaMesCuatro" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesCuatro2" name="FechaMesCuatro2" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesCuatro3" name="FechaMesCuatro3" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesCuatro4" name="FechaMesCuatro4" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesCuatro5" name="FechaMesCuatro5" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesCuatro6" name="FechaMesCuatro6" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesCuatro7" name="FechaMesCuatro7" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="FechaMesCuatro8" name="FechaMesCuatro8" />
+                        </th>
+
+                    </tr>
+
+                    <tr>
+
+                        <td align="center"><strong>Numero Sesiones</strong> </td>
+
+                        <th>
+                            <input class="form-control" id="NumeroSesiones" name="NumeroSesiones" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroSesiones2" name="NumeroSesiones2" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroSesiones3" name="NumeroSesiones3" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroSesiones4" name="NumeroSesiones4" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroSesiones5" name="NumeroSesiones5" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroSesiones6" name="NumeroSesiones6" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroSesiones7" name="NumeroSesiones7" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroSesiones8" name="NumeroSesiones8" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroSesiones9" name="NumeroSesiones9" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroSesiones10" name="NumeroSesiones10" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroSesiones11" name="NumeroSesiones11" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroSesiones12" name="NumeroSesiones12" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroSesiones13" name="NumeroSesiones13" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroSesiones14" name="NumeroSesiones14" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroSesiones15" name="NumeroSesiones15" />
+                        </th>
+                        <th>
+                            <input class="form-control" id="NumeroSesiones16" name="NumeroSesiones16" />
+                        </th>
+
+                    </tr>
+
+
+                </table>
+                <br />
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    </form>
+</div>
+<hr width=100% align="right" size=200 color="black">
+<div class="row m-0">
+
+    <form id="FormAntecedentesFisioterapia" name="FormAntecedentesFisioterapia">
+
+        <div class="row m-0">
+            <table align="center" border="1" class="col-xs-12 col-sm-12 col-md-12" id="PlanillaTable" style="overflow-x: visible;">
+
+                <tr>
+
+                    <th colspan="12">Nombre Elementos</th>
+
+                
+
+
+
+                </tr>
+                <tr>
+                    <td colspan="12" >
+                        <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="NombrePrincipal" name="NombrePrincipal">
+
+                            <optgroup label="Preparacion fisica">
+                                <option value="">Seleccionar</option>
+                                <option value="Fuerza Maxima">Fuerza Maxima</option>
+                                <option value="Fuerza Explosiva">Fuerza Explosiva</option>
+                                <option value="Fuerza Resistencia">Fuerza Resistencia</option>
+                                <option value="Fuerza Relativa">Fuerza Relativa</option>
+                                <option value="Resistencia Aerobica">Resistencia Aerobica</option>
+                                <option value="Resistencia Anaerobica">Resistencia Anaerobica</option>
+                                <option value="Flexibilidad">Flexibilidad</option>
+                                <option value="Volumen en repeticiones">Volumen en repeticiones</option>
+                                <option value="Volumen en kilometros,metros">Volumen en kilometros,metros</option>
+                                <option value="Volumen en kilogramos">Volumen en kilogramos</option>
+                                <option value="Volumen flechas, asaltos, lanzamientos, combates">Volumen flechas, asaltos, lanzamientos, combates</option>
+                                <option value="Volumen en tiempo">Volumen en tiempo</option>
+                                <option value="Volumen en repeticiones">Volumen en repeticiones</option>
+                            </optgroup>
+                            <optgroup label="Preparación Tecnica">
+                                <option value="Acoplamiento">Acoplamiento</option>
+                                <option value="Diferenciación">Diferenciación</option>
+                                <option value="Ritmo">Ritmo</option>
+                                <option value="Orientación">Orientación</option>
+                                <option value="Volumen en repeticiones">Volumen en repeticiones</option>
+                                <option value="Volumen en kilometros,metros">Volumen en kilometros,metros</option>
+                                <option value="Volumen en kilogramos">Volumen en kilogramos</option>
+                                <option value="Volumen flechas, asaltos, lanzamientos, combates">Volumen flechas, asaltos, lanzamientos, combates</option>
+                                <option value="Volumen en tiempo">Volumen en tiempo</option>
+                                <option value="Volumen en repeticiones">Volumen en repeticiones</option>
+
+                            </optgroup>
+                            <optgroup label="Preparación Tactica">
+                                <option value="Sistema de Juegos">Sistema de Juegos</option>
+                                <option value="Ataque">Ataque</option>
+                                <option value="Defensa">Defensa</option>
+                            </optgroup>
+                            <optgroup label="Preparación Teorica">
+                                <option value="Charlas">Charlas</option>
+                                <option value="Videos">Videos</option>
+                                <option value="Anagramas">Anagramas</option>
+                            </optgroup>
+                            <optgroup label="Preparación Mental">
+                                <option value="Motivación">Motivación</option>
+                                <option value="Compromiso">Compromiso</option>
+                                <option value="Responsabilidad">Responsabilidad</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                    @*<td colspan="12">
+                        <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="NombreElementoPlangrafico" name="NombreElementoPlangrafico">
+                            <option value="">Seleccionar</option>
+                            <option value="Vol.Ideal">Vol.Ideal</option>
+                            <option value="Vol. % Real">Vol. % Real</option>
+                            <option value="Vol. Ejecuta">Vol. Ejecuta</option>
+
+                        </select>
+
+                    </td>*@
+
+
+                <tr>
+
+                    <td align="center" colspan="12">
+
+                </tr>
+                <tr>
+
+                    <td align="center" colspan="12">
+
+                </tr>
+
+
+
+
+
+
+
+            </table>
+            <br />
+            <br />
+            <br />
+            <br />
+            <button class="boton_personalizado" type="button" onclick="CargarElemtosTabla()" >Agregar</button>
+
+        </div>
+
+    </form>
+    <br />
+    <br />
+    <br />
+    <br />
+
+</div>
+<div class="col-xs-4 col-sm-4 col-md-4">
+    <label><strong>Firma Metodologo </strong></label>
+    <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="FirmaMetodologo" name="FirmaMetodologo" />
+</div>
+<div class="col-xs-4 col-sm-4 col-md-4">
+    <label><strong>Firma Entrenador </strong></label>
+    <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="FirmaEntrenador" name="FirmaEntrenador" />
+</div>
+<div class="col-xs-4 col-sm-4 col-md-4">
+    <button type="button" onclick="Createobj()" class="btn btn-block btn-outline-primary btn-rounded btn-outline mt-4" id="SavePlanGrafico">Guardar </button>
+</div>
+
+

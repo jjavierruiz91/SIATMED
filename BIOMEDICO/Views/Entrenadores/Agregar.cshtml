@@ -1,0 +1,241 @@
+﻿
+@{
+    ViewBag.Title = "Agregar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script defer src="~/Scripts/APP/Entrenadores/Entrenadores.js"></script>
+<h1><strong>Ficha Deportiva - Entrenadores  <img align="right" id="ImagenDeport" height="150" width="150" @*style="border-radius:50%;*@ border-color:#000000" /></strong></h1>
+
+<hr width=100% align="right" size=200 color="black">
+
+<h1><strong>Datos Generales Entrenadores</strong>  </h1>
+
+<div class="row m-0">
+
+    <form id="FormEntrenadores" name="FormEntrenadores">
+
+        <div class="row m-0">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Tipo Identificación</strong> </label>
+                <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="TipoIdentificacionEntrenador" name="TipoIdentificacionEntrenador">
+                    <option value="">Seleccionar</option>
+                    <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
+                    <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                    <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                    <option value="Otro">Otro</option>
+                </select>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Número Identificación</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" type="text" class="form-control" id="NumeroIdentificacionEntrenador" name="NumeroIdentificacionEntrenador" onchange="ValidarCedula()" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Estado Entrenadores</strong></label>
+                <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="EstadoEntrenador" name="EstadoEntrenador">
+                    <option value="">Seleccionar</option>
+                    <option value="Activo">Activo</option>
+                    <option value="Inactivo">Inactivo</option>
+                </select>
+            </div>
+
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Primer Nombre</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="PrimerNombreEntrenador" name="PrimerNombreEntrenador" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Segundo Nombre</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="SegundoNombreEntrenador" name="SegundoNombreEntrenador" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Primer Apellido</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="PrimerApellidoEntrenador" name="PrimerApellidoEntrenador" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Segundo Apellido</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="Segundoapellidoentrenador" name="Segundoapellidoentrenador" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Imagen</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" type="file" class="form-control" id="Imagen" name="Imagen" />
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Edad</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="EdadEntrenador" onkeypress="return soloNumeros(event)" name="EdadEntrenador" />
+            </div>
+            @*<div class="col-xs-4 col-sm-4 col-md-4">
+                    <label></label>
+                    <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="Genero" name="Genero" />
+                </div>*@
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Género</strong></label>
+                <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="GeneroEntrenador" name="GeneroEntrenador">
+                    <option value="">Seleccionar</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                </select>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Grupo Sanguíneo</strong></label>
+                <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="GrupoSanguineoEntrenador" name="GrupoSanguineoEntrenador">
+                    <option value="">Seleccionar</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Eps</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" type="email" class="form-control" id="EpsEntrenador" name="EpsEntrenador" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Correo</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" type="email" class="form-control" id="CorreoEntrenador" name="CorreoEntrenador" />
+            </div>
+
+            @*<div class="col-xs-4 col-sm-4 col-md-4">
+                    <label>Deporte </label>
+                    <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="Deporte" name="Deporte" />
+                </div>*@
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Deporte</strong></label>
+                @{
+                    var ListaDeporte = BIOMEDICO.Controllers.DeporteController.ListDeporte();
+
+                    <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="DeporteEntrenador" name="DeporteEntrenador">
+                        <option value="">Seleccionar</option>
+                        @foreach (var item in ListaDeporte)
+                        {
+                            <option value="@item.CodDeporte">@item.NombreDeporte</option>
+                        }
+
+
+                    </select>
+                }
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Fecha Nacimiento</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" type="date" class="form-control" id="FechaNacimientoEntrenador" name="FechaNacimientoEntrenador" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Teléfono Movil</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="TelefonoEntrenador" onkeypress="return soloNumeros(event)" name="TelefonoEntrenador" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Direccion </strong> </label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="DireccionEntrenador" name="DireccionEntrenador" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Barrio   </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="BarrioEntrenador" name="BarrioEntrenador" />
+            </div>
+
+                    
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Estado Civil</strong> </label>
+
+                <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="EstadoCivilEntrenador" name="EstadoCivilEntrenador">
+                    <option value="">Seleccionar</option>
+                    <option value="Soltero(a)">Soltero(a)</option>
+                    <option value="Casado(a)">Casado(a)</option>
+                    <option value="Union Libre">Union Libre</option>
+                    <option value="Separado(a)">Separado(a)</option>
+                    <option value="Divorciado(a)">Divorciado(a)</option>
+                    <option value="Viudo(a)">Viudo(a)</option>
+                </select>
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Nivel Educativo </strong></label>
+                <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="NivelEstudioEntrenador" name="NivelEstudioEntrenador">
+                    <option value="">Seleccionar</option>
+                    <option value="PRIMARIA">PRIMARIA</option>
+                    <option value="BACCHILLER">BACHILLER</option>
+                    <option value="TECNICO">TECNICO</option>
+                    <option value="TECNOLOGO">TECNOLOGO</option>
+                    <option value="PROFESIONAL">PROFESIONAL</option>
+                    <option value="ESPECIALISTA">ESPECIALISTA</option>
+                    <option value="POST GRADO">POST-GRADO</option>
+                    <option value="NINGUNO">NINGUNO</option>
+
+                </select>
+            </div>
+
+        </div>
+
+
+
+
+
+    </form>
+</div>
+<br />
+
+<br />
+
+<br />
+
+<div class="row m-0">
+    <h1><strong>Estudios Entrenadores</strong> </h1>
+    <hr width=100% align="right" size=200 color="black">
+
+    <br />
+    <form id="FormDeportistaPadre" name="FormDeportistaPadre">
+
+        <div class="row m-0">
+
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Estudios   </strong></label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="EstudiosEntrenador"></textarea>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Cursos    </strong></label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="CursosEntrenador"></textarea>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Records    </strong></label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="RecordsEntrenador"></textarea>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Investigaciones    </strong></label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="InvestigacionesEntrenador"></textarea>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Libros    </strong></label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="LibrosEntrenadores"></textarea>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Experiencias    </strong></label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="ExperienciasEntrenador"></textarea>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Años Experiencia    </strong></label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="AñosExperienciaEntrenador"></textarea>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Club Deportivo    </strong></label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="ClubDeportivoEntrenador"></textarea>
+            </div>
+
+
+        </div>
+
+        <br />
+    </form>
+
+</div>
+
+<div class="col-xs-4 col-sm-4 col-md-4">
+    <button type="button" onclick="Createobj()" class="btn btn-block btn-outline-primary btn-rounded btn-outline mt-4" id="SaveEntrenadores">Guardar </button>
+</div>
+
+

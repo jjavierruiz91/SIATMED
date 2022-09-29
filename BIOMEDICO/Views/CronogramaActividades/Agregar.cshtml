@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewBag.Title = "Agregar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    h1 {
+        text-align: center;
+        color: cadetblue
+    }
+</style>
+<script defer src="~/Scripts/APP/CronogramaActividades/CronogramaActividades.js"></script>
+
+<h1>
+    <strong>
+        SECRETARIA DE RECREACIÓN Y DEPORTES
+        ÁREA TECNICA METODOLÓGICA
+        CRONOGRAMA DE ACTIVIDADES SEMANAL
+    </strong>
+
+</h1>
+
+
+<div class="row m-0">
+
+    <form id="FormPlanEntrenamineto" name="FormPlanEntrenamineto">
+
+        <div class="row m-0">
+
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong> Nombre Entrenador</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="EntrenadorActividadesSemanales" name="EntrenadorActividadesSemanales" />
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Deporte</strong></label>
+                @{
+                    var ListaDeporte = BIOMEDICO.Controllers.DeporteController.ListDeporte();
+
+                    <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="DeporteActividadesSemanales" name="DeporteActividadesSemanales">
+                        <option value="">Seleccionar</option>
+                        @foreach (var item in ListaDeporte)
+                        {
+                            <option value="@item.NombreDeporte">@item.NombreDeporte</option>
+                        }
+
+
+                    </select>
+                }
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Semana Del</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" type="date" class="form-control" id="SemanadelActividadesSemanales" name="SemanadelActividadesSemanales" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Semana Hasta</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" type="date" class="form-control" id="SemanaHastaActividadesSemanales" name="SemanaHastaActividadesSemanales" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Actividades </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="ActividadActividadesSemanales" name="ActividadActividadesSemanales" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Hora </strong></label>
+                <input type="time" style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="HoraActividadesSemanales" name="HoraActividadesSemanales" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Lugar</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="LugarActividadesSemanales" name="LugarActividadesSemanales" />
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Fecha </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" type="date" class="form-control" id="FechaActividadesSemanales" name="FechaActividadesSemanales" />
+            </div>
+
+            
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Caracter del Evento</strong> </label>
+                <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="EventoActividadesSemanales" name="EventoActividadesSemanales">
+                    <option value="">Seleccionar</option>
+                    <option value="Internacional">Internacional</option>
+                    <option value="Nacional">Nacional</option>
+                    <option value="Regional">Regional</option>
+                    <option value="Zonal">Zonal</option>
+                    <option value="Local">Local</option>
+                    <option value="Otro">Otro</option>
+                </select>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Visita</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="VisitaBiomedicoActividadesSemanales" name="VisitaBiomedicoActividadesSemanales" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Firma Entrenador </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="FirmaEntrenador" name="FirmaEntrenador" />
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+    </form>
+</div>
+
+
+<div class="col-xs-4 col-sm-4 col-md-4">
+    <button type="button" onclick="Createobj()" class="btn btn-block btn-outline-primary btn-rounded btn-outline mt-4" id="SaveCronogramActividades">Guardar </button>
+</div>
+
+

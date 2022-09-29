@@ -1,0 +1,1158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BIOMEDICOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BIOMEDICOEntities5" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ASignarPermisos" EntityType="BIOMEDICOModel.ASignarPermisos" />
+    <EntitySet Name="Deporte" EntityType="BIOMEDICOModel.Deporte" />
+    <EntitySet Name="Permisos" EntityType="BIOMEDICOModel.Permisos" />
+    <EntitySet Name="Rol" EntityType="BIOMEDICOModel.Rol" />
+    <EntitySet Name="TipoPermiso" EntityType="BIOMEDICOModel.TipoPermiso" />
+    <EntitySet Name="Usuarios" EntityType="BIOMEDICOModel.Usuarios" />
+    <AssociationSet Name="FK_ASignar_permisos_Permisos1" Association="BIOMEDICOModel.FK_ASignar_permisos_Permisos1">
+      <End Role="Permisos" EntitySet="Permisos" />
+      <End Role="ASignarPermisos" EntitySet="ASignarPermisos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASignar_permisos_Rol1" Association="BIOMEDICOModel.FK_ASignar_permisos_Rol1">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="ASignarPermisos" EntitySet="ASignarPermisos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Permisos_TipoPermiso" Association="BIOMEDICOModel.FK_Permisos_TipoPermiso">
+      <End Role="TipoPermiso" EntitySet="TipoPermiso" />
+      <End Role="Permisos" EntitySet="Permisos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Rol1" Association="BIOMEDICOModel.FK_Usuarios_Rol1">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <EntitySet Name="DatosFamiliares" EntityType="BIOMEDICOModel.DatosFamiliares" />
+    <EntitySet Name="Deportistas" EntityType="BIOMEDICOModel.Deportistas" />
+    <AssociationSet Name="FK_DatosFamiliares_Deportistas" Association="BIOMEDICOModel.FK_DatosFamiliares_Deportistas">
+      <End Role="Deportistas" EntitySet="Deportistas" />
+      <End Role="DatosFamiliares" EntitySet="DatosFamiliares" />
+    </AssociationSet>
+    <EntitySet Name="Ocupacion" EntityType="BIOMEDICOModel.Ocupacion" />
+    <AssociationSet Name="FK_Ocupacion_Deportistas" Association="BIOMEDICOModel.FK_Ocupacion_Deportistas">
+      <End Role="Deportistas" EntitySet="Deportistas" />
+      <End Role="Ocupacion" EntitySet="Ocupacion" />
+    </AssociationSet>
+    <EntitySet Name="Entrenadores" EntityType="BIOMEDICOModel.Entrenadores" />
+    <EntitySet Name="EstudiosEntrenadores" EntityType="BIOMEDICOModel.EstudiosEntrenadores" />
+    <AssociationSet Name="FK_EstudiosEntrenadores_Entrenadores" Association="BIOMEDICOModel.FK_EstudiosEntrenadores_Entrenadores">
+      <End Role="Entrenadores" EntitySet="Entrenadores" />
+      <End Role="EstudiosEntrenadores" EntitySet="EstudiosEntrenadores" />
+    </AssociationSet>
+    <EntitySet Name="ActividadUnidadEntrenamiento" EntityType="BIOMEDICOModel.ActividadUnidadEntrenamiento" />
+    <EntitySet Name="AsesoriasEntrenadores" EntityType="BIOMEDICOModel.AsesoriasEntrenadores" />
+    <EntitySet Name="EvaluacionEquipoVisitaCompetencia" EntityType="BIOMEDICOModel.EvaluacionEquipoVisitaCompetencia" />
+    <EntitySet Name="EvaluacionVisitaCompetencia" EntityType="BIOMEDICOModel.EvaluacionVisitaCompetencia" />
+    <EntitySet Name="PlanEntrenamientoMensual" EntityType="BIOMEDICOModel.PlanEntrenamientoMensual" />
+    <EntitySet Name="UnidadEntrenamiento" EntityType="BIOMEDICOModel.UnidadEntrenamiento" />
+    <EntitySet Name="VisitaCompetencias" EntityType="BIOMEDICOModel.VisitaCompetencias" />
+    <AssociationSet Name="FK_ActividadUnidadEntrenamiento_UnidadEntrenamiento" Association="BIOMEDICOModel.FK_ActividadUnidadEntrenamiento_UnidadEntrenamiento">
+      <End Role="UnidadEntrenamiento" EntitySet="UnidadEntrenamiento" />
+      <End Role="ActividadUnidadEntrenamiento" EntitySet="ActividadUnidadEntrenamiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EvaluacionEquipoVisitaCompetencia_VisitaCompetencias" Association="BIOMEDICOModel.FK_EvaluacionEquipoVisitaCompetencia_VisitaCompetencias">
+      <End Role="VisitaCompetencias" EntitySet="VisitaCompetencias" />
+      <End Role="EvaluacionEquipoVisitaCompetencia" EntitySet="EvaluacionEquipoVisitaCompetencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EvaluacionVisitaCompetencia_VisitaCompetencias" Association="BIOMEDICOModel.FK_EvaluacionVisitaCompetencia_VisitaCompetencias">
+      <End Role="VisitaCompetencias" EntitySet="VisitaCompetencias" />
+      <End Role="EvaluacionVisitaCompetencia" EntitySet="EvaluacionVisitaCompetencia" />
+    </AssociationSet>
+    <EntitySet Name="AnalisisMacrociclo" EntityType="BIOMEDICOModel.AnalisisMacrociclo" />
+    <EntitySet Name="ObjetivosMacrociclo" EntityType="BIOMEDICOModel.ObjetivosMacrociclo" />
+    <EntitySet Name="PlanAnalisisMacro" EntityType="BIOMEDICOModel.PlanAnalisisMacro" />
+    <AssociationSet Name="FK_ObjetivosMacrociclo_AnalisisMacrociclo" Association="BIOMEDICOModel.FK_ObjetivosMacrociclo_AnalisisMacrociclo">
+      <End Role="AnalisisMacrociclo" EntitySet="AnalisisMacrociclo" />
+      <End Role="ObjetivosMacrociclo" EntitySet="ObjetivosMacrociclo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlanAnalisisMacro_AnalisisMacrociclo" Association="BIOMEDICOModel.FK_PlanAnalisisMacro_AnalisisMacrociclo">
+      <End Role="AnalisisMacrociclo" EntitySet="AnalisisMacrociclo" />
+      <End Role="PlanAnalisisMacro" EntitySet="PlanAnalisisMacro" />
+    </AssociationSet>
+    <EntitySet Name="Categoria" EntityType="BIOMEDICOModel.Categoria" />
+    <EntitySet Name="CronogramaActividades" EntityType="BIOMEDICOModel.CronogramaActividades" />
+    <EntitySet Name="Elemento" EntityType="BIOMEDICOModel.Elemento" />
+    <EntitySet Name="Microciclo" EntityType="BIOMEDICOModel.Microciclo" />
+    <EntitySet Name="GymColiseo" EntityType="BIOMEDICOModel.GymColiseo" />
+    <EntitySet Name="GymEstadio" EntityType="BIOMEDICOModel.GymEstadio" />
+    <EntitySet Name="HorarioEntrenadores" EntityType="BIOMEDICOModel.HorarioEntrenadores" />
+    <EntitySet Name="UnidadMesociclo" EntityType="BIOMEDICOModel.UnidadMesociclo" />
+    <EntitySet Name="Mesociclo" EntityType="BIOMEDICOModel.Mesociclo" />
+    <EntitySet Name="MesocicloDatos" EntityType="BIOMEDICOModel.MesocicloDatos" />
+    <AssociationSet Name="FK_MesocicloDatos_Mesociclo" Association="BIOMEDICOModel.FK_MesocicloDatos_Mesociclo">
+      <End Role="Mesociclo" EntitySet="Mesociclo" />
+      <End Role="MesocicloDatos" EntitySet="MesocicloDatos" />
+    </AssociationSet>
+    <EntitySet Name="PlanSemanalDias" EntityType="BIOMEDICOModel.PlanSemanalDias" />
+    <EntitySet Name="PlanSemanalMicrociclo" EntityType="BIOMEDICOModel.PlanSemanalMicrociclo" />
+    <AssociationSet Name="FK_PlanSemanalDias_PlanSemanalMicrociclo" Association="BIOMEDICOModel.FK_PlanSemanalDias_PlanSemanalMicrociclo">
+      <End Role="PlanSemanalMicrociclo" EntitySet="PlanSemanalMicrociclo" />
+      <End Role="PlanSemanalDias" EntitySet="PlanSemanalDias" />
+    </AssociationSet>
+    <EntitySet Name="PlanGrafico" EntityType="BIOMEDICOModel.PlanGrafico" />
+    <EntitySet Name="PlanGraficoDatos" EntityType="BIOMEDICOModel.PlanGraficoDatos" />
+    <AssociationSet Name="FK_PlanGraficoDatos_PlanGrafico" Association="BIOMEDICOModel.FK_PlanGraficoDatos_PlanGrafico">
+      <End Role="PlanGrafico" EntitySet="PlanGrafico" />
+      <End Role="PlanGraficoDatos" EntitySet="PlanGraficoDatos" />
+    </AssociationSet>
+    <EntitySet Name="RolDeporte" EntityType="BIOMEDICOModel.RolDeporte" />
+    <EntitySet Name="CuadroMedallero" EntityType="BIOMEDICOModel.CuadroMedallero" />
+  </EntityContainer>
+  <EntityType Name="ASignarPermisos">
+    <Key>
+      <PropertyRef Name="IdPermiso" />
+    </Key>
+    <Property Name="IdPermiso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CodPermiso" Type="Int32" Nullable="false" />
+    <Property Name="CodRol" Type="Int32" />
+    <NavigationProperty Name="Permisos" Relationship="BIOMEDICOModel.FK_ASignar_permisos_Permisos1" FromRole="ASignarPermisos" ToRole="Permisos" />
+    <NavigationProperty Name="Rol" Relationship="BIOMEDICOModel.FK_ASignar_permisos_Rol1" FromRole="ASignarPermisos" ToRole="Rol" />
+  </EntityType>
+  <EntityType Name="Deporte">
+    <Key>
+      <PropertyRef Name="IdDeporte" />
+    </Key>
+    <Property Name="IdDeporte" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CodDeporte" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NombreDeporte" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Permisos">
+    <Key>
+      <PropertyRef Name="IdPermiso" />
+    </Key>
+    <Property Name="IdPermiso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CodPermiso" Type="Int32" />
+    <Property Name="NomPermiso" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EtiquetaPermiso" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DesPermiso" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoPermiso" Type="Int32" />
+    <Property Name="PadrePermiso" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ASignarPermisos" Relationship="BIOMEDICOModel.FK_ASignar_permisos_Permisos1" FromRole="Permisos" ToRole="ASignarPermisos" />
+    <NavigationProperty Name="TipoPermiso1" Relationship="BIOMEDICOModel.FK_Permisos_TipoPermiso" FromRole="Permisos" ToRole="TipoPermiso" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="CodRol" />
+    </Key>
+    <Property Name="CodRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomRol" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ASignarPermisos" Relationship="BIOMEDICOModel.FK_ASignar_permisos_Rol1" FromRole="Rol" ToRole="ASignarPermisos" />
+    <NavigationProperty Name="Usuarios" Relationship="BIOMEDICOModel.FK_Usuarios_Rol1" FromRole="Rol" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="TipoPermiso">
+    <Key>
+      <PropertyRef Name="CodPermiso" />
+    </Key>
+    <Property Name="CodPermiso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DescPermiso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Permisos" Relationship="BIOMEDICOModel.FK_Permisos_TipoPermiso" FromRole="TipoPermiso" ToRole="Permisos" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CedUsuario" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="NomUsuario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ApeUsuario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Correo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CodRol" Type="Int32" />
+    <NavigationProperty Name="Rol" Relationship="BIOMEDICOModel.FK_Usuarios_Rol1" FromRole="Usuarios" ToRole="Rol" />
+  </EntityType>
+  <Association Name="FK_ASignar_permisos_Permisos1">
+    <End Type="BIOMEDICOModel.Permisos" Role="Permisos" Multiplicity="1" />
+    <End Type="BIOMEDICOModel.ASignarPermisos" Role="ASignarPermisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permisos">
+        <PropertyRef Name="IdPermiso" />
+      </Principal>
+      <Dependent Role="ASignarPermisos">
+        <PropertyRef Name="CodPermiso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASignar_permisos_Rol1">
+    <End Type="BIOMEDICOModel.Rol" Role="Rol" Multiplicity="0..1" />
+    <End Type="BIOMEDICOModel.ASignarPermisos" Role="ASignarPermisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="CodRol" />
+      </Principal>
+      <Dependent Role="ASignarPermisos">
+        <PropertyRef Name="CodRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Permisos_TipoPermiso">
+    <End Type="BIOMEDICOModel.TipoPermiso" Role="TipoPermiso" Multiplicity="0..1" />
+    <End Type="BIOMEDICOModel.Permisos" Role="Permisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoPermiso">
+        <PropertyRef Name="CodPermiso" />
+      </Principal>
+      <Dependent Role="Permisos">
+        <PropertyRef Name="TipoPermiso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Rol1">
+    <End Type="BIOMEDICOModel.Rol" Role="Rol" Multiplicity="0..1" />
+    <End Type="BIOMEDICOModel.Usuarios" Role="Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="CodRol" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="CodRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="DatosFamiliares">
+    <Key>
+      <PropertyRef Name="IdFamiliares" />
+    </Key>
+    <Property Name="IdFamiliares" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomMadre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ApeMadre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Direccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Barrio" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Celular" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Ocupacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NomPadre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ApePadre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DireccionPadre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BarrioPadre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CelularPadre" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="OcupacionPadre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MarcaTorneos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LugarTorneos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaTorneros" Type="DateTime" Precision="3" />
+    <Property Name="EventosTorneos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EntrenadorActual" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EmailEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TelefonoEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LugarEntrenamientoEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="HorasEntrenamiento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DiasEntrenamiento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ObservacionesEntrenamiento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IdDeportista" Type="Int32" />
+    <NavigationProperty Name="Deportistas" Relationship="BIOMEDICOModel.FK_DatosFamiliares_Deportistas" FromRole="DatosFamiliares" ToRole="Deportistas" />
+  </EntityType>
+  <EntityType Name="Deportistas">
+    <Key>
+      <PropertyRef Name="IdDeportista" />
+    </Key>
+    <Property Name="IdDeportista" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TipoIdentificacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumIdentificacion" Type="Int64" />
+    <Property Name="EstadoDeportista" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ProgramaDeportista" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PrimerNombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SegundoNombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PrimerApellido" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SegundoApellido" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Imagen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Edad" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Genero" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EpsDeportista" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GrupoSanguineo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CorreoDeportista" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Deporte" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Precision="3" />
+    <Property Name="PaisNacimiento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DepartamentoNacimiento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MunicipioNacimiento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TelefonoFijo" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="TelefonoMovil" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Pasaporte" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MunicipioResidencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BarrioResidencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DireccionResidencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EstadoCivil" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="DatosFamiliares" Relationship="BIOMEDICOModel.FK_DatosFamiliares_Deportistas" FromRole="Deportistas" ToRole="DatosFamiliares" />
+    <NavigationProperty Name="Ocupacion" Relationship="BIOMEDICOModel.FK_Ocupacion_Deportistas" FromRole="Deportistas" ToRole="Ocupacion" />
+  </EntityType>
+  <Association Name="FK_DatosFamiliares_Deportistas">
+    <End Type="BIOMEDICOModel.Deportistas" Role="Deportistas" Multiplicity="0..1" />
+    <End Type="BIOMEDICOModel.DatosFamiliares" Role="DatosFamiliares" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Deportistas">
+        <PropertyRef Name="IdDeportista" />
+      </Principal>
+      <Dependent Role="DatosFamiliares">
+        <PropertyRef Name="IdDeportista" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Ocupacion">
+    <Key>
+      <PropertyRef Name="IdOcupacion" />
+    </Key>
+    <Property Name="IdOcupacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NivelEducativo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="OperacionesDepor" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CualOperacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FracturasDepor" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CualFractura" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LesionesDepor" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CualLesion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AlergiasDepor" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CualAlergia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EspecialidadCombate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AñosActivos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ClubDeportivo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Peso" Type="Double" />
+    <Property Name="Estatura" Type="Double" />
+    <Property Name="TallaCamisa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TallaPantalon" Type="Int32" />
+    <Property Name="TallaCalzado" Type="Int32" />
+    <Property Name="TallaSudadera" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroHijos" Type="Int32" />
+    <Property Name="IdDeportista" Type="Int32" />
+    <NavigationProperty Name="Deportistas" Relationship="BIOMEDICOModel.FK_Ocupacion_Deportistas" FromRole="Ocupacion" ToRole="Deportistas" />
+  </EntityType>
+  <Association Name="FK_Ocupacion_Deportistas">
+    <End Type="BIOMEDICOModel.Deportistas" Role="Deportistas" Multiplicity="0..1" />
+    <End Type="BIOMEDICOModel.Ocupacion" Role="Ocupacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Deportistas">
+        <PropertyRef Name="IdDeportista" />
+      </Principal>
+      <Dependent Role="Ocupacion">
+        <PropertyRef Name="IdDeportista" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Entrenadores">
+    <Key>
+      <PropertyRef Name="IdEntrenadores" />
+    </Key>
+    <Property Name="IdEntrenadores" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TipoIdentificacionEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroIdentificacionEntrenador" Type="Int64" />
+    <Property Name="EstadoEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PrimerNombreEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SegundoNombreEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PrimerApellidoEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Segundoapellidoentrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GeneroEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GrupoSanguineoEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EpsEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CorreoEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaNacimientoEntrenador" Type="DateTime" Precision="3" />
+    <Property Name="DeporteEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NivelEstudioEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TelefonoEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DireccionEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BarrioEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EstadoCivilEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EdadEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Imagen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="EstudiosEntrenadores" Relationship="BIOMEDICOModel.FK_EstudiosEntrenadores_Entrenadores" FromRole="Entrenadores" ToRole="EstudiosEntrenadores" />
+  </EntityType>
+  <EntityType Name="EstudiosEntrenadores">
+    <Key>
+      <PropertyRef Name="IdEstudiosEntrenador" />
+    </Key>
+    <Property Name="IdEstudiosEntrenador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EstudiosEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CursosEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="RecordsEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="InvestigacionesEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LibrosEntrenadores" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ExperienciasEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AñosExperienciaEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ClubDeportivoEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IdEntrenadores" Type="Int32" />
+    <NavigationProperty Name="Entrenadores" Relationship="BIOMEDICOModel.FK_EstudiosEntrenadores_Entrenadores" FromRole="EstudiosEntrenadores" ToRole="Entrenadores" />
+  </EntityType>
+  <Association Name="FK_EstudiosEntrenadores_Entrenadores">
+    <End Type="BIOMEDICOModel.Entrenadores" Role="Entrenadores" Multiplicity="0..1" />
+    <End Type="BIOMEDICOModel.EstudiosEntrenadores" Role="EstudiosEntrenadores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Entrenadores">
+        <PropertyRef Name="IdEntrenadores" />
+      </Principal>
+      <Dependent Role="EstudiosEntrenadores">
+        <PropertyRef Name="IdEntrenadores" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ActividadUnidadEntrenamiento">
+    <Key>
+      <PropertyRef Name="IdActividadUnidadEntrenamiento" />
+    </Key>
+    <Property Name="IdActividadUnidadEntrenamiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AcuerdoObjetivos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MediosEntrenamientos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DesarrolloEntrenamientos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ObjetivosMultiples" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MaterialAdecuado" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CompoentesEntrenamientos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PlanificaActividadFinal" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EvaluaCumplimientoUE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ObjetivosActividadFinal" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MotivacionObjetivos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DisciplinaAdecuada" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ControlGrupo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="RespetoEntrenamiento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="RecomendacionesGenerales" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ObservacionesEntrenadores" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FirmaEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FirmaMetodologo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IdUnidadEntrenamiento" Type="Int32" />
+    <NavigationProperty Name="UnidadEntrenamiento" Relationship="BIOMEDICOModel.FK_ActividadUnidadEntrenamiento_UnidadEntrenamiento" FromRole="ActividadUnidadEntrenamiento" ToRole="UnidadEntrenamiento" />
+  </EntityType>
+  <EntityType Name="AsesoriasEntrenadores">
+    <Key>
+      <PropertyRef Name="IdAsesoriasEntrenadores" />
+    </Key>
+    <Property Name="IdAsesoriasEntrenadores" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumIdentificacionDeportistas" Type="Int64" />
+    <Property Name="Deportista" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Entrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Metodologo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Deporte" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Agrupacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Escenarios" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaAsesorias" Type="DateTime" Precision="3" />
+    <Property Name="TemasAsesorias" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DesarrolloAsesorias" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ConclusionesAsesorias" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CompromisosAsesorias" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Asistentes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FirmaEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FirmaMetodologo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioRegistra" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="EvaluacionEquipoVisitaCompetencia">
+    <Key>
+      <PropertyRef Name="IdEvaluacionEquipo" />
+    </Key>
+    <Property Name="IdEvaluacionEquipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Disciplinado" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Combativo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Adaptacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Responsabilidad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EvaluacionregularEquipo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ProblemasDocumentacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PreparacionFisica" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PreparacionTecnica" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PreparacionTactica" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PreparacionMental" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EvaluacionPreparacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FirmaEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FirmaMetodologo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IdVisitaCompetencia" Type="Int32" />
+    <NavigationProperty Name="VisitaCompetencias" Relationship="BIOMEDICOModel.FK_EvaluacionEquipoVisitaCompetencia_VisitaCompetencias" FromRole="EvaluacionEquipoVisitaCompetencia" ToRole="VisitaCompetencias" />
+  </EntityType>
+  <EntityType Name="EvaluacionVisitaCompetencia">
+    <Key>
+      <PropertyRef Name="IdEvaluacionVisitaCompetencia" />
+    </Key>
+    <Property Name="IdEvaluacionVisitaCompetencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LugarEntrenamiento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AtencionMedica" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EscenariosDeportivos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Uniformidad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ComportamientoArbitral" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TransporteInterno" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Alimentacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Hospedaje" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CalificacionRegular" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="hospedajeDelegacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AlimentacionDelegacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EmpresaTransporte" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DuracionViajeIda" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DuracionViajeVuelta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ViajeIdaComoFue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ViajeRegresoComoFue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IdVisitaCompetencia" Type="Int32" />
+    <NavigationProperty Name="VisitaCompetencias" Relationship="BIOMEDICOModel.FK_EvaluacionVisitaCompetencia_VisitaCompetencias" FromRole="EvaluacionVisitaCompetencia" ToRole="VisitaCompetencias" />
+  </EntityType>
+  <EntityType Name="PlanEntrenamientoMensual">
+    <Key>
+      <PropertyRef Name="IdPlanEntrenamientoMensual" />
+    </Key>
+    <Property Name="IdPlanEntrenamientoMensual" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumIdentificacionDeportista" Type="Int64" />
+    <Property Name="NombreDeportista" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Entrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Deporte" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Agrupacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Categoria" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Modalidad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Mes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Año" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Metodologo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaEntregaActa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Preparacionfisica" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PreparacionTecnica" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PreparacionTactica" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ObjetivosParciales" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FirmaEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FirmaMetodologo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioRegistra" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaRegistra" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="UnidadEntrenamiento">
+    <Key>
+      <PropertyRef Name="IdUnidadEntrenamiento" />
+    </Key>
+    <Property Name="IdUnidadEntrenamiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Deporte" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Agrupacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Categoria" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Modalidad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaSesion" Type="DateTime" Precision="3" />
+    <Property Name="HoraInicio" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="HoraFinal" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ObjetivosSesion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumMesociclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoMicrociclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MetodologoEvaluador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Sesionentrenamiento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UnidadEntrenamiento1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ObjetivosEntrenamiento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PlanificaCalentamiento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CalentamientoGeneral" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CalentamientoEspecifico" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ActividadUnidadEntrenamiento" Relationship="BIOMEDICOModel.FK_ActividadUnidadEntrenamiento_UnidadEntrenamiento" FromRole="UnidadEntrenamiento" ToRole="ActividadUnidadEntrenamiento" />
+  </EntityType>
+  <EntityType Name="VisitaCompetencias">
+    <Key>
+      <PropertyRef Name="IdVisitaCompetencia" />
+    </Key>
+    <Property Name="IdVisitaCompetencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TorneoVisitaCompetencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaInicioEvento" Type="DateTime" Precision="3" />
+    <Property Name="FechaFinalEvento" Type="DateTime" Precision="3" />
+    <Property Name="FechaSalidaEvento" Type="DateTime" Precision="3" />
+    <Property Name="FechaRegresoEvento" Type="DateTime" Precision="3" />
+    <Property Name="EquipoDeportista" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DeporteVisitaCompetencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CategoriaVisitaCompetencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AgrupacionVisitaCompetencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EntrenadorVisitaCompetencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroEquiposVisitaCompetencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AsistentesEventoVisitaCompetencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TecnicosEventoVisitaCompetencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SistemaCompetenciaVisitaCompetencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CombatesVisitaCompetencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SemifinalFinalVisitaCompetencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MedalleroDeportista" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MedallaOroDeportista" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MedallaPlataDeportista" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MedallaBronceDeportista" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MedalleroEquipo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MedallaOroEquipo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MedallaPlataEquipo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MedallaBronceEquipo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ObservacionesPositivas" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ObservacionesNegativas" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioRegistro" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="EvaluacionEquipoVisitaCompetencia" Relationship="BIOMEDICOModel.FK_EvaluacionEquipoVisitaCompetencia_VisitaCompetencias" FromRole="VisitaCompetencias" ToRole="EvaluacionEquipoVisitaCompetencia" />
+    <NavigationProperty Name="EvaluacionVisitaCompetencia" Relationship="BIOMEDICOModel.FK_EvaluacionVisitaCompetencia_VisitaCompetencias" FromRole="VisitaCompetencias" ToRole="EvaluacionVisitaCompetencia" />
+  </EntityType>
+  <Association Name="FK_ActividadUnidadEntrenamiento_UnidadEntrenamiento">
+    <End Type="BIOMEDICOModel.UnidadEntrenamiento" Role="UnidadEntrenamiento" Multiplicity="0..1" />
+    <End Type="BIOMEDICOModel.ActividadUnidadEntrenamiento" Role="ActividadUnidadEntrenamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnidadEntrenamiento">
+        <PropertyRef Name="IdUnidadEntrenamiento" />
+      </Principal>
+      <Dependent Role="ActividadUnidadEntrenamiento">
+        <PropertyRef Name="IdUnidadEntrenamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EvaluacionEquipoVisitaCompetencia_VisitaCompetencias">
+    <End Type="BIOMEDICOModel.VisitaCompetencias" Role="VisitaCompetencias" Multiplicity="0..1" />
+    <End Type="BIOMEDICOModel.EvaluacionEquipoVisitaCompetencia" Role="EvaluacionEquipoVisitaCompetencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VisitaCompetencias">
+        <PropertyRef Name="IdVisitaCompetencia" />
+      </Principal>
+      <Dependent Role="EvaluacionEquipoVisitaCompetencia">
+        <PropertyRef Name="IdVisitaCompetencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EvaluacionVisitaCompetencia_VisitaCompetencias">
+    <End Type="BIOMEDICOModel.VisitaCompetencias" Role="VisitaCompetencias" Multiplicity="0..1" />
+    <End Type="BIOMEDICOModel.EvaluacionVisitaCompetencia" Role="EvaluacionVisitaCompetencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VisitaCompetencias">
+        <PropertyRef Name="IdVisitaCompetencia" />
+      </Principal>
+      <Dependent Role="EvaluacionVisitaCompetencia">
+        <PropertyRef Name="IdVisitaCompetencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="AnalisisMacrociclo">
+    <Key>
+      <PropertyRef Name="IdMacroAnterior" />
+    </Key>
+    <Property Name="IdMacroAnterior" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumIdentificacionDeportist" Type="Int64" />
+    <Property Name="NombreDeportist" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Entrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Deporte" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Agrupacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Categoria" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Modalidad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Genero" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Año" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Mes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Metodologo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaEvaluacion" Type="DateTime" Precision="3" />
+    <Property Name="ObjetivoGeneral" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ObjetivosEspecificos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PreparacionFisica" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PreparacionTecnica" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PreparacionTactica" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ResultadosCompetencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PronosticoMacrociclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioRegistro" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ObjetivosMacrociclo" Relationship="BIOMEDICOModel.FK_ObjetivosMacrociclo_AnalisisMacrociclo" FromRole="AnalisisMacrociclo" ToRole="ObjetivosMacrociclo" />
+    <NavigationProperty Name="PlanAnalisisMacro" Relationship="BIOMEDICOModel.FK_PlanAnalisisMacro_AnalisisMacrociclo" FromRole="AnalisisMacrociclo" ToRole="PlanAnalisisMacro" />
+  </EntityType>
+  <EntityType Name="ObjetivosMacrociclo">
+    <Key>
+      <PropertyRef Name="IdObjetivosMacrociclo" />
+    </Key>
+    <Property Name="IdObjetivosMacrociclo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ObjetivosHumanos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ObjetivosFisicos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ObjetivosFinancieros" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ObjetivosDeportivos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MedicinaDelDeporte" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MesocicloHumano" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MesocicloFisico" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MesocicloFinanciero" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MesocicloDeportivo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MesocicloDeporte" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PropuestoHumano" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PropuestoFisico" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PropuestoFinanciero" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PropuestoDeportivo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PropuestoDeporte" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DistribucionMacrociclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PreparacionMacrociclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CompetenciaMacrociclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DiasTrabajoMacrociclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="OtrosDiasMacrociclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AcumulacionMacrociclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TransformacionMacrocilo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="RealizacionMacrociclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IdMacroAnterior" Type="Int32" />
+    <NavigationProperty Name="AnalisisMacrociclo" Relationship="BIOMEDICOModel.FK_ObjetivosMacrociclo_AnalisisMacrociclo" FromRole="ObjetivosMacrociclo" ToRole="AnalisisMacrociclo" />
+  </EntityType>
+  <EntityType Name="PlanAnalisisMacro">
+    <Key>
+      <PropertyRef Name="IdPlanMacrociclo" />
+    </Key>
+    <Property Name="IdPlanMacrociclo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompetenciaPrincipal" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoPlanificacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumMacrociclo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="FechaInicioMacro" Type="DateTime" Precision="3" />
+    <Property Name="FechaFinMacro" Type="DateTime" Precision="3" />
+    <Property Name="SedeCompetencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EscenarioMacro" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CondicionesClimaticas" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ObjetivosNuevaCompetencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ObjetivosEspecificosNuevaCompetencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PronosticoCompetencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TareasMesociclos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PeriodoPreparatorio" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MesosicloGeneral" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MesosicloEspecial" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MesosicloCompeticion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TareaMesosicloGeneral" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TareaMesosicloEspecial" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TareaMesosicloCompeticion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Capacidades01" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Capacidades02" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Capacidades03" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Capacidades04" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Capacidades05" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Capacidades06" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Capacidades07" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Capacidades08" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Capacidades09" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Capacidades10" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Metodos01" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Metodos02" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Metodos03" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Metodos04" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Metodos05" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Metodos06" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Metodos07" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Metodos08" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Metodos09" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Metodos10" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Medios01" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Medios02" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Medios03" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Medios04" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Medios05" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Medios06" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Medios07" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Medios08" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Medios09" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Medios10" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="RecursosHumanos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="RecursosFisicos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Recursosfinancieros" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="RecursoDeportivo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DisponibleHumanos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DisponibleFisicos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DisponibleFinanciero" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DisponibleDeportivo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IdMacroAnterior" Type="Int32" />
+    <NavigationProperty Name="AnalisisMacrociclo" Relationship="BIOMEDICOModel.FK_PlanAnalisisMacro_AnalisisMacrociclo" FromRole="PlanAnalisisMacro" ToRole="AnalisisMacrociclo" />
+  </EntityType>
+  <Association Name="FK_ObjetivosMacrociclo_AnalisisMacrociclo">
+    <End Type="BIOMEDICOModel.AnalisisMacrociclo" Role="AnalisisMacrociclo" Multiplicity="0..1" />
+    <End Type="BIOMEDICOModel.ObjetivosMacrociclo" Role="ObjetivosMacrociclo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnalisisMacrociclo">
+        <PropertyRef Name="IdMacroAnterior" />
+      </Principal>
+      <Dependent Role="ObjetivosMacrociclo">
+        <PropertyRef Name="IdMacroAnterior" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlanAnalisisMacro_AnalisisMacrociclo">
+    <End Type="BIOMEDICOModel.AnalisisMacrociclo" Role="AnalisisMacrociclo" Multiplicity="0..1" />
+    <End Type="BIOMEDICOModel.PlanAnalisisMacro" Role="PlanAnalisisMacro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnalisisMacrociclo">
+        <PropertyRef Name="IdMacroAnterior" />
+      </Principal>
+      <Dependent Role="PlanAnalisisMacro">
+        <PropertyRef Name="IdMacroAnterior" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="IdCategoria" />
+    </Key>
+    <Property Name="IdCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Deporte" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NomCategoria" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DescripcionCategoria" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CronogramaActividades">
+    <Key>
+      <PropertyRef Name="IdCronogramaActividadesSemanales" />
+    </Key>
+    <Property Name="IdCronogramaActividadesSemanales" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EntrenadorActividadesSemanales" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DeporteActividadesSemanales" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SemanadelActividadesSemanales" Type="DateTime" Precision="3" />
+    <Property Name="SemanaHastaActividadesSemanales" Type="DateTime" Precision="3" />
+    <Property Name="ActividadActividadesSemanales" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="HoraActividadesSemanales" Type="Time" Precision="7" />
+    <Property Name="LugarActividadesSemanales" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaActividadesSemanales" Type="DateTime" Precision="3" />
+    <Property Name="EventoActividadesSemanales" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="VisitaBiomedicoActividadesSemanales" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FirmaEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Usuarioregistro" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Elemento">
+    <Key>
+      <PropertyRef Name="IdElemento" />
+    </Key>
+    <Property Name="IdElemento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreElemento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Microciclo">
+    <Key>
+      <PropertyRef Name="IdMicrociclo" />
+    </Key>
+    <Property Name="IdMicrociclo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreMicrociclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="GymColiseo">
+    <Key>
+      <PropertyRef Name="IdGymColiseo" />
+    </Key>
+    <Property Name="IdGymColiseo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeporteGymColiseo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CategoriaGymColiseo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TelefonoGymColiseo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EntrenadorGymColiseo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="HoraInicioGymColiseo" Type="Time" Precision="7" />
+    <Property Name="HoraFinalGymColiseo" Type="Time" Precision="7" />
+    <Property Name="FechaGymColiseo" Type="DateTime" Precision="3" />
+    <Property Name="FirmaEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioRegistro" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="GymEstadio">
+    <Key>
+      <PropertyRef Name="IdGymEstadio" />
+    </Key>
+    <Property Name="IdGymEstadio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeporteGymEstadio" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CategoriaGymEstadio" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TelefonoGymEstadio" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EntrenadorGymEstadio" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="HoraInicioGymEstadio" Type="Time" Precision="7" />
+    <Property Name="HoraFinalGymEstadio" Type="Time" Precision="7" />
+    <Property Name="FechaGymEstadio" Type="DateTime" Precision="3" />
+    <Property Name="FirmaEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioRegistro" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="HorarioEntrenadores">
+    <Key>
+      <PropertyRef Name="IdHorarioEntrenadores" />
+    </Key>
+    <Property Name="IdHorarioEntrenadores" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeporteHorarioEntrenadores" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EscenariosHorarioEntrenadores" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EntrenadorHorarioEntrenadores" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TelefonoHorarioEntrenadores" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="HoraInicioHorarioEntrenadores" Type="Time" Precision="7" />
+    <Property Name="HoraFinalHorarioEntrenadores" Type="Time" Precision="7" />
+    <Property Name="FechaHorEntrenadores" Type="DateTime" Precision="3" />
+    <Property Name="FirmaEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioRegistra" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="UnidadMesociclo">
+    <Key>
+      <PropertyRef Name="IdUnidadMesociclo" />
+    </Key>
+    <Property Name="IdUnidadMesociclo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreUnidadMesociclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DeportistUnidadMesociclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AgrupacionUnidadMesociclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CategoriaUnidadMesociclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Mesociclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoMesociclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Miclociclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SesionesEntrenamientos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Duracion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="Hora" Type="Time" Precision="7" />
+    <Property Name="Objetivos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CapacidadInicial" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CapacidadControl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CapacidadFinal" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ActividadInicial" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ActividadControl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ActividadFinal" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MetodoInicial" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MetodoControl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Metodofinal" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DosificacionInicial" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DosificacionControl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DosificacionFinal" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FirmaEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Usuarioregistro" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Mesociclo">
+    <Key>
+      <PropertyRef Name="IdMesociclo" />
+    </Key>
+    <Property Name="IdMesociclo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Deporte" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Deportista" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Agrupacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Categoria" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Mesociclo1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoMesociclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Microciclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ObjetivosFisicos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ObjetivosTacticos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="FirmaEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioRegistra" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="MesocicloDatos" Relationship="BIOMEDICOModel.FK_MesocicloDatos_Mesociclo" FromRole="Mesociclo" ToRole="MesocicloDatos" />
+  </EntityType>
+  <EntityType Name="MesocicloDatos">
+    <Key>
+      <PropertyRef Name="IdMesocicloDatos" />
+    </Key>
+    <Property Name="IdMesocicloDatos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreElemento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Microciclo1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Microciclo2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Microciclo3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Microciclo4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Plan1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Plan2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Plan3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Plan4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Real1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Real2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Real3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Real4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Dif1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Dif2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Dif3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Dif4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Porcentaje1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Porcentaje2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Porcentaje3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Porcentaje4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="resultadoPLaneado" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="resultadoRealizado" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IdMesociclo" Type="Int32" />
+    <NavigationProperty Name="Mesociclo" Relationship="BIOMEDICOModel.FK_MesocicloDatos_Mesociclo" FromRole="MesocicloDatos" ToRole="Mesociclo" />
+  </EntityType>
+  <Association Name="FK_MesocicloDatos_Mesociclo">
+    <End Type="BIOMEDICOModel.Mesociclo" Role="Mesociclo" Multiplicity="0..1" />
+    <End Type="BIOMEDICOModel.MesocicloDatos" Role="MesocicloDatos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mesociclo">
+        <PropertyRef Name="IdMesociclo" />
+      </Principal>
+      <Dependent Role="MesocicloDatos">
+        <PropertyRef Name="IdMesociclo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PlanSemanalDias">
+    <Key>
+      <PropertyRef Name="IdPlanSemanalDias" />
+    </Key>
+    <Property Name="IdPlanSemanalDias" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ElementoSemanalDias" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LunesSemanalDias" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MartesSemanalDias" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MiercolesSemanalDias" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="JuevesSemanalDias" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ViernesSemanalDias" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SabadoSemanalDias" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DomingoSemanalDias" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IdPlanSemanal" Type="Int32" />
+    <NavigationProperty Name="PlanSemanalMicrociclo" Relationship="BIOMEDICOModel.FK_PlanSemanalDias_PlanSemanalMicrociclo" FromRole="PlanSemanalDias" ToRole="PlanSemanalMicrociclo" />
+  </EntityType>
+  <EntityType Name="PlanSemanalMicrociclo">
+    <Key>
+      <PropertyRef Name="IdPlanSemanal" />
+    </Key>
+    <Property Name="IdPlanSemanal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeportePlan" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Deportista" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EntrenadorPlan" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Agrupacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Categoria" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MicroCicloNum" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoMicroCiclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MesoCiclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoMesociclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ObjetivosFisicos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ObjetivosTecnicos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ElementosMicrociclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMicrociclo" Type="DateTime" Precision="3" />
+    <Property Name="HoraInicioPlan" Type="Time" Precision="7" />
+    <Property Name="HoraFinalPlan" Type="Time" Precision="7" />
+    <Property Name="UsuarioRegistro" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PlanSemanalDias" Relationship="BIOMEDICOModel.FK_PlanSemanalDias_PlanSemanalMicrociclo" FromRole="PlanSemanalMicrociclo" ToRole="PlanSemanalDias" />
+  </EntityType>
+  <Association Name="FK_PlanSemanalDias_PlanSemanalMicrociclo">
+    <End Type="BIOMEDICOModel.PlanSemanalMicrociclo" Role="PlanSemanalMicrociclo" Multiplicity="0..1" />
+    <End Type="BIOMEDICOModel.PlanSemanalDias" Role="PlanSemanalDias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PlanSemanalMicrociclo">
+        <PropertyRef Name="IdPlanSemanal" />
+      </Principal>
+      <Dependent Role="PlanSemanalDias">
+        <PropertyRef Name="IdPlanSemanal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PlanGrafico">
+    <Key>
+      <PropertyRef Name="IdPlanGrafico" />
+    </Key>
+    <Property Name="IdPlanGrafico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Deporte" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NombreMacrociclo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Mes1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Mes2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Mes3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="mes4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Mesociclos1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Mesociclos2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Mesociclos3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Mesociclos4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroMicrociclo1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroMicrociclo2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroMicrociclo3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroMicrociclo4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroMicrociclo5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroMicrociclo6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroMicrociclo7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroMicrociclo8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroMicrociclo9" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroMicrociclo10" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroMicrociclo11" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroMicrociclo12" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroMicrociclo13" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroMicrociclo14" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroMicrociclo15" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroMicrociclo16" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoMicrociclo1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoMicrociclo2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoMicrociclo3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoMicrociclo4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoMicrociclo5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoMicrociclo6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoMicrociclo7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoMicrociclo8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoMicrociclo9" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoMicrociclo10" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoMicrociclo11" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoMicrociclo12" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoMicrociclo13" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoMicrociclo14" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoMicrociclo15" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoMicrociclo16" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesUno" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesUno2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesUno3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesUno4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesUno5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesUno6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesUno7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesUno8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesDos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesDos2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesDos3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesDos4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesDos5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesDos6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesDos7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesDos8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesTres" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesTres2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesTres3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesTres4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesTres5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesTres6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesTres7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesTres8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesCuatro" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesCuatro2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesCuatro3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesCuatro4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesCuatro5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesCuatro6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesCuatro7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMesCuatro8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroSesiones" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroSesiones2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroSesiones3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroSesiones4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroSesiones5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroSesiones6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroSesiones7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroSesiones8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroSesiones9" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroSesiones10" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroSesiones11" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroSesiones12" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroSesiones13" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroSesiones14" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroSesiones15" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroSesiones16" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FirmaEntrenador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FirmaMetodologo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioRegistra" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PlanGraficoDatos" Relationship="BIOMEDICOModel.FK_PlanGraficoDatos_PlanGrafico" FromRole="PlanGrafico" ToRole="PlanGraficoDatos" />
+  </EntityType>
+  <EntityType Name="PlanGraficoDatos">
+    <Key>
+      <PropertyRef Name="IdPlanGraficoDatos" />
+    </Key>
+    <Property Name="IdPlanGraficoDatos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombrePrincipal" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NombreElementoPlangrafico" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ideal1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ideal2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ideal3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ideal4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ideal5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ideal6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ideal7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ideal8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ideal9" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ideal10" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ideal11" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ideal12" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ideal13" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ideal14" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ideal15" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ideal16" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IdPlanGrafico" Type="Int32" />
+    <NavigationProperty Name="PlanGrafico" Relationship="BIOMEDICOModel.FK_PlanGraficoDatos_PlanGrafico" FromRole="PlanGraficoDatos" ToRole="PlanGrafico" />
+  </EntityType>
+  <Association Name="FK_PlanGraficoDatos_PlanGrafico">
+    <End Type="BIOMEDICOModel.PlanGrafico" Role="PlanGrafico" Multiplicity="0..1" />
+    <End Type="BIOMEDICOModel.PlanGraficoDatos" Role="PlanGraficoDatos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PlanGrafico">
+        <PropertyRef Name="IdPlanGrafico" />
+      </Principal>
+      <Dependent Role="PlanGraficoDatos">
+        <PropertyRef Name="IdPlanGrafico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="RolDeporte">
+    <Key>
+      <PropertyRef Name="IdRolDeporte" />
+    </Key>
+    <Property Name="IdRolDeporte" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreDeporte" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NomRol" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CuadroMedallero">
+    <Key>
+      <PropertyRef Name="IdCuadroMedallero" />
+    </Key>
+    <Property Name="IdCuadroMedallero" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeporteMedallero" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MedallaOro" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MedallaPlata" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MedallaBronce" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CategoriaMedallero" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DeportistaMedallero" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EventoMedallero" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaMedallero" Type="DateTime" Precision="3" />
+    <Property Name="PruebaMedallero" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Marca" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

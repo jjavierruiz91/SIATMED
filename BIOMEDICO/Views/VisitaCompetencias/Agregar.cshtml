@@ -1,0 +1,458 @@
+﻿
+@{
+    ViewBag.Title = "Agregar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script defer src="~/Scripts/APP/Visitacompetencia/visitaCompetencia.js"></script>
+<h2></h2>
+
+
+<style>
+    h1 {
+        text-align: center;
+        color: cadetblue
+    }
+</style>
+
+
+
+<h1>
+    <strong>
+        SECRETARIA DE RECREACION Y DEPORTES
+        ÁREA TÉCNICA METODOLOGÍCA
+        ACTA INFORME VISITA COMPETENCIA
+    </strong>
+</h1>
+
+<hr width=100% align="right" size=200 color="black">
+
+<h2><strong>DATOS GENERALES </strong>  </h2>
+
+<div class="row m-0">
+
+    <form id="FormDeportista" name="FormDeportista">
+
+        <div class="row m-0">
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Torneo Visita Competencia </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="TorneoVisitaCompetencia" name="TorneoVisitaCompetencia" />
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Fecha Inicio Evento </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" type="date" class="form-control" id="FechaInicioEvento" name="FechaInicioEvento" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Fecha Final Evento </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" type="date" class="form-control" id="FechaFinalEvento" name="FechaFinalEvento" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Fecha Salida Evento </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" type="date" class="form-control" id="FechaNacimiento" name="FechaNacimiento" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Fecha Regreso Evento </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" type="date" class="form-control" id="FechaRegresoEvento" name="FechaRegresoEvento" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Equipo Deportista </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="EquipoDeportista" name="EquipoDeportista" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Deporte</strong></label>
+                @{
+                    var ListaDeporte = BIOMEDICO.Controllers.DeporteController.ListDeporte();
+
+                    <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="DeporteVisitaCompetencia" name="DeporteVisitaCompetencia">
+                        <option value="">Seleccionar</option>
+                        @foreach (var item in ListaDeporte)
+                        {
+                            <option value="@item.CodDeporte">@item.NombreDeporte</option>
+                        }
+
+
+                    </select>
+                }
+            </div>
+
+            
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Categoria Visita Competencia</strong></label>
+                @{
+                    var listaCategoria = BIOMEDICO.Controllers.CategoriaController.ListCategoria();
+
+                    <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="CategoriaVisitaCompetencia" name="CategoriaVisitaCompetencia">
+                        <option value="">Seleccionar</option>
+                        @foreach (var item in listaCategoria)
+                        {
+                            <option value="@item.IdCategoria">@item.NomCategoria</option>
+                        }
+
+
+                    </select>
+                }
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Agrupacion Visita Competencia </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="AgrupacionVisitaCompetencia" name="AgrupacionVisitaCompetencia" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Entrenador Visita Competencia </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="EntrenadorVisitaCompetencia" name="EntrenadorVisitaCompetencia" />
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+    </form>
+</div>
+<br />
+
+<br />
+<H2><strong>PARTICIPACIÓN GENERAL Y SISTEMA DE COMPETENCIA</strong></H2>
+<hr width=100% align="right" size=200 color="black">
+
+<br />
+
+<div class="row m-0">
+
+    <form id="FormDeportistaOcupacion" name="FormDeportistaOcupacion">
+
+        <div class="row m-0">
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Número total de equipos o atletas participantes: </strong> </label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="NumeroEquiposVisitaCompetencia"></textarea>
+
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Relación Deportistas  Asistentes al Evento:  </strong> </label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="AsistentesEventoVisitaCompetencia"></textarea>
+
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Relación personal Técnico y de apoyo  Asistentes al Evento:  </strong> </label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="TecnicosEventoVisitaCompetencia"></textarea>
+
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Sistemas de competencia: </strong> </label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="SistemaCompetenciaVisitaCompetencia"></textarea>
+
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Fases,Series,Combates 2:   </strong> </label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="CombatesVisitaCompetencia"></textarea>
+
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Semifinal y Final: </strong> </label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="SemifinalFinalVisitaCompetencia"></textarea>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+<br />
+
+<div class="row m-0">
+    <H2><strong>POSICIÓN ALCANZADA POR EL EQUIPO EN EL EVENTO </strong> </H2>
+    <hr width=100% align="right" size=200 color="black">
+
+    <br />
+    <form id="FormDeportistaPadres" name="FormDeportistaPadres">
+
+        <div class="row m-0">
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Resultado final cuadro de medallero por deportista: </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="MedalleroDeportista" name="MedalleroDeportista" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Medalla Oro: </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="MedallaOroDeportista" name="MedallaOroDeportista" />
+            </div>
+
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Medalla Plata: </strong> </label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="MedallaPlataDeportista" name="MedallaPlataDeportista" />
+
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Medalla Bronce: </strong> </label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="MedallaBronceDeportista" name="MedallaBronceDeportista" />
+
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Resultado Final Cuadro de Medallero por Equipo:: </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="MedalleroEquipo" name="MedalleroEquipo" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Total Medallas Oro: </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="MedallaOroEquipo" name="MedallaOroEquipo" />
+            </div>
+
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Total Medallas Plata: </strong> </label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="MedallaPlataEquipo" name="MedallaPlataEquipo" />
+
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Total Medallas Bronce: </strong> </label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="MedallaBronceEquipo" name="MedallaBronceEquipo" />
+
+            </div>
+        </div>
+
+        <br />
+    </form>
+
+</div>
+<br />
+
+<br />
+<h2><strong>OBSERVACIONES RESULTADOS COMPETENCIA ACORDE A MACROCICLO REALIZADO </strong>  </h2>
+<hr width=100% align="right" size=200 color="black">
+<div class="row m-0">
+    <form id="FormDeportistaMadre" name="FormDeportistaMadre" class="col-xl-12">
+        <div class="row m-0">
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Observaciones a Resultados Positivos:</strong> </label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="ObservacionesPositivas"></textarea>
+
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Observaciones a Resultados Negativos: </strong> </label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="ObservacionesNegativas"></textarea>
+
+            </div>
+
+        </div>
+
+        <br />
+    </form>
+</div>
+<br />
+
+<br />
+<div class="row m-0">
+    <h2><strong>EVALUACIÓN DE LA ORGANIZACIÓN Y SEDE DEL EVENTO </strong> </h2>
+    <form id="FormDeportistaPadre" name="FormDeportistaPadre">
+
+        <h2><strong>Evalúe Bueno, Regular, Malo los siguientes aspectos: </strong> </h2>
+        <div class="row m-0">
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Lugar de Entrenamiento:</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="LugarEntrenamiento" name="LugarEntrenamiento" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Atención médica:</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="AtencionMedica" name="AtencionMedica" />
+            </div>
+
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Escenarios deportivos:</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="EscenariosDeportivos" name="EscenariosDeportivos" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Uniformidad: </strong>  </label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="Uniformidad" name="Uniformidad" />
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Comportamiento arbitral: </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="ComportamientoArbitral" name="ComportamientoArbitral" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Transporte  Interno:</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="TransporteInterno" name="TransporteInterno" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Alimentación:</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="Alimentacion" name="Alimentacion" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Hospedaje: </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="Hospedaje" name="Hospedaje" />
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Por que califica regular o mal: </strong> </label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="CalificacionRegular"></textarea>
+
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Lugar donde se hospedó la delegación: : </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="hospedajeDelegacion" name="hospedajeDelegacion" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Lugar donde se alimentó la delegación:</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="AlimentacionDelegacion" name="AlimentacionDelegacion" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Empresa con quién se transportó la delegación: </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="EmpresaTransporte" name="EmpresaTransporte" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Duración viaje de ida: </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="DuracionViajeIda" name="DuracionViajeIda" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Duración viaje de vuelta: </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="DuracionViajeVuelta" name="DuracionViajeVuelta" />
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Viaje de ida como fue:  </strong> </label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="ViajeIdaComoFue"></textarea>
+
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Viaje de Regreso Como Fue:</strong> </label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="ViajeRegresoComoFue"></textarea>
+
+            </div>
+        </div>
+
+        <br />
+    </form>
+
+</div>
+<br />
+
+<br />
+<div class="row m-0">
+    <h2><strong>EVALUACIÓN COMPORTAMIENTO EQUIPO  </strong> </h2>
+    <hr width=100% align="right" size=200 color="black">
+
+    <br />
+    <form id="FormDeportistaPadre" name="FormDeportistaPadre">
+        <h2><strong>Evalúe Bueno, Regular, Malo los siguientes aspectos: </strong> </h2>
+
+        <div class="row m-0">
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Disciplinado</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="Disciplinado" name="Disciplinado" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Combativo:</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="Combativo" name="Combativo" />
+            </div>
+
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong> Adaptacion</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="Adaptacion" name="Adaptacion" />
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Responsabilidad</strong>  </label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="Responsabilidad" name="Responsabilidad" />
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Por que evalúa de regular o malo: </strong> </label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="EvaluacionregularEquipo"></textarea>
+
+            </div>
+
+
+        </div>
+
+        <br />
+    </form>
+
+</div>
+<br />
+
+<br />
+<div class="row m-0">
+    <h2><strong>DOCUMENTACIÓN </strong> </h2>
+    <hr width=100% align="right" size=200 color="black">
+
+    <br />
+    <form id="FormDeportistaPadre" name="FormDeportistaPadre" class="col-xl-12">
+
+        <div class="row m-0">
+
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Explique si Hubo Problemas con la Documentación:  </strong> </label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="ProblemasDocumentacion"></textarea>
+
+            </div>
+
+
+        </div>
+
+        <br />
+    </form>
+
+</div>
+<br />
+
+<br />
+<div class="row m-0">
+    <h2><strong>EVALUACIÓN COMPETENCIA DE ACUERDO A LO PLANIFICADO </strong> </h2>
+    <hr width=100% align="right" size=200 color="black">
+
+    <br />
+    <form id="FormDeportistaPadre" name="FormDeportistaPadre">
+
+        <h2><strong>Evalúe Bueno, Regular, Malo los siguientes aspectos: </strong> </h2>
+        <div class="row m-0">
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Preparación Fisica</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="PreparacionFisica" name="PreparacionFisica" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Preparación Tecnica:</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="PreparacionTecnica" name="PreparacionTecnica" />
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong> Preparación Tactica</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="PreparacionTactica" name="PreparacionTactica" />
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Preparación Mental</strong>  </label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="PreparacionMental" name="PreparacionMental" />
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label><strong>Por que evalúa de regular o malo: </strong> </label>
+                <textarea style="border: black; border-width: 1px; border-style: solid;" name="textarea" rows="10" cols="10" class="form-control" id="EvaluacionPreparacion"></textarea>
+
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Firma Entrenador </strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="FirmaEntrenador" name="FirmaEntrenador" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Firma Metodologo</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="FirmaMetodologo" name="FirmaMetodologo" />
+            </div>
+
+        </div>
+
+        <br />
+    </form>
+
+</div>
+
+<div class="col-xs-4 col-sm-4 col-md-4">
+    <button type="button" onclick="Createobj()" class="btn btn-block btn-outline-primary btn-rounded btn-outline mt-4" id="SaveVisitaComptencia">Guardar </button>
+</div>
+

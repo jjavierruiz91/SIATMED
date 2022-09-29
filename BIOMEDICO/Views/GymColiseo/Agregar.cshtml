@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewBag.Title = "Agregar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    h1 {
+        text-align: center;
+        color: cadetblue
+    }
+</style>
+<script defer src="~/Scripts/APP/GymColiseo/GymColiseo.js"></script>
+<h1>
+    <strong>
+        SECRETARIA DE RECREACIÓN Y DEPORTES
+        HORARIO DE ENTRENAMIENTO GIMNASIO COLISEO CUBIERTO JULIO MONSALVO CASTILLA
+    </strong>
+
+</h1>
+
+
+<div class="row m-0">
+
+    <form id="FormPlanEntrenamineto" name="FormPlanEntrenamineto">
+
+        <div class="row m-0">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Deporte</strong></label>
+                @{
+                    var ListaDeporte = BIOMEDICO.Controllers.DeporteController.ListDeporte();
+
+                    <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="DeporteGymColiseo" name="DeporteGymColiseo">
+                        <option value="">Seleccionar</option>
+                        @foreach (var item in ListaDeporte)
+                        {
+                            <option value="@item.CodDeporte">@item.NombreDeporte</option>
+                        }
+
+
+                    </select>
+                }
+            </div>
+
+
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong> Nombre Entrenador</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="EntrenadorGymColiseo" name="EntrenadorGymColiseo" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Telefono Entrenador</strong></label>
+                <input style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="TelefonoGymColiseo" name="TelefonoGymColiseo" />
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Categorias</strong></label>
+                @{
+                    var listaCategoria = BIOMEDICO.Controllers.CategoriaController.ListCategoria();
+
+                    <select style="border: black; border-width: 1px; border-style: solid;" class="select2 form-control" id="CategoriaGymColiseo" name="CategoriaGymColiseo">
+                        <option value="">Seleccionar</option>
+                        @foreach (var item in listaCategoria)
+                        {
+                            <option value="@item.NomCategoria">@item.NomCategoria</option>
+                        }
+
+
+                    </select>
+                }
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Hora Inicio</strong></label>
+                <input type="time" style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="HoraInicioGymColiseo" name="HoraInicioGymColiseo" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Hora Final </strong></label>
+                <input type="time" style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="HoraFinalGymColiseo" name="HoraFinalGymColiseo" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <label><strong>Fecha </strong></label>
+                <input type="date" style="border: black; border-width: 1px; border-style: solid;" class="form-control" id="FechaGymColiseo" name="FechaGymColiseo" />
+            </div>
+
+        </div>
+
+
+
+
+
+    </form>
+</div>
+
+
+<div class="col-xs-4 col-sm-4 col-md-4">
+    <button type="button" onclick="Createobj()" class="btn btn-block btn-outline-primary btn-rounded btn-outline mt-4" id="SaveGymColiseo">Guardar </button>
+</div>

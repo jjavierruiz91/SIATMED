@@ -1,0 +1,888 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BIOMEDICOModelStoreContainer" CdmEntityContainer="BIOMEDICOEntities5">
+    <EntitySetMapping Name="ASignarPermisos">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.ASignarPermisos">
+        <MappingFragment StoreEntitySet="ASignarPermisos">
+          <ScalarProperty Name="CodRol" ColumnName="CodRol" />
+          <ScalarProperty Name="CodPermiso" ColumnName="CodPermiso" />
+          <ScalarProperty Name="IdPermiso" ColumnName="IdPermiso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Deporte">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.Deporte">
+        <MappingFragment StoreEntitySet="Deporte">
+          <ScalarProperty Name="NombreDeporte" ColumnName="NombreDeporte" />
+          <ScalarProperty Name="CodDeporte" ColumnName="CodDeporte" />
+          <ScalarProperty Name="IdDeporte" ColumnName="IdDeporte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permisos">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.Permisos">
+        <MappingFragment StoreEntitySet="Permisos">
+          <ScalarProperty Name="PadrePermiso" ColumnName="PadrePermiso" />
+          <ScalarProperty Name="TipoPermiso" ColumnName="TipoPermiso" />
+          <ScalarProperty Name="DesPermiso" ColumnName="DesPermiso" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="EtiquetaPermiso" ColumnName="EtiquetaPermiso" />
+          <ScalarProperty Name="NomPermiso" ColumnName="NomPermiso" />
+          <ScalarProperty Name="CodPermiso" ColumnName="CodPermiso" />
+          <ScalarProperty Name="IdPermiso" ColumnName="IdPermiso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rol">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.Rol">
+        <MappingFragment StoreEntitySet="Rol">
+          <ScalarProperty Name="NomRol" ColumnName="NomRol" />
+          <ScalarProperty Name="CodRol" ColumnName="CodRol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoPermiso">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.TipoPermiso">
+        <MappingFragment StoreEntitySet="TipoPermiso">
+          <ScalarProperty Name="DescPermiso" ColumnName="DescPermiso" />
+          <ScalarProperty Name="CodPermiso" ColumnName="CodPermiso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="CodRol" ColumnName="CodRol" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="ApeUsuario" ColumnName="ApeUsuario" />
+          <ScalarProperty Name="NomUsuario" ColumnName="NomUsuario" />
+          <ScalarProperty Name="CedUsuario" ColumnName="CedUsuario" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DatosFamiliares">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.DatosFamiliares">
+        <MappingFragment StoreEntitySet="DatosFamiliares">
+          <ScalarProperty Name="IdDeportista" ColumnName="IdDeportista" />
+          <ScalarProperty Name="ObservacionesEntrenamiento" ColumnName="ObservacionesEntrenamiento" />
+          <ScalarProperty Name="DiasEntrenamiento" ColumnName="DiasEntrenamiento" />
+          <ScalarProperty Name="HorasEntrenamiento" ColumnName="HorasEntrenamiento" />
+          <ScalarProperty Name="LugarEntrenamientoEntrenador" ColumnName="LugarEntrenamientoEntrenador" />
+          <ScalarProperty Name="TelefonoEntrenador" ColumnName="TelefonoEntrenador" />
+          <ScalarProperty Name="EmailEntrenador" ColumnName="EmailEntrenador" />
+          <ScalarProperty Name="EntrenadorActual" ColumnName="EntrenadorActual" />
+          <ScalarProperty Name="EventosTorneos" ColumnName="EventosTorneos" />
+          <ScalarProperty Name="FechaTorneros" ColumnName="FechaTorneros" />
+          <ScalarProperty Name="LugarTorneos" ColumnName="LugarTorneos" />
+          <ScalarProperty Name="MarcaTorneos" ColumnName="MarcaTorneos" />
+          <ScalarProperty Name="OcupacionPadre" ColumnName="OcupacionPadre" />
+          <ScalarProperty Name="CelularPadre" ColumnName="CelularPadre" />
+          <ScalarProperty Name="BarrioPadre" ColumnName="BarrioPadre" />
+          <ScalarProperty Name="DireccionPadre" ColumnName="DireccionPadre" />
+          <ScalarProperty Name="ApePadre" ColumnName="ApePadre" />
+          <ScalarProperty Name="NomPadre" ColumnName="NomPadre" />
+          <ScalarProperty Name="Ocupacion" ColumnName="Ocupacion" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Barrio" ColumnName="Barrio" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="ApeMadre" ColumnName="ApeMadre" />
+          <ScalarProperty Name="NomMadre" ColumnName="NomMadre" />
+          <ScalarProperty Name="IdFamiliares" ColumnName="IdFamiliares" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Deportistas">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.Deportistas">
+        <MappingFragment StoreEntitySet="Deportistas">
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+          <ScalarProperty Name="DireccionResidencia" ColumnName="DireccionResidencia" />
+          <ScalarProperty Name="BarrioResidencia" ColumnName="BarrioResidencia" />
+          <ScalarProperty Name="MunicipioResidencia" ColumnName="MunicipioResidencia" />
+          <ScalarProperty Name="Pasaporte" ColumnName="Pasaporte" />
+          <ScalarProperty Name="TelefonoMovil" ColumnName="TelefonoMovil" />
+          <ScalarProperty Name="TelefonoFijo" ColumnName="TelefonoFijo" />
+          <ScalarProperty Name="MunicipioNacimiento" ColumnName="MunicipioNacimiento" />
+          <ScalarProperty Name="DepartamentoNacimiento" ColumnName="DepartamentoNacimiento" />
+          <ScalarProperty Name="PaisNacimiento" ColumnName="PaisNacimiento" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Deporte" ColumnName="Deporte" />
+          <ScalarProperty Name="CorreoDeportista" ColumnName="CorreoDeportista" />
+          <ScalarProperty Name="GrupoSanguineo" ColumnName="GrupoSanguineo" />
+          <ScalarProperty Name="EpsDeportista" ColumnName="EpsDeportista" />
+          <ScalarProperty Name="Genero" ColumnName="Genero" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+          <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+          <ScalarProperty Name="SegundoNombre" ColumnName="SegundoNombre" />
+          <ScalarProperty Name="PrimerNombre" ColumnName="PrimerNombre" />
+          <ScalarProperty Name="ProgramaDeportista" ColumnName="ProgramaDeportista" />
+          <ScalarProperty Name="EstadoDeportista" ColumnName="EstadoDeportista" />
+          <ScalarProperty Name="NumIdentificacion" ColumnName="NumIdentificacion" />
+          <ScalarProperty Name="TipoIdentificacion" ColumnName="TipoIdentificacion" />
+          <ScalarProperty Name="IdDeportista" ColumnName="IdDeportista" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ocupacion">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.Ocupacion">
+        <MappingFragment StoreEntitySet="Ocupacion">
+          <ScalarProperty Name="IdDeportista" ColumnName="IdDeportista" />
+          <ScalarProperty Name="NumeroHijos" ColumnName="NumeroHijos" />
+          <ScalarProperty Name="TallaSudadera" ColumnName="TallaSudadera" />
+          <ScalarProperty Name="TallaCalzado" ColumnName="TallaCalzado" />
+          <ScalarProperty Name="TallaPantalon" ColumnName="TallaPantalon" />
+          <ScalarProperty Name="TallaCamisa" ColumnName="TallaCamisa" />
+          <ScalarProperty Name="Estatura" ColumnName="Estatura" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="ClubDeportivo" ColumnName="ClubDeportivo" />
+          <ScalarProperty Name="AñosActivos" ColumnName="AñosActivos" />
+          <ScalarProperty Name="EspecialidadCombate" ColumnName="EspecialidadCombate" />
+          <ScalarProperty Name="CualAlergia" ColumnName="CualAlergia" />
+          <ScalarProperty Name="AlergiasDepor" ColumnName="AlergiasDepor" />
+          <ScalarProperty Name="CualLesion" ColumnName="CualLesion" />
+          <ScalarProperty Name="LesionesDepor" ColumnName="LesionesDepor" />
+          <ScalarProperty Name="CualFractura" ColumnName="CualFractura" />
+          <ScalarProperty Name="FracturasDepor" ColumnName="FracturasDepor" />
+          <ScalarProperty Name="CualOperacion" ColumnName="CualOperacion" />
+          <ScalarProperty Name="OperacionesDepor" ColumnName="OperacionesDepor" />
+          <ScalarProperty Name="NivelEducativo" ColumnName="NivelEducativo" />
+          <ScalarProperty Name="IdOcupacion" ColumnName="IdOcupacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entrenadores">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.Entrenadores">
+        <MappingFragment StoreEntitySet="Entrenadores">
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="EdadEntrenador" ColumnName="EdadEntrenador" />
+          <ScalarProperty Name="EstadoCivilEntrenador" ColumnName="EstadoCivilEntrenador" />
+          <ScalarProperty Name="BarrioEntrenador" ColumnName="BarrioEntrenador" />
+          <ScalarProperty Name="DireccionEntrenador" ColumnName="DireccionEntrenador" />
+          <ScalarProperty Name="TelefonoEntrenador" ColumnName="TelefonoEntrenador" />
+          <ScalarProperty Name="NivelEstudioEntrenador" ColumnName="NivelEstudioEntrenador" />
+          <ScalarProperty Name="DeporteEntrenador" ColumnName="DeporteEntrenador" />
+          <ScalarProperty Name="FechaNacimientoEntrenador" ColumnName="FechaNacimientoEntrenador" />
+          <ScalarProperty Name="CorreoEntrenador" ColumnName="CorreoEntrenador" />
+          <ScalarProperty Name="EpsEntrenador" ColumnName="EpsEntrenador" />
+          <ScalarProperty Name="GrupoSanguineoEntrenador" ColumnName="GrupoSanguineoEntrenador" />
+          <ScalarProperty Name="GeneroEntrenador" ColumnName="GeneroEntrenador" />
+          <ScalarProperty Name="Segundoapellidoentrenador" ColumnName="Segundoapellidoentrenador" />
+          <ScalarProperty Name="PrimerApellidoEntrenador" ColumnName="PrimerApellidoEntrenador" />
+          <ScalarProperty Name="SegundoNombreEntrenador" ColumnName="SegundoNombreEntrenador" />
+          <ScalarProperty Name="PrimerNombreEntrenador" ColumnName="PrimerNombreEntrenador" />
+          <ScalarProperty Name="EstadoEntrenador" ColumnName="EstadoEntrenador" />
+          <ScalarProperty Name="NumeroIdentificacionEntrenador" ColumnName="NumeroIdentificacionEntrenador" />
+          <ScalarProperty Name="TipoIdentificacionEntrenador" ColumnName="TipoIdentificacionEntrenador" />
+          <ScalarProperty Name="IdEntrenadores" ColumnName="IdEntrenadores" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstudiosEntrenadores">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.EstudiosEntrenadores">
+        <MappingFragment StoreEntitySet="EstudiosEntrenadores">
+          <ScalarProperty Name="IdEntrenadores" ColumnName="IdEntrenadores" />
+          <ScalarProperty Name="ClubDeportivoEntrenador" ColumnName="ClubDeportivoEntrenador" />
+          <ScalarProperty Name="AñosExperienciaEntrenador" ColumnName="AñosExperienciaEntrenador" />
+          <ScalarProperty Name="ExperienciasEntrenador" ColumnName="ExperienciasEntrenador" />
+          <ScalarProperty Name="LibrosEntrenadores" ColumnName="LibrosEntrenadores" />
+          <ScalarProperty Name="InvestigacionesEntrenador" ColumnName="InvestigacionesEntrenador" />
+          <ScalarProperty Name="RecordsEntrenador" ColumnName="RecordsEntrenador" />
+          <ScalarProperty Name="CursosEntrenador" ColumnName="CursosEntrenador" />
+          <ScalarProperty Name="EstudiosEntrenador" ColumnName="EstudiosEntrenador" />
+          <ScalarProperty Name="IdEstudiosEntrenador" ColumnName="IdEstudiosEntrenador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActividadUnidadEntrenamiento">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.ActividadUnidadEntrenamiento">
+        <MappingFragment StoreEntitySet="ActividadUnidadEntrenamiento">
+          <ScalarProperty Name="IdUnidadEntrenamiento" ColumnName="IdUnidadEntrenamiento" />
+          <ScalarProperty Name="FirmaMetodologo" ColumnName="FirmaMetodologo" />
+          <ScalarProperty Name="FirmaEntrenador" ColumnName="FirmaEntrenador" />
+          <ScalarProperty Name="ObservacionesEntrenadores" ColumnName="ObservacionesEntrenadores" />
+          <ScalarProperty Name="RecomendacionesGenerales" ColumnName="RecomendacionesGenerales" />
+          <ScalarProperty Name="RespetoEntrenamiento" ColumnName="RespetoEntrenamiento" />
+          <ScalarProperty Name="ControlGrupo" ColumnName="ControlGrupo" />
+          <ScalarProperty Name="DisciplinaAdecuada" ColumnName="DisciplinaAdecuada" />
+          <ScalarProperty Name="MotivacionObjetivos" ColumnName="MotivacionObjetivos" />
+          <ScalarProperty Name="ObjetivosActividadFinal" ColumnName="ObjetivosActividadFinal" />
+          <ScalarProperty Name="EvaluaCumplimientoUE" ColumnName="EvaluaCumplimientoUE" />
+          <ScalarProperty Name="PlanificaActividadFinal" ColumnName="PlanificaActividadFinal" />
+          <ScalarProperty Name="CompoentesEntrenamientos" ColumnName="CompoentesEntrenamientos" />
+          <ScalarProperty Name="MaterialAdecuado" ColumnName="MaterialAdecuado" />
+          <ScalarProperty Name="ObjetivosMultiples" ColumnName="ObjetivosMultiples" />
+          <ScalarProperty Name="DesarrolloEntrenamientos" ColumnName="DesarrolloEntrenamientos" />
+          <ScalarProperty Name="MediosEntrenamientos" ColumnName="MediosEntrenamientos" />
+          <ScalarProperty Name="AcuerdoObjetivos" ColumnName="AcuerdoObjetivos" />
+          <ScalarProperty Name="IdActividadUnidadEntrenamiento" ColumnName="IdActividadUnidadEntrenamiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AsesoriasEntrenadores">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.AsesoriasEntrenadores">
+        <MappingFragment StoreEntitySet="AsesoriasEntrenadores">
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="UsuarioRegistra" ColumnName="UsuarioRegistra" />
+          <ScalarProperty Name="FirmaMetodologo" ColumnName="FirmaMetodologo" />
+          <ScalarProperty Name="FirmaEntrenador" ColumnName="FirmaEntrenador" />
+          <ScalarProperty Name="Asistentes" ColumnName="Asistentes" />
+          <ScalarProperty Name="CompromisosAsesorias" ColumnName="CompromisosAsesorias" />
+          <ScalarProperty Name="ConclusionesAsesorias" ColumnName="ConclusionesAsesorias" />
+          <ScalarProperty Name="DesarrolloAsesorias" ColumnName="DesarrolloAsesorias" />
+          <ScalarProperty Name="TemasAsesorias" ColumnName="TemasAsesorias" />
+          <ScalarProperty Name="FechaAsesorias" ColumnName="FechaAsesorias" />
+          <ScalarProperty Name="Escenarios" ColumnName="Escenarios" />
+          <ScalarProperty Name="Agrupacion" ColumnName="Agrupacion" />
+          <ScalarProperty Name="Deporte" ColumnName="Deporte" />
+          <ScalarProperty Name="Metodologo" ColumnName="Metodologo" />
+          <ScalarProperty Name="Entrenador" ColumnName="Entrenador" />
+          <ScalarProperty Name="Deportista" ColumnName="Deportista" />
+          <ScalarProperty Name="NumIdentificacionDeportistas" ColumnName="NumIdentificacionDeportistas" />
+          <ScalarProperty Name="IdAsesoriasEntrenadores" ColumnName="IdAsesoriasEntrenadores" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EvaluacionEquipoVisitaCompetencia">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.EvaluacionEquipoVisitaCompetencia">
+        <MappingFragment StoreEntitySet="EvaluacionEquipoVisitaCompetencia">
+          <ScalarProperty Name="IdVisitaCompetencia" ColumnName="IdVisitaCompetencia" />
+          <ScalarProperty Name="FirmaMetodologo" ColumnName="FirmaMetodologo" />
+          <ScalarProperty Name="FirmaEntrenador" ColumnName="FirmaEntrenador" />
+          <ScalarProperty Name="EvaluacionPreparacion" ColumnName="EvaluacionPreparacion" />
+          <ScalarProperty Name="PreparacionMental" ColumnName="PreparacionMental" />
+          <ScalarProperty Name="PreparacionTactica" ColumnName="PreparacionTactica" />
+          <ScalarProperty Name="PreparacionTecnica" ColumnName="PreparacionTecnica" />
+          <ScalarProperty Name="PreparacionFisica" ColumnName="PreparacionFisica" />
+          <ScalarProperty Name="ProblemasDocumentacion" ColumnName="ProblemasDocumentacion" />
+          <ScalarProperty Name="EvaluacionregularEquipo" ColumnName="EvaluacionregularEquipo" />
+          <ScalarProperty Name="Responsabilidad" ColumnName="Responsabilidad" />
+          <ScalarProperty Name="Adaptacion" ColumnName="Adaptacion" />
+          <ScalarProperty Name="Combativo" ColumnName="Combativo" />
+          <ScalarProperty Name="Disciplinado" ColumnName="Disciplinado" />
+          <ScalarProperty Name="IdEvaluacionEquipo" ColumnName="IdEvaluacionEquipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EvaluacionVisitaCompetencia">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.EvaluacionVisitaCompetencia">
+        <MappingFragment StoreEntitySet="EvaluacionVisitaCompetencia">
+          <ScalarProperty Name="IdVisitaCompetencia" ColumnName="IdVisitaCompetencia" />
+          <ScalarProperty Name="ViajeRegresoComoFue" ColumnName="ViajeRegresoComoFue" />
+          <ScalarProperty Name="ViajeIdaComoFue" ColumnName="ViajeIdaComoFue" />
+          <ScalarProperty Name="DuracionViajeVuelta" ColumnName="DuracionViajeVuelta" />
+          <ScalarProperty Name="DuracionViajeIda" ColumnName="DuracionViajeIda" />
+          <ScalarProperty Name="EmpresaTransporte" ColumnName="EmpresaTransporte" />
+          <ScalarProperty Name="AlimentacionDelegacion" ColumnName="AlimentacionDelegacion" />
+          <ScalarProperty Name="hospedajeDelegacion" ColumnName="hospedajeDelegacion" />
+          <ScalarProperty Name="CalificacionRegular" ColumnName="CalificacionRegular" />
+          <ScalarProperty Name="Hospedaje" ColumnName="Hospedaje" />
+          <ScalarProperty Name="Alimentacion" ColumnName="Alimentacion" />
+          <ScalarProperty Name="TransporteInterno" ColumnName="TransporteInterno" />
+          <ScalarProperty Name="ComportamientoArbitral" ColumnName="ComportamientoArbitral" />
+          <ScalarProperty Name="Uniformidad" ColumnName="Uniformidad" />
+          <ScalarProperty Name="EscenariosDeportivos" ColumnName="EscenariosDeportivos" />
+          <ScalarProperty Name="AtencionMedica" ColumnName="AtencionMedica" />
+          <ScalarProperty Name="LugarEntrenamiento" ColumnName="LugarEntrenamiento" />
+          <ScalarProperty Name="IdEvaluacionVisitaCompetencia" ColumnName="IdEvaluacionVisitaCompetencia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlanEntrenamientoMensual">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.PlanEntrenamientoMensual">
+        <MappingFragment StoreEntitySet="PlanEntrenamientoMensual">
+          <ScalarProperty Name="FechaRegistra" ColumnName="FechaRegistra" />
+          <ScalarProperty Name="UsuarioRegistra" ColumnName="UsuarioRegistra" />
+          <ScalarProperty Name="FirmaMetodologo" ColumnName="FirmaMetodologo" />
+          <ScalarProperty Name="FirmaEntrenador" ColumnName="FirmaEntrenador" />
+          <ScalarProperty Name="ObjetivosParciales" ColumnName="ObjetivosParciales" />
+          <ScalarProperty Name="PreparacionTactica" ColumnName="PreparacionTactica" />
+          <ScalarProperty Name="PreparacionTecnica" ColumnName="PreparacionTecnica" />
+          <ScalarProperty Name="Preparacionfisica" ColumnName="Preparacionfisica" />
+          <ScalarProperty Name="FechaEntregaActa" ColumnName="FechaEntregaActa" />
+          <ScalarProperty Name="Metodologo" ColumnName="Metodologo" />
+          <ScalarProperty Name="Año" ColumnName="Año" />
+          <ScalarProperty Name="Mes" ColumnName="Mes" />
+          <ScalarProperty Name="Modalidad" ColumnName="Modalidad" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+          <ScalarProperty Name="Agrupacion" ColumnName="Agrupacion" />
+          <ScalarProperty Name="Deporte" ColumnName="Deporte" />
+          <ScalarProperty Name="Entrenador" ColumnName="Entrenador" />
+          <ScalarProperty Name="NombreDeportista" ColumnName="NombreDeportista" />
+          <ScalarProperty Name="NumIdentificacionDeportista" ColumnName="NumIdentificacionDeportista" />
+          <ScalarProperty Name="IdPlanEntrenamientoMensual" ColumnName="IdPlanEntrenamientoMensual" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnidadEntrenamiento">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.UnidadEntrenamiento">
+        <MappingFragment StoreEntitySet="UnidadEntrenamiento">
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="CalentamientoEspecifico" ColumnName="CalentamientoEspecifico" />
+          <ScalarProperty Name="CalentamientoGeneral" ColumnName="CalentamientoGeneral" />
+          <ScalarProperty Name="PlanificaCalentamiento" ColumnName="PlanificaCalentamiento" />
+          <ScalarProperty Name="ObjetivosEntrenamiento" ColumnName="ObjetivosEntrenamiento" />
+          <ScalarProperty Name="UnidadEntrenamiento1" ColumnName="UnidadEntrenamiento" />
+          <ScalarProperty Name="Sesionentrenamiento" ColumnName="Sesionentrenamiento" />
+          <ScalarProperty Name="MetodologoEvaluador" ColumnName="MetodologoEvaluador" />
+          <ScalarProperty Name="TipoMicrociclo" ColumnName="TipoMicrociclo" />
+          <ScalarProperty Name="NumMesociclo" ColumnName="NumMesociclo" />
+          <ScalarProperty Name="ObjetivosSesion" ColumnName="ObjetivosSesion" />
+          <ScalarProperty Name="HoraFinal" ColumnName="HoraFinal" />
+          <ScalarProperty Name="HoraInicio" ColumnName="HoraInicio" />
+          <ScalarProperty Name="FechaSesion" ColumnName="FechaSesion" />
+          <ScalarProperty Name="Modalidad" ColumnName="Modalidad" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+          <ScalarProperty Name="Agrupacion" ColumnName="Agrupacion" />
+          <ScalarProperty Name="Deporte" ColumnName="Deporte" />
+          <ScalarProperty Name="NombreEntrenador" ColumnName="NombreEntrenador" />
+          <ScalarProperty Name="IdUnidadEntrenamiento" ColumnName="IdUnidadEntrenamiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VisitaCompetencias">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.VisitaCompetencias">
+        <MappingFragment StoreEntitySet="VisitaCompetencias">
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="UsuarioRegistro" ColumnName="UsuarioRegistro" />
+          <ScalarProperty Name="ObservacionesNegativas" ColumnName="ObservacionesNegativas" />
+          <ScalarProperty Name="ObservacionesPositivas" ColumnName="ObservacionesPositivas" />
+          <ScalarProperty Name="MedallaBronceEquipo" ColumnName="MedallaBronceEquipo" />
+          <ScalarProperty Name="MedallaPlataEquipo" ColumnName="MedallaPlataEquipo" />
+          <ScalarProperty Name="MedallaOroEquipo" ColumnName="MedallaOroEquipo" />
+          <ScalarProperty Name="MedalleroEquipo" ColumnName="MedalleroEquipo" />
+          <ScalarProperty Name="MedallaBronceDeportista" ColumnName="MedallaBronceDeportista" />
+          <ScalarProperty Name="MedallaPlataDeportista" ColumnName="MedallaPlataDeportista" />
+          <ScalarProperty Name="MedallaOroDeportista" ColumnName="MedallaOroDeportista" />
+          <ScalarProperty Name="MedalleroDeportista" ColumnName="MedalleroDeportista" />
+          <ScalarProperty Name="SemifinalFinalVisitaCompetencia" ColumnName="SemifinalFinalVisitaCompetencia" />
+          <ScalarProperty Name="CombatesVisitaCompetencia" ColumnName="CombatesVisitaCompetencia" />
+          <ScalarProperty Name="SistemaCompetenciaVisitaCompetencia" ColumnName="SistemaCompetenciaVisitaCompetencia" />
+          <ScalarProperty Name="TecnicosEventoVisitaCompetencia" ColumnName="TecnicosEventoVisitaCompetencia" />
+          <ScalarProperty Name="AsistentesEventoVisitaCompetencia" ColumnName="AsistentesEventoVisitaCompetencia" />
+          <ScalarProperty Name="NumeroEquiposVisitaCompetencia" ColumnName="NumeroEquiposVisitaCompetencia" />
+          <ScalarProperty Name="EntrenadorVisitaCompetencia" ColumnName="EntrenadorVisitaCompetencia" />
+          <ScalarProperty Name="AgrupacionVisitaCompetencia" ColumnName="AgrupacionVisitaCompetencia" />
+          <ScalarProperty Name="CategoriaVisitaCompetencia" ColumnName="CategoriaVisitaCompetencia" />
+          <ScalarProperty Name="DeporteVisitaCompetencia" ColumnName="DeporteVisitaCompetencia" />
+          <ScalarProperty Name="EquipoDeportista" ColumnName="EquipoDeportista" />
+          <ScalarProperty Name="FechaRegresoEvento" ColumnName="FechaRegresoEvento" />
+          <ScalarProperty Name="FechaSalidaEvento" ColumnName="FechaSalidaEvento" />
+          <ScalarProperty Name="FechaFinalEvento" ColumnName="FechaFinalEvento" />
+          <ScalarProperty Name="FechaInicioEvento" ColumnName="FechaInicioEvento" />
+          <ScalarProperty Name="TorneoVisitaCompetencia" ColumnName="TorneoVisitaCompetencia" />
+          <ScalarProperty Name="IdVisitaCompetencia" ColumnName="IdVisitaCompetencia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnalisisMacrociclo">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.AnalisisMacrociclo">
+        <MappingFragment StoreEntitySet="AnalisisMacrociclo">
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="UsuarioRegistro" ColumnName="UsuarioRegistro" />
+          <ScalarProperty Name="PronosticoMacrociclo" ColumnName="PronosticoMacrociclo" />
+          <ScalarProperty Name="ResultadosCompetencia" ColumnName="ResultadosCompetencia" />
+          <ScalarProperty Name="PreparacionTactica" ColumnName="PreparacionTactica" />
+          <ScalarProperty Name="PreparacionTecnica" ColumnName="PreparacionTecnica" />
+          <ScalarProperty Name="PreparacionFisica" ColumnName="PreparacionFisica" />
+          <ScalarProperty Name="ObjetivosEspecificos" ColumnName="ObjetivosEspecificos" />
+          <ScalarProperty Name="ObjetivoGeneral" ColumnName="ObjetivoGeneral" />
+          <ScalarProperty Name="FechaEvaluacion" ColumnName="FechaEvaluacion" />
+          <ScalarProperty Name="Metodologo" ColumnName="Metodologo" />
+          <ScalarProperty Name="Mes" ColumnName="Mes" />
+          <ScalarProperty Name="Año" ColumnName="Año" />
+          <ScalarProperty Name="Genero" ColumnName="Genero" />
+          <ScalarProperty Name="Modalidad" ColumnName="Modalidad" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+          <ScalarProperty Name="Agrupacion" ColumnName="Agrupacion" />
+          <ScalarProperty Name="Deporte" ColumnName="Deporte" />
+          <ScalarProperty Name="Entrenador" ColumnName="Entrenador" />
+          <ScalarProperty Name="NombreDeportist" ColumnName="NombreDeportist" />
+          <ScalarProperty Name="NumIdentificacionDeportist" ColumnName="NumIdentificacionDeportist" />
+          <ScalarProperty Name="IdMacroAnterior" ColumnName="IdMacroAnterior" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjetivosMacrociclo">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.ObjetivosMacrociclo">
+        <MappingFragment StoreEntitySet="ObjetivosMacrociclo">
+          <ScalarProperty Name="IdMacroAnterior" ColumnName="IdMacroAnterior" />
+          <ScalarProperty Name="RealizacionMacrociclo" ColumnName="RealizacionMacrociclo" />
+          <ScalarProperty Name="TransformacionMacrocilo" ColumnName="TransformacionMacrocilo" />
+          <ScalarProperty Name="AcumulacionMacrociclo" ColumnName="AcumulacionMacrociclo" />
+          <ScalarProperty Name="OtrosDiasMacrociclo" ColumnName="OtrosDiasMacrociclo" />
+          <ScalarProperty Name="DiasTrabajoMacrociclo" ColumnName="DiasTrabajoMacrociclo" />
+          <ScalarProperty Name="CompetenciaMacrociclo" ColumnName="CompetenciaMacrociclo" />
+          <ScalarProperty Name="PreparacionMacrociclo" ColumnName="PreparacionMacrociclo" />
+          <ScalarProperty Name="DistribucionMacrociclo" ColumnName="DistribucionMacrociclo" />
+          <ScalarProperty Name="PropuestoDeporte" ColumnName="PropuestoDeporte" />
+          <ScalarProperty Name="PropuestoDeportivo" ColumnName="PropuestoDeportivo" />
+          <ScalarProperty Name="PropuestoFinanciero" ColumnName="PropuestoFinanciero" />
+          <ScalarProperty Name="PropuestoFisico" ColumnName="PropuestoFisico" />
+          <ScalarProperty Name="PropuestoHumano" ColumnName="PropuestoHumano" />
+          <ScalarProperty Name="MesocicloDeporte" ColumnName="MesocicloDeporte" />
+          <ScalarProperty Name="MesocicloDeportivo" ColumnName="MesocicloDeportivo" />
+          <ScalarProperty Name="MesocicloFinanciero" ColumnName="MesocicloFinanciero" />
+          <ScalarProperty Name="MesocicloFisico" ColumnName="MesocicloFisico" />
+          <ScalarProperty Name="MesocicloHumano" ColumnName="MesocicloHumano" />
+          <ScalarProperty Name="MedicinaDelDeporte" ColumnName="MedicinaDelDeporte" />
+          <ScalarProperty Name="ObjetivosDeportivos" ColumnName="ObjetivosDeportivos" />
+          <ScalarProperty Name="ObjetivosFinancieros" ColumnName="ObjetivosFinancieros" />
+          <ScalarProperty Name="ObjetivosFisicos" ColumnName="ObjetivosFisicos" />
+          <ScalarProperty Name="ObjetivosHumanos" ColumnName="ObjetivosHumanos" />
+          <ScalarProperty Name="IdObjetivosMacrociclo" ColumnName="IdObjetivosMacrociclo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlanAnalisisMacro">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.PlanAnalisisMacro">
+        <MappingFragment StoreEntitySet="PlanAnalisisMacro">
+          <ScalarProperty Name="IdMacroAnterior" ColumnName="IdMacroAnterior" />
+          <ScalarProperty Name="DisponibleDeportivo" ColumnName="DisponibleDeportivo" />
+          <ScalarProperty Name="DisponibleFinanciero" ColumnName="DisponibleFinanciero" />
+          <ScalarProperty Name="DisponibleFisicos" ColumnName="DisponibleFisicos" />
+          <ScalarProperty Name="DisponibleHumanos" ColumnName="DisponibleHumanos" />
+          <ScalarProperty Name="RecursoDeportivo" ColumnName="RecursoDeportivo" />
+          <ScalarProperty Name="Recursosfinancieros" ColumnName="Recursosfinancieros" />
+          <ScalarProperty Name="RecursosFisicos" ColumnName="RecursosFisicos" />
+          <ScalarProperty Name="RecursosHumanos" ColumnName="RecursosHumanos" />
+          <ScalarProperty Name="Medios10" ColumnName="Medios10" />
+          <ScalarProperty Name="Medios09" ColumnName="Medios09" />
+          <ScalarProperty Name="Medios08" ColumnName="Medios08" />
+          <ScalarProperty Name="Medios07" ColumnName="Medios07" />
+          <ScalarProperty Name="Medios06" ColumnName="Medios06" />
+          <ScalarProperty Name="Medios05" ColumnName="Medios05" />
+          <ScalarProperty Name="Medios04" ColumnName="Medios04" />
+          <ScalarProperty Name="Medios03" ColumnName="Medios03" />
+          <ScalarProperty Name="Medios02" ColumnName="Medios02" />
+          <ScalarProperty Name="Medios01" ColumnName="Medios01" />
+          <ScalarProperty Name="Metodos10" ColumnName="Metodos10" />
+          <ScalarProperty Name="Metodos09" ColumnName="Metodos09" />
+          <ScalarProperty Name="Metodos08" ColumnName="Metodos08" />
+          <ScalarProperty Name="Metodos07" ColumnName="Metodos07" />
+          <ScalarProperty Name="Metodos06" ColumnName="Metodos06" />
+          <ScalarProperty Name="Metodos05" ColumnName="Metodos05" />
+          <ScalarProperty Name="Metodos04" ColumnName="Metodos04" />
+          <ScalarProperty Name="Metodos03" ColumnName="Metodos03" />
+          <ScalarProperty Name="Metodos02" ColumnName="Metodos02" />
+          <ScalarProperty Name="Metodos01" ColumnName="Metodos01" />
+          <ScalarProperty Name="Capacidades10" ColumnName="Capacidades10" />
+          <ScalarProperty Name="Capacidades09" ColumnName="Capacidades09" />
+          <ScalarProperty Name="Capacidades08" ColumnName="Capacidades08" />
+          <ScalarProperty Name="Capacidades07" ColumnName="Capacidades07" />
+          <ScalarProperty Name="Capacidades06" ColumnName="Capacidades06" />
+          <ScalarProperty Name="Capacidades05" ColumnName="Capacidades05" />
+          <ScalarProperty Name="Capacidades04" ColumnName="Capacidades04" />
+          <ScalarProperty Name="Capacidades03" ColumnName="Capacidades03" />
+          <ScalarProperty Name="Capacidades02" ColumnName="Capacidades02" />
+          <ScalarProperty Name="Capacidades01" ColumnName="Capacidades01" />
+          <ScalarProperty Name="TareaMesosicloCompeticion" ColumnName="TareaMesosicloCompeticion" />
+          <ScalarProperty Name="TareaMesosicloEspecial" ColumnName="TareaMesosicloEspecial" />
+          <ScalarProperty Name="TareaMesosicloGeneral" ColumnName="TareaMesosicloGeneral" />
+          <ScalarProperty Name="MesosicloCompeticion" ColumnName="MesosicloCompeticion" />
+          <ScalarProperty Name="MesosicloEspecial" ColumnName="MesosicloEspecial" />
+          <ScalarProperty Name="MesosicloGeneral" ColumnName="MesosicloGeneral" />
+          <ScalarProperty Name="PeriodoPreparatorio" ColumnName="PeriodoPreparatorio" />
+          <ScalarProperty Name="TareasMesociclos" ColumnName="TareasMesociclos" />
+          <ScalarProperty Name="PronosticoCompetencia" ColumnName="PronosticoCompetencia" />
+          <ScalarProperty Name="ObjetivosEspecificosNuevaCompetencia" ColumnName="ObjetivosEspecificosNuevaCompetencia" />
+          <ScalarProperty Name="ObjetivosNuevaCompetencia" ColumnName="ObjetivosNuevaCompetencia" />
+          <ScalarProperty Name="CondicionesClimaticas" ColumnName="CondicionesClimaticas" />
+          <ScalarProperty Name="EscenarioMacro" ColumnName="EscenarioMacro" />
+          <ScalarProperty Name="SedeCompetencia" ColumnName="SedeCompetencia" />
+          <ScalarProperty Name="FechaFinMacro" ColumnName="FechaFinMacro" />
+          <ScalarProperty Name="FechaInicioMacro" ColumnName="FechaInicioMacro" />
+          <ScalarProperty Name="NumMacrociclo" ColumnName="NumMacrociclo" />
+          <ScalarProperty Name="TipoPlanificacion" ColumnName="TipoPlanificacion" />
+          <ScalarProperty Name="CompetenciaPrincipal" ColumnName="CompetenciaPrincipal" />
+          <ScalarProperty Name="IdPlanMacrociclo" ColumnName="IdPlanMacrociclo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categoria">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.Categoria">
+        <MappingFragment StoreEntitySet="Categoria">
+          <ScalarProperty Name="DescripcionCategoria" ColumnName="DescripcionCategoria" />
+          <ScalarProperty Name="NomCategoria" ColumnName="NomCategoria" />
+          <ScalarProperty Name="Deporte" ColumnName="Deporte" />
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CronogramaActividades">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.CronogramaActividades">
+        <MappingFragment StoreEntitySet="CronogramaActividades">
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="Usuarioregistro" ColumnName="Usuarioregistro" />
+          <ScalarProperty Name="FirmaEntrenador" ColumnName="FirmaEntrenador" />
+          <ScalarProperty Name="VisitaBiomedicoActividadesSemanales" ColumnName="VisitaBiomedicoActividadesSemanales" />
+          <ScalarProperty Name="EventoActividadesSemanales" ColumnName="EventoActividadesSemanales" />
+          <ScalarProperty Name="FechaActividadesSemanales" ColumnName="FechaActividadesSemanales" />
+          <ScalarProperty Name="LugarActividadesSemanales" ColumnName="LugarActividadesSemanales" />
+          <ScalarProperty Name="HoraActividadesSemanales" ColumnName="HoraActividadesSemanales" />
+          <ScalarProperty Name="ActividadActividadesSemanales" ColumnName="ActividadActividadesSemanales" />
+          <ScalarProperty Name="SemanaHastaActividadesSemanales" ColumnName="SemanaHastaActividadesSemanales" />
+          <ScalarProperty Name="SemanadelActividadesSemanales" ColumnName="SemanadelActividadesSemanales" />
+          <ScalarProperty Name="DeporteActividadesSemanales" ColumnName="DeporteActividadesSemanales" />
+          <ScalarProperty Name="EntrenadorActividadesSemanales" ColumnName="EntrenadorActividadesSemanales" />
+          <ScalarProperty Name="IdCronogramaActividadesSemanales" ColumnName="IdCronogramaActividadesSemanales" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Elemento">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.Elemento">
+        <MappingFragment StoreEntitySet="Elemento">
+          <ScalarProperty Name="NombreElemento" ColumnName="NombreElemento" />
+          <ScalarProperty Name="IdElemento" ColumnName="IdElemento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Microciclo">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.Microciclo">
+        <MappingFragment StoreEntitySet="Microciclo">
+          <ScalarProperty Name="NombreMicrociclo" ColumnName="NombreMicrociclo" />
+          <ScalarProperty Name="IdMicrociclo" ColumnName="IdMicrociclo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GymColiseo">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.GymColiseo">
+        <MappingFragment StoreEntitySet="GymColiseo">
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="UsuarioRegistro" ColumnName="UsuarioRegistro" />
+          <ScalarProperty Name="FirmaEntrenador" ColumnName="FirmaEntrenador" />
+          <ScalarProperty Name="FechaGymColiseo" ColumnName="FechaGymColiseo" />
+          <ScalarProperty Name="HoraFinalGymColiseo" ColumnName="HoraFinalGymColiseo" />
+          <ScalarProperty Name="HoraInicioGymColiseo" ColumnName="HoraInicioGymColiseo" />
+          <ScalarProperty Name="EntrenadorGymColiseo" ColumnName="EntrenadorGymColiseo" />
+          <ScalarProperty Name="TelefonoGymColiseo" ColumnName="TelefonoGymColiseo" />
+          <ScalarProperty Name="CategoriaGymColiseo" ColumnName="CategoriaGymColiseo" />
+          <ScalarProperty Name="DeporteGymColiseo" ColumnName="DeporteGymColiseo" />
+          <ScalarProperty Name="IdGymColiseo" ColumnName="IdGymColiseo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GymEstadio">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.GymEstadio">
+        <MappingFragment StoreEntitySet="GymEstadio">
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="UsuarioRegistro" ColumnName="UsuarioRegistro" />
+          <ScalarProperty Name="FirmaEntrenador" ColumnName="FirmaEntrenador" />
+          <ScalarProperty Name="FechaGymEstadio" ColumnName="FechaGymEstadio" />
+          <ScalarProperty Name="HoraFinalGymEstadio" ColumnName="HoraFinalGymEstadio" />
+          <ScalarProperty Name="HoraInicioGymEstadio" ColumnName="HoraInicioGymEstadio" />
+          <ScalarProperty Name="EntrenadorGymEstadio" ColumnName="EntrenadorGymEstadio" />
+          <ScalarProperty Name="TelefonoGymEstadio" ColumnName="TelefonoGymEstadio" />
+          <ScalarProperty Name="CategoriaGymEstadio" ColumnName="CategoriaGymEstadio" />
+          <ScalarProperty Name="DeporteGymEstadio" ColumnName="DeporteGymEstadio" />
+          <ScalarProperty Name="IdGymEstadio" ColumnName="IdGymEstadio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HorarioEntrenadores">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.HorarioEntrenadores">
+        <MappingFragment StoreEntitySet="HorarioEntrenadores">
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="UsuarioRegistra" ColumnName="UsuarioRegistra" />
+          <ScalarProperty Name="FirmaEntrenador" ColumnName="FirmaEntrenador" />
+          <ScalarProperty Name="FechaHorEntrenadores" ColumnName="FechaHorEntrenadores" />
+          <ScalarProperty Name="HoraFinalHorarioEntrenadores" ColumnName="HoraFinalHorarioEntrenadores" />
+          <ScalarProperty Name="HoraInicioHorarioEntrenadores" ColumnName="HoraInicioHorarioEntrenadores" />
+          <ScalarProperty Name="TelefonoHorarioEntrenadores" ColumnName="TelefonoHorarioEntrenadores" />
+          <ScalarProperty Name="EntrenadorHorarioEntrenadores" ColumnName="EntrenadorHorarioEntrenadores" />
+          <ScalarProperty Name="EscenariosHorarioEntrenadores" ColumnName="EscenariosHorarioEntrenadores" />
+          <ScalarProperty Name="DeporteHorarioEntrenadores" ColumnName="DeporteHorarioEntrenadores" />
+          <ScalarProperty Name="IdHorarioEntrenadores" ColumnName="IdHorarioEntrenadores" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnidadMesociclo">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.UnidadMesociclo">
+        <MappingFragment StoreEntitySet="UnidadMesociclo">
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="Usuarioregistro" ColumnName="Usuarioregistro" />
+          <ScalarProperty Name="FirmaEntrenador" ColumnName="FirmaEntrenador" />
+          <ScalarProperty Name="DosificacionFinal" ColumnName="DosificacionFinal" />
+          <ScalarProperty Name="DosificacionControl" ColumnName="DosificacionControl" />
+          <ScalarProperty Name="DosificacionInicial" ColumnName="DosificacionInicial" />
+          <ScalarProperty Name="Metodofinal" ColumnName="Metodofinal" />
+          <ScalarProperty Name="MetodoControl" ColumnName="MetodoControl" />
+          <ScalarProperty Name="MetodoInicial" ColumnName="MetodoInicial" />
+          <ScalarProperty Name="ActividadFinal" ColumnName="ActividadFinal" />
+          <ScalarProperty Name="ActividadControl" ColumnName="ActividadControl" />
+          <ScalarProperty Name="ActividadInicial" ColumnName="ActividadInicial" />
+          <ScalarProperty Name="CapacidadFinal" ColumnName="CapacidadFinal" />
+          <ScalarProperty Name="CapacidadControl" ColumnName="CapacidadControl" />
+          <ScalarProperty Name="CapacidadInicial" ColumnName="CapacidadInicial" />
+          <ScalarProperty Name="Objetivos" ColumnName="Objetivos" />
+          <ScalarProperty Name="Hora" ColumnName="Hora" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Duracion" ColumnName="Duracion" />
+          <ScalarProperty Name="SesionesEntrenamientos" ColumnName="SesionesEntrenamientos" />
+          <ScalarProperty Name="Miclociclo" ColumnName="Miclociclo" />
+          <ScalarProperty Name="TipoMesociclo" ColumnName="TipoMesociclo" />
+          <ScalarProperty Name="Mesociclo" ColumnName="Mesociclo" />
+          <ScalarProperty Name="CategoriaUnidadMesociclo" ColumnName="CategoriaUnidadMesociclo" />
+          <ScalarProperty Name="AgrupacionUnidadMesociclo" ColumnName="AgrupacionUnidadMesociclo" />
+          <ScalarProperty Name="DeportistUnidadMesociclo" ColumnName="DeportistUnidadMesociclo" />
+          <ScalarProperty Name="NombreUnidadMesociclo" ColumnName="NombreUnidadMesociclo" />
+          <ScalarProperty Name="IdUnidadMesociclo" ColumnName="IdUnidadMesociclo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mesociclo">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.Mesociclo">
+        <MappingFragment StoreEntitySet="Mesociclo">
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="UsuarioRegistra" ColumnName="UsuarioRegistra" />
+          <ScalarProperty Name="FirmaEntrenador" ColumnName="FirmaEntrenador" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="ObjetivosTacticos" ColumnName="ObjetivosTacticos" />
+          <ScalarProperty Name="ObjetivosFisicos" ColumnName="ObjetivosFisicos" />
+          <ScalarProperty Name="Microciclo" ColumnName="Microciclo" />
+          <ScalarProperty Name="TipoMesociclo" ColumnName="TipoMesociclo" />
+          <ScalarProperty Name="Mesociclo1" ColumnName="Mesociclo" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+          <ScalarProperty Name="Agrupacion" ColumnName="Agrupacion" />
+          <ScalarProperty Name="Deportista" ColumnName="Deportista" />
+          <ScalarProperty Name="Deporte" ColumnName="Deporte" />
+          <ScalarProperty Name="IdMesociclo" ColumnName="IdMesociclo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MesocicloDatos">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.MesocicloDatos">
+        <MappingFragment StoreEntitySet="MesocicloDatos">
+          <ScalarProperty Name="IdMesociclo" ColumnName="IdMesociclo" />
+          <ScalarProperty Name="resultadoRealizado" ColumnName="resultadoRealizado" />
+          <ScalarProperty Name="resultadoPLaneado" ColumnName="resultadoPLaneado" />
+          <ScalarProperty Name="Porcentaje4" ColumnName="Porcentaje4" />
+          <ScalarProperty Name="Porcentaje3" ColumnName="Porcentaje3" />
+          <ScalarProperty Name="Porcentaje2" ColumnName="Porcentaje2" />
+          <ScalarProperty Name="Porcentaje1" ColumnName="Porcentaje1" />
+          <ScalarProperty Name="Dif4" ColumnName="Dif4" />
+          <ScalarProperty Name="Dif3" ColumnName="Dif3" />
+          <ScalarProperty Name="Dif2" ColumnName="Dif2" />
+          <ScalarProperty Name="Dif1" ColumnName="Dif1" />
+          <ScalarProperty Name="Real4" ColumnName="Real4" />
+          <ScalarProperty Name="Real3" ColumnName="Real3" />
+          <ScalarProperty Name="Real2" ColumnName="Real2" />
+          <ScalarProperty Name="Real1" ColumnName="Real1" />
+          <ScalarProperty Name="Plan4" ColumnName="Plan4" />
+          <ScalarProperty Name="Plan3" ColumnName="Plan3" />
+          <ScalarProperty Name="Plan2" ColumnName="Plan2" />
+          <ScalarProperty Name="Plan1" ColumnName="Plan1" />
+          <ScalarProperty Name="Microciclo4" ColumnName="Microciclo4" />
+          <ScalarProperty Name="Microciclo3" ColumnName="Microciclo3" />
+          <ScalarProperty Name="Microciclo2" ColumnName="Microciclo2" />
+          <ScalarProperty Name="Microciclo1" ColumnName="Microciclo1" />
+          <ScalarProperty Name="NombreElemento" ColumnName="NombreElemento" />
+          <ScalarProperty Name="IdMesocicloDatos" ColumnName="IdMesocicloDatos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlanSemanalDias">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.PlanSemanalDias">
+        <MappingFragment StoreEntitySet="PlanSemanalDias">
+          <ScalarProperty Name="IdPlanSemanal" ColumnName="IdPlanSemanal" />
+          <ScalarProperty Name="DomingoSemanalDias" ColumnName="DomingoSemanalDias" />
+          <ScalarProperty Name="SabadoSemanalDias" ColumnName="SabadoSemanalDias" />
+          <ScalarProperty Name="ViernesSemanalDias" ColumnName="ViernesSemanalDias" />
+          <ScalarProperty Name="JuevesSemanalDias" ColumnName="JuevesSemanalDias" />
+          <ScalarProperty Name="MiercolesSemanalDias" ColumnName="MiercolesSemanalDias" />
+          <ScalarProperty Name="MartesSemanalDias" ColumnName="MartesSemanalDias" />
+          <ScalarProperty Name="LunesSemanalDias" ColumnName="LunesSemanalDias" />
+          <ScalarProperty Name="ElementoSemanalDias" ColumnName="ElementoSemanalDias" />
+          <ScalarProperty Name="IdPlanSemanalDias" ColumnName="IdPlanSemanalDias" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlanSemanalMicrociclo">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.PlanSemanalMicrociclo">
+        <MappingFragment StoreEntitySet="PlanSemanalMicrociclo">
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="UsuarioRegistro" ColumnName="UsuarioRegistro" />
+          <ScalarProperty Name="HoraFinalPlan" ColumnName="HoraFinalPlan" />
+          <ScalarProperty Name="HoraInicioPlan" ColumnName="HoraInicioPlan" />
+          <ScalarProperty Name="FechaMicrociclo" ColumnName="FechaMicrociclo" />
+          <ScalarProperty Name="ElementosMicrociclo" ColumnName="ElementosMicrociclo" />
+          <ScalarProperty Name="ObjetivosTecnicos" ColumnName="ObjetivosTecnicos" />
+          <ScalarProperty Name="ObjetivosFisicos" ColumnName="ObjetivosFisicos" />
+          <ScalarProperty Name="TipoMesociclo" ColumnName="TipoMesociclo" />
+          <ScalarProperty Name="MesoCiclo" ColumnName="MesoCiclo" />
+          <ScalarProperty Name="TipoMicroCiclo" ColumnName="TipoMicroCiclo" />
+          <ScalarProperty Name="MicroCicloNum" ColumnName="MicroCicloNum" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+          <ScalarProperty Name="Agrupacion" ColumnName="Agrupacion" />
+          <ScalarProperty Name="EntrenadorPlan" ColumnName="EntrenadorPlan" />
+          <ScalarProperty Name="Deportista" ColumnName="Deportista" />
+          <ScalarProperty Name="DeportePlan" ColumnName="DeportePlan" />
+          <ScalarProperty Name="IdPlanSemanal" ColumnName="IdPlanSemanal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlanGrafico">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.PlanGrafico">
+        <MappingFragment StoreEntitySet="PlanGrafico">
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="UsuarioRegistra" ColumnName="UsuarioRegistra" />
+          <ScalarProperty Name="FirmaMetodologo" ColumnName="FirmaMetodologo" />
+          <ScalarProperty Name="FirmaEntrenador" ColumnName="FirmaEntrenador" />
+          <ScalarProperty Name="NumeroSesiones16" ColumnName="NumeroSesiones16" />
+          <ScalarProperty Name="NumeroSesiones15" ColumnName="NumeroSesiones15" />
+          <ScalarProperty Name="NumeroSesiones14" ColumnName="NumeroSesiones14" />
+          <ScalarProperty Name="NumeroSesiones13" ColumnName="NumeroSesiones13" />
+          <ScalarProperty Name="NumeroSesiones12" ColumnName="NumeroSesiones12" />
+          <ScalarProperty Name="NumeroSesiones11" ColumnName="NumeroSesiones11" />
+          <ScalarProperty Name="NumeroSesiones10" ColumnName="NumeroSesiones10" />
+          <ScalarProperty Name="NumeroSesiones9" ColumnName="NumeroSesiones9" />
+          <ScalarProperty Name="NumeroSesiones8" ColumnName="NumeroSesiones8" />
+          <ScalarProperty Name="NumeroSesiones7" ColumnName="NumeroSesiones7" />
+          <ScalarProperty Name="NumeroSesiones6" ColumnName="NumeroSesiones6" />
+          <ScalarProperty Name="NumeroSesiones5" ColumnName="NumeroSesiones5" />
+          <ScalarProperty Name="NumeroSesiones4" ColumnName="NumeroSesiones4" />
+          <ScalarProperty Name="NumeroSesiones3" ColumnName="NumeroSesiones3" />
+          <ScalarProperty Name="NumeroSesiones2" ColumnName="NumeroSesiones2" />
+          <ScalarProperty Name="NumeroSesiones" ColumnName="NumeroSesiones" />
+          <ScalarProperty Name="FechaMesCuatro8" ColumnName="FechaMesCuatro8" />
+          <ScalarProperty Name="FechaMesCuatro7" ColumnName="FechaMesCuatro7" />
+          <ScalarProperty Name="FechaMesCuatro6" ColumnName="FechaMesCuatro6" />
+          <ScalarProperty Name="FechaMesCuatro5" ColumnName="FechaMesCuatro5" />
+          <ScalarProperty Name="FechaMesCuatro4" ColumnName="FechaMesCuatro4" />
+          <ScalarProperty Name="FechaMesCuatro3" ColumnName="FechaMesCuatro3" />
+          <ScalarProperty Name="FechaMesCuatro2" ColumnName="FechaMesCuatro2" />
+          <ScalarProperty Name="FechaMesCuatro" ColumnName="FechaMesCuatro" />
+          <ScalarProperty Name="FechaMesTres8" ColumnName="FechaMesTres8" />
+          <ScalarProperty Name="FechaMesTres7" ColumnName="FechaMesTres7" />
+          <ScalarProperty Name="FechaMesTres6" ColumnName="FechaMesTres6" />
+          <ScalarProperty Name="FechaMesTres5" ColumnName="FechaMesTres5" />
+          <ScalarProperty Name="FechaMesTres4" ColumnName="FechaMesTres4" />
+          <ScalarProperty Name="FechaMesTres3" ColumnName="FechaMesTres3" />
+          <ScalarProperty Name="FechaMesTres2" ColumnName="FechaMesTres2" />
+          <ScalarProperty Name="FechaMesTres" ColumnName="FechaMesTres" />
+          <ScalarProperty Name="FechaMesDos8" ColumnName="FechaMesDos8" />
+          <ScalarProperty Name="FechaMesDos7" ColumnName="FechaMesDos7" />
+          <ScalarProperty Name="FechaMesDos6" ColumnName="FechaMesDos6" />
+          <ScalarProperty Name="FechaMesDos5" ColumnName="FechaMesDos5" />
+          <ScalarProperty Name="FechaMesDos4" ColumnName="FechaMesDos4" />
+          <ScalarProperty Name="FechaMesDos3" ColumnName="FechaMesDos3" />
+          <ScalarProperty Name="FechaMesDos2" ColumnName="FechaMesDos2" />
+          <ScalarProperty Name="FechaMesDos" ColumnName="FechaMesDos" />
+          <ScalarProperty Name="FechaMesUno8" ColumnName="FechaMesUno8" />
+          <ScalarProperty Name="FechaMesUno7" ColumnName="FechaMesUno7" />
+          <ScalarProperty Name="FechaMesUno6" ColumnName="FechaMesUno6" />
+          <ScalarProperty Name="FechaMesUno5" ColumnName="FechaMesUno5" />
+          <ScalarProperty Name="FechaMesUno4" ColumnName="FechaMesUno4" />
+          <ScalarProperty Name="FechaMesUno3" ColumnName="FechaMesUno3" />
+          <ScalarProperty Name="FechaMesUno2" ColumnName="FechaMesUno2" />
+          <ScalarProperty Name="FechaMesUno" ColumnName="FechaMesUno" />
+          <ScalarProperty Name="TipoMicrociclo16" ColumnName="TipoMicrociclo16" />
+          <ScalarProperty Name="TipoMicrociclo15" ColumnName="TipoMicrociclo15" />
+          <ScalarProperty Name="TipoMicrociclo14" ColumnName="TipoMicrociclo14" />
+          <ScalarProperty Name="TipoMicrociclo13" ColumnName="TipoMicrociclo13" />
+          <ScalarProperty Name="TipoMicrociclo12" ColumnName="TipoMicrociclo12" />
+          <ScalarProperty Name="TipoMicrociclo11" ColumnName="TipoMicrociclo11" />
+          <ScalarProperty Name="TipoMicrociclo10" ColumnName="TipoMicrociclo10" />
+          <ScalarProperty Name="TipoMicrociclo9" ColumnName="TipoMicrociclo9" />
+          <ScalarProperty Name="TipoMicrociclo8" ColumnName="TipoMicrociclo8" />
+          <ScalarProperty Name="TipoMicrociclo7" ColumnName="TipoMicrociclo7" />
+          <ScalarProperty Name="TipoMicrociclo6" ColumnName="TipoMicrociclo6" />
+          <ScalarProperty Name="TipoMicrociclo5" ColumnName="TipoMicrociclo5" />
+          <ScalarProperty Name="TipoMicrociclo4" ColumnName="TipoMicrociclo4" />
+          <ScalarProperty Name="TipoMicrociclo3" ColumnName="TipoMicrociclo3" />
+          <ScalarProperty Name="TipoMicrociclo2" ColumnName="TipoMicrociclo2" />
+          <ScalarProperty Name="TipoMicrociclo1" ColumnName="TipoMicrociclo1" />
+          <ScalarProperty Name="NumeroMicrociclo16" ColumnName="NumeroMicrociclo16" />
+          <ScalarProperty Name="NumeroMicrociclo15" ColumnName="NumeroMicrociclo15" />
+          <ScalarProperty Name="NumeroMicrociclo14" ColumnName="NumeroMicrociclo14" />
+          <ScalarProperty Name="NumeroMicrociclo13" ColumnName="NumeroMicrociclo13" />
+          <ScalarProperty Name="NumeroMicrociclo12" ColumnName="NumeroMicrociclo12" />
+          <ScalarProperty Name="NumeroMicrociclo11" ColumnName="NumeroMicrociclo11" />
+          <ScalarProperty Name="NumeroMicrociclo10" ColumnName="NumeroMicrociclo10" />
+          <ScalarProperty Name="NumeroMicrociclo9" ColumnName="NumeroMicrociclo9" />
+          <ScalarProperty Name="NumeroMicrociclo8" ColumnName="NumeroMicrociclo8" />
+          <ScalarProperty Name="NumeroMicrociclo7" ColumnName="NumeroMicrociclo7" />
+          <ScalarProperty Name="NumeroMicrociclo6" ColumnName="NumeroMicrociclo6" />
+          <ScalarProperty Name="NumeroMicrociclo5" ColumnName="NumeroMicrociclo5" />
+          <ScalarProperty Name="NumeroMicrociclo4" ColumnName="NumeroMicrociclo4" />
+          <ScalarProperty Name="NumeroMicrociclo3" ColumnName="NumeroMicrociclo3" />
+          <ScalarProperty Name="NumeroMicrociclo2" ColumnName="NumeroMicrociclo2" />
+          <ScalarProperty Name="NumeroMicrociclo1" ColumnName="NumeroMicrociclo1" />
+          <ScalarProperty Name="Mesociclos4" ColumnName="Mesociclos4" />
+          <ScalarProperty Name="Mesociclos3" ColumnName="Mesociclos3" />
+          <ScalarProperty Name="Mesociclos2" ColumnName="Mesociclos2" />
+          <ScalarProperty Name="Mesociclos1" ColumnName="Mesociclos1" />
+          <ScalarProperty Name="mes4" ColumnName="mes4" />
+          <ScalarProperty Name="Mes3" ColumnName="Mes3" />
+          <ScalarProperty Name="Mes2" ColumnName="Mes2" />
+          <ScalarProperty Name="Mes1" ColumnName="Mes1" />
+          <ScalarProperty Name="NombreMacrociclo" ColumnName="NombreMacrociclo" />
+          <ScalarProperty Name="Deporte" ColumnName="Deporte" />
+          <ScalarProperty Name="IdPlanGrafico" ColumnName="IdPlanGrafico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlanGraficoDatos">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.PlanGraficoDatos">
+        <MappingFragment StoreEntitySet="PlanGraficoDatos">
+          <ScalarProperty Name="IdPlanGrafico" ColumnName="IdPlanGrafico" />
+          <ScalarProperty Name="Ideal16" ColumnName="Ideal16" />
+          <ScalarProperty Name="Ideal15" ColumnName="Ideal15" />
+          <ScalarProperty Name="Ideal14" ColumnName="Ideal14" />
+          <ScalarProperty Name="Ideal13" ColumnName="Ideal13" />
+          <ScalarProperty Name="Ideal12" ColumnName="Ideal12" />
+          <ScalarProperty Name="Ideal11" ColumnName="Ideal11" />
+          <ScalarProperty Name="Ideal10" ColumnName="Ideal10" />
+          <ScalarProperty Name="Ideal9" ColumnName="Ideal9" />
+          <ScalarProperty Name="Ideal8" ColumnName="Ideal8" />
+          <ScalarProperty Name="Ideal7" ColumnName="Ideal7" />
+          <ScalarProperty Name="Ideal6" ColumnName="Ideal6" />
+          <ScalarProperty Name="Ideal5" ColumnName="Ideal5" />
+          <ScalarProperty Name="Ideal4" ColumnName="Ideal4" />
+          <ScalarProperty Name="Ideal3" ColumnName="Ideal3" />
+          <ScalarProperty Name="Ideal2" ColumnName="Ideal2" />
+          <ScalarProperty Name="Ideal1" ColumnName="Ideal1" />
+          <ScalarProperty Name="NombreElementoPlangrafico" ColumnName="NombreElementoPlangrafico" />
+          <ScalarProperty Name="NombrePrincipal" ColumnName="NombrePrincipal" />
+          <ScalarProperty Name="IdPlanGraficoDatos" ColumnName="IdPlanGraficoDatos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolDeporte">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.RolDeporte">
+        <MappingFragment StoreEntitySet="RolDeporte">
+          <ScalarProperty Name="NomRol" ColumnName="NomRol" />
+          <ScalarProperty Name="NombreDeporte" ColumnName="NombreDeporte" />
+          <ScalarProperty Name="IdRolDeporte" ColumnName="IdRolDeporte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CuadroMedallero">
+      <EntityTypeMapping TypeName="BIOMEDICOModel.CuadroMedallero">
+        <MappingFragment StoreEntitySet="CuadroMedallero">
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="PruebaMedallero" ColumnName="PruebaMedallero" />
+          <ScalarProperty Name="FechaMedallero" ColumnName="FechaMedallero" />
+          <ScalarProperty Name="EventoMedallero" ColumnName="EventoMedallero" />
+          <ScalarProperty Name="DeportistaMedallero" ColumnName="DeportistaMedallero" />
+          <ScalarProperty Name="CategoriaMedallero" ColumnName="CategoriaMedallero" />
+          <ScalarProperty Name="MedallaBronce" ColumnName="MedallaBronce" />
+          <ScalarProperty Name="MedallaPlata" ColumnName="MedallaPlata" />
+          <ScalarProperty Name="MedallaOro" ColumnName="MedallaOro" />
+          <ScalarProperty Name="DeporteMedallero" ColumnName="DeporteMedallero" />
+          <ScalarProperty Name="IdCuadroMedallero" ColumnName="IdCuadroMedallero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

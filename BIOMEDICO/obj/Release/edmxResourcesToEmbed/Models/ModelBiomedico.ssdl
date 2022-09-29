@@ -1,0 +1,1128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BIOMEDICOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ActividadUnidadEntrenamiento">
+    <Key>
+      <PropertyRef Name="IdActividadUnidadEntrenamiento" />
+    </Key>
+    <Property Name="IdActividadUnidadEntrenamiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AcuerdoObjetivos" Type="varchar(max)" />
+    <Property Name="MediosEntrenamientos" Type="varchar(max)" />
+    <Property Name="DesarrolloEntrenamientos" Type="varchar(max)" />
+    <Property Name="ObjetivosMultiples" Type="varchar(max)" />
+    <Property Name="MaterialAdecuado" Type="varchar(max)" />
+    <Property Name="CompoentesEntrenamientos" Type="varchar(max)" />
+    <Property Name="PlanificaActividadFinal" Type="varchar(max)" />
+    <Property Name="EvaluaCumplimientoUE" Type="varchar(max)" />
+    <Property Name="ObjetivosActividadFinal" Type="varchar(max)" />
+    <Property Name="MotivacionObjetivos" Type="varchar(max)" />
+    <Property Name="DisciplinaAdecuada" Type="varchar(max)" />
+    <Property Name="ControlGrupo" Type="varchar(max)" />
+    <Property Name="RespetoEntrenamiento" Type="varchar(max)" />
+    <Property Name="RecomendacionesGenerales" Type="varchar(max)" />
+    <Property Name="ObservacionesEntrenadores" Type="varchar(max)" />
+    <Property Name="FirmaEntrenador" Type="varchar(max)" />
+    <Property Name="FirmaMetodologo" Type="varchar(max)" />
+    <Property Name="IdUnidadEntrenamiento" Type="int" />
+  </EntityType>
+  <EntityType Name="AnalisisMacrociclo">
+    <Key>
+      <PropertyRef Name="IdMacroAnterior" />
+    </Key>
+    <Property Name="IdMacroAnterior" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumIdentificacionDeportist" Type="bigint" />
+    <Property Name="NombreDeportist" Type="varchar(max)" />
+    <Property Name="Entrenador" Type="varchar(max)" />
+    <Property Name="Deporte" Type="varchar(max)" />
+    <Property Name="Agrupacion" Type="varchar(max)" />
+    <Property Name="Categoria" Type="varchar(max)" />
+    <Property Name="Modalidad" Type="varchar(max)" />
+    <Property Name="Genero" Type="varchar(max)" />
+    <Property Name="Año" Type="varchar(max)" />
+    <Property Name="Mes" Type="varchar(max)" />
+    <Property Name="Metodologo" Type="varchar(max)" />
+    <Property Name="FechaEvaluacion" Type="datetime" />
+    <Property Name="ObjetivoGeneral" Type="varchar(max)" />
+    <Property Name="ObjetivosEspecificos" Type="varchar(max)" />
+    <Property Name="PreparacionFisica" Type="varchar(max)" />
+    <Property Name="PreparacionTecnica" Type="varchar(max)" />
+    <Property Name="PreparacionTactica" Type="varchar(max)" />
+    <Property Name="ResultadosCompetencia" Type="varchar(max)" />
+    <Property Name="PronosticoMacrociclo" Type="varchar(max)" />
+    <Property Name="UsuarioRegistro" Type="varchar(max)" />
+    <Property Name="FechaRegistro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AsesoriasEntrenadores">
+    <Key>
+      <PropertyRef Name="IdAsesoriasEntrenadores" />
+    </Key>
+    <Property Name="IdAsesoriasEntrenadores" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumIdentificacionDeportistas" Type="bigint" />
+    <Property Name="Deportista" Type="varchar(max)" />
+    <Property Name="Entrenador" Type="varchar(max)" />
+    <Property Name="Metodologo" Type="varchar(max)" />
+    <Property Name="Deporte" Type="varchar(max)" />
+    <Property Name="Agrupacion" Type="varchar(max)" />
+    <Property Name="Escenarios" Type="varchar(max)" />
+    <Property Name="FechaAsesorias" Type="datetime" />
+    <Property Name="TemasAsesorias" Type="varchar(max)" />
+    <Property Name="DesarrolloAsesorias" Type="varchar(max)" />
+    <Property Name="ConclusionesAsesorias" Type="varchar(max)" />
+    <Property Name="CompromisosAsesorias" Type="varchar(max)" />
+    <Property Name="Asistentes" Type="varchar(max)" />
+    <Property Name="FirmaEntrenador" Type="varchar(max)" />
+    <Property Name="FirmaMetodologo" Type="varchar(max)" />
+    <Property Name="UsuarioRegistra" Type="varchar(max)" />
+    <Property Name="FechaRegistro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ASignarPermisos">
+    <Key>
+      <PropertyRef Name="IdPermiso" />
+    </Key>
+    <Property Name="IdPermiso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodPermiso" Type="int" Nullable="false" />
+    <Property Name="CodRol" Type="int" />
+  </EntityType>
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="IdCategoria" />
+    </Key>
+    <Property Name="IdCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Deporte" Type="varchar(max)" />
+    <Property Name="NomCategoria" Type="varchar(max)" />
+    <Property Name="DescripcionCategoria" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="CronogramaActividades">
+    <Key>
+      <PropertyRef Name="IdCronogramaActividadesSemanales" />
+    </Key>
+    <Property Name="IdCronogramaActividadesSemanales" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EntrenadorActividadesSemanales" Type="varchar(max)" />
+    <Property Name="DeporteActividadesSemanales" Type="varchar(max)" />
+    <Property Name="SemanadelActividadesSemanales" Type="datetime" />
+    <Property Name="SemanaHastaActividadesSemanales" Type="datetime" />
+    <Property Name="ActividadActividadesSemanales" Type="varchar(max)" />
+    <Property Name="HoraActividadesSemanales" Type="time" Precision="7" />
+    <Property Name="LugarActividadesSemanales" Type="varchar(max)" />
+    <Property Name="FechaActividadesSemanales" Type="datetime" />
+    <Property Name="EventoActividadesSemanales" Type="varchar(max)" />
+    <Property Name="VisitaBiomedicoActividadesSemanales" Type="varchar(max)" />
+    <Property Name="FirmaEntrenador" Type="varchar(max)" />
+    <Property Name="Usuarioregistro" Type="varchar(max)" />
+    <Property Name="FechaRegistro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CuadroMedallero">
+    <Key>
+      <PropertyRef Name="IdCuadroMedallero" />
+    </Key>
+    <Property Name="IdCuadroMedallero" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeporteMedallero" Type="varchar(max)" />
+    <Property Name="MedallaOro" Type="varchar(max)" />
+    <Property Name="MedallaPlata" Type="varchar(max)" />
+    <Property Name="MedallaBronce" Type="varchar(max)" />
+    <Property Name="CategoriaMedallero" Type="varchar(max)" />
+    <Property Name="DeportistaMedallero" Type="varchar(max)" />
+    <Property Name="EventoMedallero" Type="varchar(max)" />
+    <Property Name="FechaMedallero" Type="datetime" />
+    <Property Name="PruebaMedallero" Type="varchar(max)" />
+    <Property Name="Marca" Type="varchar(max)" />
+    <Property Name="UsuarioCreacion" Type="varchar(max)" />
+    <Property Name="FechaCreacion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DatosFamiliares">
+    <Key>
+      <PropertyRef Name="IdFamiliares" />
+    </Key>
+    <Property Name="IdFamiliares" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomMadre" Type="varchar(max)" />
+    <Property Name="ApeMadre" Type="varchar(max)" />
+    <Property Name="Direccion" Type="varchar(max)" />
+    <Property Name="Barrio" Type="varchar(max)" />
+    <Property Name="Celular" Type="nchar" MaxLength="30" />
+    <Property Name="Ocupacion" Type="varchar(max)" />
+    <Property Name="NomPadre" Type="varchar(max)" />
+    <Property Name="ApePadre" Type="varchar(max)" />
+    <Property Name="DireccionPadre" Type="varchar(max)" />
+    <Property Name="BarrioPadre" Type="varchar(max)" />
+    <Property Name="CelularPadre" Type="nchar" MaxLength="30" />
+    <Property Name="OcupacionPadre" Type="varchar(max)" />
+    <Property Name="MarcaTorneos" Type="varchar(max)" />
+    <Property Name="LugarTorneos" Type="varchar(max)" />
+    <Property Name="FechaTorneros" Type="datetime" />
+    <Property Name="EventosTorneos" Type="varchar(max)" />
+    <Property Name="EntrenadorActual" Type="varchar(max)" />
+    <Property Name="EmailEntrenador" Type="varchar(max)" />
+    <Property Name="TelefonoEntrenador" Type="varchar(max)" />
+    <Property Name="LugarEntrenamientoEntrenador" Type="varchar(max)" />
+    <Property Name="HorasEntrenamiento" Type="varchar(max)" />
+    <Property Name="DiasEntrenamiento" Type="varchar(max)" />
+    <Property Name="ObservacionesEntrenamiento" Type="varchar(max)" />
+    <Property Name="IdDeportista" Type="int" />
+  </EntityType>
+  <EntityType Name="Deporte">
+    <Key>
+      <PropertyRef Name="IdDeporte" />
+    </Key>
+    <Property Name="IdDeporte" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodDeporte" Type="varchar(max)" />
+    <Property Name="NombreDeporte" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Deportistas">
+    <Key>
+      <PropertyRef Name="IdDeportista" />
+    </Key>
+    <Property Name="IdDeportista" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoIdentificacion" Type="varchar(max)" />
+    <Property Name="NumIdentificacion" Type="bigint" />
+    <Property Name="EstadoDeportista" Type="varchar(max)" />
+    <Property Name="ProgramaDeportista" Type="varchar(max)" />
+    <Property Name="PrimerNombre" Type="varchar(max)" />
+    <Property Name="SegundoNombre" Type="varchar(max)" />
+    <Property Name="PrimerApellido" Type="varchar(max)" />
+    <Property Name="SegundoApellido" Type="varchar(max)" />
+    <Property Name="Imagen" Type="varchar(max)" />
+    <Property Name="Edad" Type="nchar" MaxLength="30" />
+    <Property Name="Genero" Type="varchar(max)" />
+    <Property Name="EpsDeportista" Type="varchar(max)" />
+    <Property Name="GrupoSanguineo" Type="varchar(max)" />
+    <Property Name="CorreoDeportista" Type="varchar(max)" />
+    <Property Name="Deporte" Type="varchar(max)" />
+    <Property Name="FechaNacimiento" Type="datetime" />
+    <Property Name="PaisNacimiento" Type="varchar(max)" />
+    <Property Name="DepartamentoNacimiento" Type="varchar(max)" />
+    <Property Name="MunicipioNacimiento" Type="varchar(max)" />
+    <Property Name="TelefonoFijo" Type="nchar" MaxLength="30" />
+    <Property Name="TelefonoMovil" Type="nchar" MaxLength="30" />
+    <Property Name="Pasaporte" Type="varchar(max)" />
+    <Property Name="MunicipioResidencia" Type="varchar(max)" />
+    <Property Name="BarrioResidencia" Type="varchar(max)" />
+    <Property Name="DireccionResidencia" Type="varchar(max)" />
+    <Property Name="EstadoCivil" Type="varchar" MaxLength="50" />
+    <Property Name="UsuarioCreacion" Type="varchar(max)" />
+    <Property Name="FechaCreacion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Elemento">
+    <Key>
+      <PropertyRef Name="IdElemento" />
+    </Key>
+    <Property Name="IdElemento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreElemento" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Entrenadores">
+    <Key>
+      <PropertyRef Name="IdEntrenadores" />
+    </Key>
+    <Property Name="IdEntrenadores" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoIdentificacionEntrenador" Type="varchar(max)" />
+    <Property Name="NumeroIdentificacionEntrenador" Type="bigint" />
+    <Property Name="EstadoEntrenador" Type="varchar(max)" />
+    <Property Name="PrimerNombreEntrenador" Type="varchar(max)" />
+    <Property Name="SegundoNombreEntrenador" Type="varchar(max)" />
+    <Property Name="PrimerApellidoEntrenador" Type="varchar(max)" />
+    <Property Name="Segundoapellidoentrenador" Type="varchar(max)" />
+    <Property Name="GeneroEntrenador" Type="varchar(max)" />
+    <Property Name="GrupoSanguineoEntrenador" Type="varchar(max)" />
+    <Property Name="EpsEntrenador" Type="varchar(max)" />
+    <Property Name="CorreoEntrenador" Type="varchar(max)" />
+    <Property Name="FechaNacimientoEntrenador" Type="datetime" />
+    <Property Name="DeporteEntrenador" Type="varchar(max)" />
+    <Property Name="NivelEstudioEntrenador" Type="varchar(max)" />
+    <Property Name="TelefonoEntrenador" Type="varchar(max)" />
+    <Property Name="DireccionEntrenador" Type="varchar(max)" />
+    <Property Name="BarrioEntrenador" Type="varchar(max)" />
+    <Property Name="EstadoCivilEntrenador" Type="varchar(max)" />
+    <Property Name="EdadEntrenador" Type="varchar(max)" />
+    <Property Name="Imagen" Type="varchar(max)" />
+    <Property Name="UsuarioCreacion" Type="varchar(max)" />
+    <Property Name="FechaCreacion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EstudiosEntrenadores">
+    <Key>
+      <PropertyRef Name="IdEstudiosEntrenador" />
+    </Key>
+    <Property Name="IdEstudiosEntrenador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EstudiosEntrenador" Type="varchar(max)" />
+    <Property Name="CursosEntrenador" Type="varchar(max)" />
+    <Property Name="RecordsEntrenador" Type="varchar(max)" />
+    <Property Name="InvestigacionesEntrenador" Type="varchar(max)" />
+    <Property Name="LibrosEntrenadores" Type="varchar(max)" />
+    <Property Name="ExperienciasEntrenador" Type="varchar(max)" />
+    <Property Name="AñosExperienciaEntrenador" Type="varchar(max)" />
+    <Property Name="ClubDeportivoEntrenador" Type="varchar(max)" />
+    <Property Name="IdEntrenadores" Type="int" />
+  </EntityType>
+  <EntityType Name="EvaluacionEquipoVisitaCompetencia">
+    <Key>
+      <PropertyRef Name="IdEvaluacionEquipo" />
+    </Key>
+    <Property Name="IdEvaluacionEquipo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Disciplinado" Type="varchar(max)" />
+    <Property Name="Combativo" Type="varchar(max)" />
+    <Property Name="Adaptacion" Type="varchar(max)" />
+    <Property Name="Responsabilidad" Type="varchar(max)" />
+    <Property Name="EvaluacionregularEquipo" Type="varchar(max)" />
+    <Property Name="ProblemasDocumentacion" Type="varchar(max)" />
+    <Property Name="PreparacionFisica" Type="varchar(max)" />
+    <Property Name="PreparacionTecnica" Type="varchar(max)" />
+    <Property Name="PreparacionTactica" Type="varchar(max)" />
+    <Property Name="PreparacionMental" Type="varchar(max)" />
+    <Property Name="EvaluacionPreparacion" Type="varchar(max)" />
+    <Property Name="FirmaEntrenador" Type="varchar(max)" />
+    <Property Name="FirmaMetodologo" Type="varchar(max)" />
+    <Property Name="IdVisitaCompetencia" Type="int" />
+  </EntityType>
+  <EntityType Name="EvaluacionVisitaCompetencia">
+    <Key>
+      <PropertyRef Name="IdEvaluacionVisitaCompetencia" />
+    </Key>
+    <Property Name="IdEvaluacionVisitaCompetencia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LugarEntrenamiento" Type="varchar(max)" />
+    <Property Name="AtencionMedica" Type="varchar(max)" />
+    <Property Name="EscenariosDeportivos" Type="varchar(max)" />
+    <Property Name="Uniformidad" Type="varchar(max)" />
+    <Property Name="ComportamientoArbitral" Type="varchar(max)" />
+    <Property Name="TransporteInterno" Type="varchar(max)" />
+    <Property Name="Alimentacion" Type="varchar(max)" />
+    <Property Name="Hospedaje" Type="varchar(max)" />
+    <Property Name="CalificacionRegular" Type="varchar(max)" />
+    <Property Name="hospedajeDelegacion" Type="varchar(max)" />
+    <Property Name="AlimentacionDelegacion" Type="varchar(max)" />
+    <Property Name="EmpresaTransporte" Type="varchar(max)" />
+    <Property Name="DuracionViajeIda" Type="varchar(max)" />
+    <Property Name="DuracionViajeVuelta" Type="varchar(max)" />
+    <Property Name="ViajeIdaComoFue" Type="varchar(max)" />
+    <Property Name="ViajeRegresoComoFue" Type="varchar(max)" />
+    <Property Name="IdVisitaCompetencia" Type="int" />
+  </EntityType>
+  <EntityType Name="GymColiseo">
+    <Key>
+      <PropertyRef Name="IdGymColiseo" />
+    </Key>
+    <Property Name="IdGymColiseo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeporteGymColiseo" Type="varchar(max)" />
+    <Property Name="CategoriaGymColiseo" Type="varchar(max)" />
+    <Property Name="TelefonoGymColiseo" Type="varchar(max)" />
+    <Property Name="EntrenadorGymColiseo" Type="varchar(max)" />
+    <Property Name="HoraInicioGymColiseo" Type="time" Precision="7" />
+    <Property Name="HoraFinalGymColiseo" Type="time" Precision="7" />
+    <Property Name="FechaGymColiseo" Type="datetime" />
+    <Property Name="FirmaEntrenador" Type="varchar(max)" />
+    <Property Name="UsuarioRegistro" Type="varchar(max)" />
+    <Property Name="FechaRegistro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="GymEstadio">
+    <Key>
+      <PropertyRef Name="IdGymEstadio" />
+    </Key>
+    <Property Name="IdGymEstadio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeporteGymEstadio" Type="varchar(max)" />
+    <Property Name="CategoriaGymEstadio" Type="varchar(max)" />
+    <Property Name="TelefonoGymEstadio" Type="varchar(max)" />
+    <Property Name="EntrenadorGymEstadio" Type="varchar(max)" />
+    <Property Name="HoraInicioGymEstadio" Type="time" Precision="7" />
+    <Property Name="HoraFinalGymEstadio" Type="time" Precision="7" />
+    <Property Name="FechaGymEstadio" Type="datetime" />
+    <Property Name="FirmaEntrenador" Type="varchar(max)" />
+    <Property Name="UsuarioRegistro" Type="varchar(max)" />
+    <Property Name="FechaRegistro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="HorarioEntrenadores">
+    <Key>
+      <PropertyRef Name="IdHorarioEntrenadores" />
+    </Key>
+    <Property Name="IdHorarioEntrenadores" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeporteHorarioEntrenadores" Type="varchar(max)" />
+    <Property Name="EscenariosHorarioEntrenadores" Type="varchar(max)" />
+    <Property Name="EntrenadorHorarioEntrenadores" Type="varchar(max)" />
+    <Property Name="TelefonoHorarioEntrenadores" Type="varchar(max)" />
+    <Property Name="HoraInicioHorarioEntrenadores" Type="time" Precision="7" />
+    <Property Name="HoraFinalHorarioEntrenadores" Type="time" Precision="7" />
+    <Property Name="FechaHorEntrenadores" Type="datetime" />
+    <Property Name="FirmaEntrenador" Type="varchar(max)" />
+    <Property Name="UsuarioRegistra" Type="varchar(max)" />
+    <Property Name="FechaRegistro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Mesociclo">
+    <Key>
+      <PropertyRef Name="IdMesociclo" />
+    </Key>
+    <Property Name="IdMesociclo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Deporte" Type="varchar(max)" />
+    <Property Name="Deportista" Type="varchar(max)" />
+    <Property Name="Agrupacion" Type="varchar(max)" />
+    <Property Name="Categoria" Type="varchar(max)" />
+    <Property Name="Mesociclo" Type="varchar(max)" />
+    <Property Name="TipoMesociclo" Type="varchar(max)" />
+    <Property Name="Microciclo" Type="varchar(max)" />
+    <Property Name="ObjetivosFisicos" Type="varchar(max)" />
+    <Property Name="ObjetivosTacticos" Type="varchar(max)" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="FirmaEntrenador" Type="varchar(max)" />
+    <Property Name="UsuarioRegistra" Type="varchar(max)" />
+    <Property Name="FechaRegistro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MesocicloDatos">
+    <Key>
+      <PropertyRef Name="IdMesocicloDatos" />
+    </Key>
+    <Property Name="IdMesocicloDatos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreElemento" Type="varchar(max)" />
+    <Property Name="Microciclo1" Type="varchar(max)" />
+    <Property Name="Microciclo2" Type="varchar(max)" />
+    <Property Name="Microciclo3" Type="varchar(max)" />
+    <Property Name="Microciclo4" Type="varchar(max)" />
+    <Property Name="Plan1" Type="varchar(max)" />
+    <Property Name="Plan2" Type="varchar(max)" />
+    <Property Name="Plan3" Type="varchar(max)" />
+    <Property Name="Plan4" Type="varchar(max)" />
+    <Property Name="Real1" Type="varchar(max)" />
+    <Property Name="Real2" Type="varchar(max)" />
+    <Property Name="Real3" Type="varchar(max)" />
+    <Property Name="Real4" Type="varchar(max)" />
+    <Property Name="Dif1" Type="varchar(max)" />
+    <Property Name="Dif2" Type="varchar(max)" />
+    <Property Name="Dif3" Type="varchar(max)" />
+    <Property Name="Dif4" Type="varchar(max)" />
+    <Property Name="Porcentaje1" Type="varchar(max)" />
+    <Property Name="Porcentaje2" Type="varchar(max)" />
+    <Property Name="Porcentaje3" Type="varchar(max)" />
+    <Property Name="Porcentaje4" Type="varchar(max)" />
+    <Property Name="resultadoPLaneado" Type="varchar(max)" />
+    <Property Name="resultadoRealizado" Type="varchar(max)" />
+    <Property Name="IdMesociclo" Type="int" />
+  </EntityType>
+  <EntityType Name="Microciclo">
+    <Key>
+      <PropertyRef Name="IdMicrociclo" />
+    </Key>
+    <Property Name="IdMicrociclo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreMicrociclo" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="ObjetivosMacrociclo">
+    <Key>
+      <PropertyRef Name="IdObjetivosMacrociclo" />
+    </Key>
+    <Property Name="IdObjetivosMacrociclo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ObjetivosHumanos" Type="varchar(max)" />
+    <Property Name="ObjetivosFisicos" Type="varchar(max)" />
+    <Property Name="ObjetivosFinancieros" Type="varchar(max)" />
+    <Property Name="ObjetivosDeportivos" Type="varchar(max)" />
+    <Property Name="MedicinaDelDeporte" Type="varchar(max)" />
+    <Property Name="MesocicloHumano" Type="varchar(max)" />
+    <Property Name="MesocicloFisico" Type="varchar(max)" />
+    <Property Name="MesocicloFinanciero" Type="varchar(max)" />
+    <Property Name="MesocicloDeportivo" Type="varchar(max)" />
+    <Property Name="MesocicloDeporte" Type="varchar(max)" />
+    <Property Name="PropuestoHumano" Type="varchar(max)" />
+    <Property Name="PropuestoFisico" Type="varchar(max)" />
+    <Property Name="PropuestoFinanciero" Type="varchar(max)" />
+    <Property Name="PropuestoDeportivo" Type="varchar(max)" />
+    <Property Name="PropuestoDeporte" Type="varchar(max)" />
+    <Property Name="DistribucionMacrociclo" Type="varchar(max)" />
+    <Property Name="PreparacionMacrociclo" Type="varchar(max)" />
+    <Property Name="CompetenciaMacrociclo" Type="varchar(max)" />
+    <Property Name="DiasTrabajoMacrociclo" Type="varchar(max)" />
+    <Property Name="OtrosDiasMacrociclo" Type="varchar(max)" />
+    <Property Name="AcumulacionMacrociclo" Type="varchar(max)" />
+    <Property Name="TransformacionMacrocilo" Type="varchar(max)" />
+    <Property Name="RealizacionMacrociclo" Type="varchar(max)" />
+    <Property Name="IdMacroAnterior" Type="int" />
+  </EntityType>
+  <EntityType Name="Ocupacion">
+    <Key>
+      <PropertyRef Name="IdOcupacion" />
+    </Key>
+    <Property Name="IdOcupacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NivelEducativo" Type="varchar(max)" />
+    <Property Name="OperacionesDepor" Type="varchar(max)" />
+    <Property Name="CualOperacion" Type="varchar(max)" />
+    <Property Name="FracturasDepor" Type="varchar(max)" />
+    <Property Name="CualFractura" Type="varchar(max)" />
+    <Property Name="LesionesDepor" Type="varchar(max)" />
+    <Property Name="CualLesion" Type="varchar(max)" />
+    <Property Name="AlergiasDepor" Type="varchar(max)" />
+    <Property Name="CualAlergia" Type="varchar(max)" />
+    <Property Name="EspecialidadCombate" Type="varchar(max)" />
+    <Property Name="AñosActivos" Type="varchar(max)" />
+    <Property Name="ClubDeportivo" Type="varchar(max)" />
+    <Property Name="Peso" Type="float" />
+    <Property Name="Estatura" Type="float" />
+    <Property Name="TallaCamisa" Type="varchar(max)" />
+    <Property Name="TallaPantalon" Type="int" />
+    <Property Name="TallaCalzado" Type="int" />
+    <Property Name="TallaSudadera" Type="varchar(max)" />
+    <Property Name="NumeroHijos" Type="int" />
+    <Property Name="IdDeportista" Type="int" />
+  </EntityType>
+  <EntityType Name="Permisos">
+    <Key>
+      <PropertyRef Name="IdPermiso" />
+    </Key>
+    <Property Name="IdPermiso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodPermiso" Type="int" />
+    <Property Name="NomPermiso" Type="varchar(max)" />
+    <Property Name="EtiquetaPermiso" Type="varchar(max)" />
+    <Property Name="Url" Type="varchar(max)" />
+    <Property Name="DesPermiso" Type="varchar(max)" />
+    <Property Name="TipoPermiso" Type="int" />
+    <Property Name="PadrePermiso" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PlanAnalisisMacro">
+    <Key>
+      <PropertyRef Name="IdPlanMacrociclo" />
+    </Key>
+    <Property Name="IdPlanMacrociclo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompetenciaPrincipal" Type="varchar(max)" />
+    <Property Name="TipoPlanificacion" Type="varchar(max)" />
+    <Property Name="NumMacrociclo" Type="nchar" MaxLength="10" />
+    <Property Name="FechaInicioMacro" Type="datetime" />
+    <Property Name="FechaFinMacro" Type="datetime" />
+    <Property Name="SedeCompetencia" Type="varchar(max)" />
+    <Property Name="EscenarioMacro" Type="varchar(max)" />
+    <Property Name="CondicionesClimaticas" Type="varchar(max)" />
+    <Property Name="ObjetivosNuevaCompetencia" Type="varchar(max)" />
+    <Property Name="ObjetivosEspecificosNuevaCompetencia" Type="varchar(max)" />
+    <Property Name="PronosticoCompetencia" Type="varchar(max)" />
+    <Property Name="TareasMesociclos" Type="varchar(max)" />
+    <Property Name="PeriodoPreparatorio" Type="varchar(max)" />
+    <Property Name="MesosicloGeneral" Type="varchar(max)" />
+    <Property Name="MesosicloEspecial" Type="varchar(max)" />
+    <Property Name="MesosicloCompeticion" Type="varchar(max)" />
+    <Property Name="TareaMesosicloGeneral" Type="varchar(max)" />
+    <Property Name="TareaMesosicloEspecial" Type="varchar(max)" />
+    <Property Name="TareaMesosicloCompeticion" Type="varchar(max)" />
+    <Property Name="Capacidades01" Type="varchar(max)" />
+    <Property Name="Capacidades02" Type="varchar(max)" />
+    <Property Name="Capacidades03" Type="varchar(max)" />
+    <Property Name="Capacidades04" Type="varchar(max)" />
+    <Property Name="Capacidades05" Type="varchar(max)" />
+    <Property Name="Capacidades06" Type="varchar(max)" />
+    <Property Name="Capacidades07" Type="varchar(max)" />
+    <Property Name="Capacidades08" Type="varchar(max)" />
+    <Property Name="Capacidades09" Type="varchar(max)" />
+    <Property Name="Capacidades10" Type="varchar(max)" />
+    <Property Name="Metodos01" Type="varchar(max)" />
+    <Property Name="Metodos02" Type="varchar(max)" />
+    <Property Name="Metodos03" Type="varchar(max)" />
+    <Property Name="Metodos04" Type="varchar(max)" />
+    <Property Name="Metodos05" Type="varchar(max)" />
+    <Property Name="Metodos06" Type="varchar(max)" />
+    <Property Name="Metodos07" Type="varchar(max)" />
+    <Property Name="Metodos08" Type="varchar(max)" />
+    <Property Name="Metodos09" Type="varchar(max)" />
+    <Property Name="Metodos10" Type="varchar(max)" />
+    <Property Name="Medios01" Type="varchar(max)" />
+    <Property Name="Medios02" Type="varchar(max)" />
+    <Property Name="Medios03" Type="varchar(max)" />
+    <Property Name="Medios04" Type="varchar(max)" />
+    <Property Name="Medios05" Type="varchar(max)" />
+    <Property Name="Medios06" Type="varchar(max)" />
+    <Property Name="Medios07" Type="varchar(max)" />
+    <Property Name="Medios08" Type="varchar(max)" />
+    <Property Name="Medios09" Type="varchar(max)" />
+    <Property Name="Medios10" Type="varchar(max)" />
+    <Property Name="RecursosHumanos" Type="varchar(max)" />
+    <Property Name="RecursosFisicos" Type="varchar(max)" />
+    <Property Name="Recursosfinancieros" Type="varchar(max)" />
+    <Property Name="RecursoDeportivo" Type="varchar(max)" />
+    <Property Name="DisponibleHumanos" Type="varchar(max)" />
+    <Property Name="DisponibleFisicos" Type="varchar(max)" />
+    <Property Name="DisponibleFinanciero" Type="varchar(max)" />
+    <Property Name="DisponibleDeportivo" Type="varchar(max)" />
+    <Property Name="IdMacroAnterior" Type="int" />
+  </EntityType>
+  <EntityType Name="PlanEntrenamientoMensual">
+    <Key>
+      <PropertyRef Name="IdPlanEntrenamientoMensual" />
+    </Key>
+    <Property Name="IdPlanEntrenamientoMensual" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumIdentificacionDeportista" Type="bigint" />
+    <Property Name="NombreDeportista" Type="varchar(max)" />
+    <Property Name="Entrenador" Type="varchar(max)" />
+    <Property Name="Deporte" Type="varchar(max)" />
+    <Property Name="Agrupacion" Type="varchar(max)" />
+    <Property Name="Categoria" Type="varchar(max)" />
+    <Property Name="Modalidad" Type="varchar(max)" />
+    <Property Name="Mes" Type="varchar(max)" />
+    <Property Name="Año" Type="varchar(max)" />
+    <Property Name="Metodologo" Type="varchar(max)" />
+    <Property Name="FechaEntregaActa" Type="varchar(max)" />
+    <Property Name="Preparacionfisica" Type="varchar(max)" />
+    <Property Name="PreparacionTecnica" Type="varchar(max)" />
+    <Property Name="PreparacionTactica" Type="varchar(max)" />
+    <Property Name="ObjetivosParciales" Type="varchar(max)" />
+    <Property Name="FirmaEntrenador" Type="varchar(max)" />
+    <Property Name="FirmaMetodologo" Type="varchar(max)" />
+    <Property Name="UsuarioRegistra" Type="varchar(max)" />
+    <Property Name="FechaRegistra" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PlanGrafico">
+    <Key>
+      <PropertyRef Name="IdPlanGrafico" />
+    </Key>
+    <Property Name="IdPlanGrafico" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Deporte" Type="varchar(max)" />
+    <Property Name="NombreMacrociclo" Type="varchar(max)" />
+    <Property Name="Mes1" Type="varchar(max)" />
+    <Property Name="Mes2" Type="varchar(max)" />
+    <Property Name="Mes3" Type="varchar(max)" />
+    <Property Name="mes4" Type="varchar(max)" />
+    <Property Name="Mesociclos1" Type="varchar(max)" />
+    <Property Name="Mesociclos2" Type="varchar(max)" />
+    <Property Name="Mesociclos3" Type="varchar(max)" />
+    <Property Name="Mesociclos4" Type="varchar(max)" />
+    <Property Name="NumeroMicrociclo1" Type="varchar(max)" />
+    <Property Name="NumeroMicrociclo2" Type="varchar(max)" />
+    <Property Name="NumeroMicrociclo3" Type="varchar(max)" />
+    <Property Name="NumeroMicrociclo4" Type="varchar(max)" />
+    <Property Name="NumeroMicrociclo5" Type="varchar(max)" />
+    <Property Name="NumeroMicrociclo6" Type="varchar(max)" />
+    <Property Name="NumeroMicrociclo7" Type="varchar(max)" />
+    <Property Name="NumeroMicrociclo8" Type="varchar(max)" />
+    <Property Name="NumeroMicrociclo9" Type="varchar(max)" />
+    <Property Name="NumeroMicrociclo10" Type="varchar(max)" />
+    <Property Name="NumeroMicrociclo11" Type="varchar(max)" />
+    <Property Name="NumeroMicrociclo12" Type="varchar(max)" />
+    <Property Name="NumeroMicrociclo13" Type="varchar(max)" />
+    <Property Name="NumeroMicrociclo14" Type="varchar(max)" />
+    <Property Name="NumeroMicrociclo15" Type="varchar(max)" />
+    <Property Name="NumeroMicrociclo16" Type="varchar(max)" />
+    <Property Name="TipoMicrociclo1" Type="varchar(max)" />
+    <Property Name="TipoMicrociclo2" Type="varchar(max)" />
+    <Property Name="TipoMicrociclo3" Type="varchar(max)" />
+    <Property Name="TipoMicrociclo4" Type="varchar(max)" />
+    <Property Name="TipoMicrociclo5" Type="varchar(max)" />
+    <Property Name="TipoMicrociclo6" Type="varchar(max)" />
+    <Property Name="TipoMicrociclo7" Type="varchar(max)" />
+    <Property Name="TipoMicrociclo8" Type="varchar(max)" />
+    <Property Name="TipoMicrociclo9" Type="varchar(max)" />
+    <Property Name="TipoMicrociclo10" Type="varchar(max)" />
+    <Property Name="TipoMicrociclo11" Type="varchar(max)" />
+    <Property Name="TipoMicrociclo12" Type="varchar(max)" />
+    <Property Name="TipoMicrociclo13" Type="varchar(max)" />
+    <Property Name="TipoMicrociclo14" Type="varchar(max)" />
+    <Property Name="TipoMicrociclo15" Type="varchar(max)" />
+    <Property Name="TipoMicrociclo16" Type="varchar(max)" />
+    <Property Name="FechaMesUno" Type="varchar(max)" />
+    <Property Name="FechaMesUno2" Type="varchar(max)" />
+    <Property Name="FechaMesUno3" Type="varchar(max)" />
+    <Property Name="FechaMesUno4" Type="varchar(max)" />
+    <Property Name="FechaMesUno5" Type="varchar(max)" />
+    <Property Name="FechaMesUno6" Type="varchar(max)" />
+    <Property Name="FechaMesUno7" Type="varchar(max)" />
+    <Property Name="FechaMesUno8" Type="varchar(max)" />
+    <Property Name="FechaMesDos" Type="varchar(max)" />
+    <Property Name="FechaMesDos2" Type="varchar(max)" />
+    <Property Name="FechaMesDos3" Type="varchar(max)" />
+    <Property Name="FechaMesDos4" Type="varchar(max)" />
+    <Property Name="FechaMesDos5" Type="varchar(max)" />
+    <Property Name="FechaMesDos6" Type="varchar(max)" />
+    <Property Name="FechaMesDos7" Type="varchar(max)" />
+    <Property Name="FechaMesDos8" Type="varchar(max)" />
+    <Property Name="FechaMesTres" Type="varchar(max)" />
+    <Property Name="FechaMesTres2" Type="varchar(max)" />
+    <Property Name="FechaMesTres3" Type="varchar(max)" />
+    <Property Name="FechaMesTres4" Type="varchar(max)" />
+    <Property Name="FechaMesTres5" Type="varchar(max)" />
+    <Property Name="FechaMesTres6" Type="varchar(max)" />
+    <Property Name="FechaMesTres7" Type="varchar(max)" />
+    <Property Name="FechaMesTres8" Type="varchar(max)" />
+    <Property Name="FechaMesCuatro" Type="varchar(max)" />
+    <Property Name="FechaMesCuatro2" Type="varchar(max)" />
+    <Property Name="FechaMesCuatro3" Type="varchar(max)" />
+    <Property Name="FechaMesCuatro4" Type="varchar(max)" />
+    <Property Name="FechaMesCuatro5" Type="varchar(max)" />
+    <Property Name="FechaMesCuatro6" Type="varchar(max)" />
+    <Property Name="FechaMesCuatro7" Type="varchar(max)" />
+    <Property Name="FechaMesCuatro8" Type="varchar(max)" />
+    <Property Name="NumeroSesiones" Type="varchar(max)" />
+    <Property Name="NumeroSesiones2" Type="varchar(max)" />
+    <Property Name="NumeroSesiones3" Type="varchar(max)" />
+    <Property Name="NumeroSesiones4" Type="varchar(max)" />
+    <Property Name="NumeroSesiones5" Type="varchar(max)" />
+    <Property Name="NumeroSesiones6" Type="varchar(max)" />
+    <Property Name="NumeroSesiones7" Type="varchar(max)" />
+    <Property Name="NumeroSesiones8" Type="varchar(max)" />
+    <Property Name="NumeroSesiones9" Type="varchar(max)" />
+    <Property Name="NumeroSesiones10" Type="varchar(max)" />
+    <Property Name="NumeroSesiones11" Type="varchar(max)" />
+    <Property Name="NumeroSesiones12" Type="varchar(max)" />
+    <Property Name="NumeroSesiones13" Type="varchar(max)" />
+    <Property Name="NumeroSesiones14" Type="varchar(max)" />
+    <Property Name="NumeroSesiones15" Type="varchar(max)" />
+    <Property Name="NumeroSesiones16" Type="varchar(max)" />
+    <Property Name="FirmaEntrenador" Type="varchar(max)" />
+    <Property Name="FirmaMetodologo" Type="varchar(max)" />
+    <Property Name="UsuarioRegistra" Type="varchar(max)" />
+    <Property Name="FechaRegistro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PlanGraficoDatos">
+    <Key>
+      <PropertyRef Name="IdPlanGraficoDatos" />
+    </Key>
+    <Property Name="IdPlanGraficoDatos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombrePrincipal" Type="varchar(max)" />
+    <Property Name="NombreElementoPlangrafico" Type="varchar(max)" />
+    <Property Name="Ideal1" Type="varchar(max)" />
+    <Property Name="Ideal2" Type="varchar(max)" />
+    <Property Name="Ideal3" Type="varchar(max)" />
+    <Property Name="Ideal4" Type="varchar(max)" />
+    <Property Name="Ideal5" Type="varchar(max)" />
+    <Property Name="Ideal6" Type="varchar(max)" />
+    <Property Name="Ideal7" Type="varchar(max)" />
+    <Property Name="Ideal8" Type="varchar(max)" />
+    <Property Name="Ideal9" Type="varchar(max)" />
+    <Property Name="Ideal10" Type="varchar(max)" />
+    <Property Name="Ideal11" Type="varchar(max)" />
+    <Property Name="Ideal12" Type="varchar(max)" />
+    <Property Name="Ideal13" Type="varchar(max)" />
+    <Property Name="Ideal14" Type="varchar(max)" />
+    <Property Name="Ideal15" Type="varchar(max)" />
+    <Property Name="Ideal16" Type="varchar(max)" />
+    <Property Name="IdPlanGrafico" Type="int" />
+  </EntityType>
+  <EntityType Name="PlanSemanalDias">
+    <Key>
+      <PropertyRef Name="IdPlanSemanalDias" />
+    </Key>
+    <Property Name="IdPlanSemanalDias" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ElementoSemanalDias" Type="varchar(max)" />
+    <Property Name="LunesSemanalDias" Type="varchar(max)" />
+    <Property Name="MartesSemanalDias" Type="varchar(max)" />
+    <Property Name="MiercolesSemanalDias" Type="varchar(max)" />
+    <Property Name="JuevesSemanalDias" Type="varchar(max)" />
+    <Property Name="ViernesSemanalDias" Type="varchar(max)" />
+    <Property Name="SabadoSemanalDias" Type="varchar(max)" />
+    <Property Name="DomingoSemanalDias" Type="varchar(max)" />
+    <Property Name="IdPlanSemanal" Type="int" />
+  </EntityType>
+  <EntityType Name="PlanSemanalMicrociclo">
+    <Key>
+      <PropertyRef Name="IdPlanSemanal" />
+    </Key>
+    <Property Name="IdPlanSemanal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeportePlan" Type="varchar(max)" />
+    <Property Name="Deportista" Type="varchar(max)" />
+    <Property Name="EntrenadorPlan" Type="varchar(max)" />
+    <Property Name="Agrupacion" Type="varchar(max)" />
+    <Property Name="Categoria" Type="varchar(max)" />
+    <Property Name="MicroCicloNum" Type="varchar(max)" />
+    <Property Name="TipoMicroCiclo" Type="varchar(max)" />
+    <Property Name="MesoCiclo" Type="varchar(max)" />
+    <Property Name="TipoMesociclo" Type="varchar(max)" />
+    <Property Name="ObjetivosFisicos" Type="varchar(max)" />
+    <Property Name="ObjetivosTecnicos" Type="varchar(max)" />
+    <Property Name="ElementosMicrociclo" Type="varchar(max)" />
+    <Property Name="FechaMicrociclo" Type="datetime" />
+    <Property Name="HoraInicioPlan" Type="time" Precision="7" />
+    <Property Name="HoraFinalPlan" Type="time" Precision="7" />
+    <Property Name="UsuarioRegistro" Type="varchar(max)" />
+    <Property Name="FechaRegistro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="CodRol" />
+    </Key>
+    <Property Name="CodRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomRol" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="RolDeporte">
+    <Key>
+      <PropertyRef Name="IdRolDeporte" />
+    </Key>
+    <Property Name="IdRolDeporte" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreDeporte" Type="varchar(max)" />
+    <Property Name="NomRol" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="TipoPermiso">
+    <Key>
+      <PropertyRef Name="CodPermiso" />
+    </Key>
+    <Property Name="CodPermiso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DescPermiso" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UnidadEntrenamiento">
+    <Key>
+      <PropertyRef Name="IdUnidadEntrenamiento" />
+    </Key>
+    <Property Name="IdUnidadEntrenamiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreEntrenador" Type="varchar(max)" />
+    <Property Name="Deporte" Type="varchar(max)" />
+    <Property Name="Agrupacion" Type="varchar(max)" />
+    <Property Name="Categoria" Type="varchar(max)" />
+    <Property Name="Modalidad" Type="varchar(max)" />
+    <Property Name="FechaSesion" Type="datetime" />
+    <Property Name="HoraInicio" Type="varchar(max)" />
+    <Property Name="HoraFinal" Type="varchar(max)" />
+    <Property Name="ObjetivosSesion" Type="varchar(max)" />
+    <Property Name="NumMesociclo" Type="varchar(max)" />
+    <Property Name="TipoMicrociclo" Type="varchar(max)" />
+    <Property Name="MetodologoEvaluador" Type="varchar(max)" />
+    <Property Name="Sesionentrenamiento" Type="varchar(max)" />
+    <Property Name="UnidadEntrenamiento" Type="varchar(max)" />
+    <Property Name="ObjetivosEntrenamiento" Type="varchar(max)" />
+    <Property Name="PlanificaCalentamiento" Type="varchar(max)" />
+    <Property Name="CalentamientoGeneral" Type="varchar(max)" />
+    <Property Name="CalentamientoEspecifico" Type="varchar(max)" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioCreacion" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="UnidadMesociclo">
+    <Key>
+      <PropertyRef Name="IdUnidadMesociclo" />
+    </Key>
+    <Property Name="IdUnidadMesociclo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreUnidadMesociclo" Type="varchar(max)" />
+    <Property Name="DeportistUnidadMesociclo" Type="varchar(max)" />
+    <Property Name="AgrupacionUnidadMesociclo" Type="varchar(max)" />
+    <Property Name="CategoriaUnidadMesociclo" Type="varchar(max)" />
+    <Property Name="Mesociclo" Type="varchar(max)" />
+    <Property Name="TipoMesociclo" Type="varchar(max)" />
+    <Property Name="Miclociclo" Type="varchar(max)" />
+    <Property Name="SesionesEntrenamientos" Type="varchar(max)" />
+    <Property Name="Duracion" Type="varchar(max)" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="Hora" Type="time" Precision="7" />
+    <Property Name="Objetivos" Type="varchar(max)" />
+    <Property Name="CapacidadInicial" Type="varchar(max)" />
+    <Property Name="CapacidadControl" Type="varchar(max)" />
+    <Property Name="CapacidadFinal" Type="varchar(max)" />
+    <Property Name="ActividadInicial" Type="varchar(max)" />
+    <Property Name="ActividadControl" Type="varchar(max)" />
+    <Property Name="ActividadFinal" Type="varchar(max)" />
+    <Property Name="MetodoInicial" Type="varchar(max)" />
+    <Property Name="MetodoControl" Type="varchar(max)" />
+    <Property Name="Metodofinal" Type="varchar(max)" />
+    <Property Name="DosificacionInicial" Type="varchar(max)" />
+    <Property Name="DosificacionControl" Type="varchar(max)" />
+    <Property Name="DosificacionFinal" Type="varchar(max)" />
+    <Property Name="FirmaEntrenador" Type="varchar(max)" />
+    <Property Name="Usuarioregistro" Type="varchar(max)" />
+    <Property Name="FechaRegistro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CedUsuario" Type="nchar" MaxLength="20" />
+    <Property Name="NomUsuario" Type="varchar(max)" />
+    <Property Name="ApeUsuario" Type="varchar(max)" />
+    <Property Name="Telefono" Type="nchar" MaxLength="10" />
+    <Property Name="Correo" Type="varchar(max)" />
+    <Property Name="Password" Type="varchar(max)" />
+    <Property Name="CodRol" Type="int" />
+  </EntityType>
+  <EntityType Name="VisitaCompetencias">
+    <Key>
+      <PropertyRef Name="IdVisitaCompetencia" />
+    </Key>
+    <Property Name="IdVisitaCompetencia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TorneoVisitaCompetencia" Type="varchar(max)" />
+    <Property Name="FechaInicioEvento" Type="datetime" />
+    <Property Name="FechaFinalEvento" Type="datetime" />
+    <Property Name="FechaSalidaEvento" Type="datetime" />
+    <Property Name="FechaRegresoEvento" Type="datetime" />
+    <Property Name="EquipoDeportista" Type="varchar(max)" />
+    <Property Name="DeporteVisitaCompetencia" Type="varchar(max)" />
+    <Property Name="CategoriaVisitaCompetencia" Type="varchar(max)" />
+    <Property Name="AgrupacionVisitaCompetencia" Type="varchar(max)" />
+    <Property Name="EntrenadorVisitaCompetencia" Type="varchar(max)" />
+    <Property Name="NumeroEquiposVisitaCompetencia" Type="varchar(max)" />
+    <Property Name="AsistentesEventoVisitaCompetencia" Type="varchar(max)" />
+    <Property Name="TecnicosEventoVisitaCompetencia" Type="varchar(max)" />
+    <Property Name="SistemaCompetenciaVisitaCompetencia" Type="varchar(max)" />
+    <Property Name="CombatesVisitaCompetencia" Type="varchar(max)" />
+    <Property Name="SemifinalFinalVisitaCompetencia" Type="varchar(max)" />
+    <Property Name="MedalleroDeportista" Type="varchar(max)" />
+    <Property Name="MedallaOroDeportista" Type="varchar(max)" />
+    <Property Name="MedallaPlataDeportista" Type="varchar(max)" />
+    <Property Name="MedallaBronceDeportista" Type="varchar(max)" />
+    <Property Name="MedalleroEquipo" Type="varchar(max)" />
+    <Property Name="MedallaOroEquipo" Type="varchar(max)" />
+    <Property Name="MedallaPlataEquipo" Type="varchar(max)" />
+    <Property Name="MedallaBronceEquipo" Type="varchar(max)" />
+    <Property Name="ObservacionesPositivas" Type="varchar(max)" />
+    <Property Name="ObservacionesNegativas" Type="varchar(max)" />
+    <Property Name="UsuarioRegistro" Type="varchar(max)" />
+    <Property Name="FechaRegistro" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_ActividadUnidadEntrenamiento_UnidadEntrenamiento">
+    <End Role="UnidadEntrenamiento" Type="Self.UnidadEntrenamiento" Multiplicity="0..1" />
+    <End Role="ActividadUnidadEntrenamiento" Type="Self.ActividadUnidadEntrenamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnidadEntrenamiento">
+        <PropertyRef Name="IdUnidadEntrenamiento" />
+      </Principal>
+      <Dependent Role="ActividadUnidadEntrenamiento">
+        <PropertyRef Name="IdUnidadEntrenamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASignar permisos_Permisos1">
+    <End Role="Permisos" Type="Self.Permisos" Multiplicity="1" />
+    <End Role="ASignarPermisos" Type="Self.ASignarPermisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permisos">
+        <PropertyRef Name="IdPermiso" />
+      </Principal>
+      <Dependent Role="ASignarPermisos">
+        <PropertyRef Name="CodPermiso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASignar permisos_Rol1">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
+    <End Role="ASignarPermisos" Type="Self.ASignarPermisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="CodRol" />
+      </Principal>
+      <Dependent Role="ASignarPermisos">
+        <PropertyRef Name="CodRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DatosFamiliares_Deportistas">
+    <End Role="Deportistas" Type="Self.Deportistas" Multiplicity="0..1" />
+    <End Role="DatosFamiliares" Type="Self.DatosFamiliares" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Deportistas">
+        <PropertyRef Name="IdDeportista" />
+      </Principal>
+      <Dependent Role="DatosFamiliares">
+        <PropertyRef Name="IdDeportista" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EstudiosEntrenadores_Entrenadores">
+    <End Role="Entrenadores" Type="Self.Entrenadores" Multiplicity="0..1" />
+    <End Role="EstudiosEntrenadores" Type="Self.EstudiosEntrenadores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Entrenadores">
+        <PropertyRef Name="IdEntrenadores" />
+      </Principal>
+      <Dependent Role="EstudiosEntrenadores">
+        <PropertyRef Name="IdEntrenadores" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EvaluacionEquipoVisitaCompetencia_VisitaCompetencias">
+    <End Role="VisitaCompetencias" Type="Self.VisitaCompetencias" Multiplicity="0..1" />
+    <End Role="EvaluacionEquipoVisitaCompetencia" Type="Self.EvaluacionEquipoVisitaCompetencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VisitaCompetencias">
+        <PropertyRef Name="IdVisitaCompetencia" />
+      </Principal>
+      <Dependent Role="EvaluacionEquipoVisitaCompetencia">
+        <PropertyRef Name="IdVisitaCompetencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EvaluacionVisitaCompetencia_VisitaCompetencias">
+    <End Role="VisitaCompetencias" Type="Self.VisitaCompetencias" Multiplicity="0..1" />
+    <End Role="EvaluacionVisitaCompetencia" Type="Self.EvaluacionVisitaCompetencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VisitaCompetencias">
+        <PropertyRef Name="IdVisitaCompetencia" />
+      </Principal>
+      <Dependent Role="EvaluacionVisitaCompetencia">
+        <PropertyRef Name="IdVisitaCompetencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MesocicloDatos_Mesociclo">
+    <End Role="Mesociclo" Type="Self.Mesociclo" Multiplicity="0..1" />
+    <End Role="MesocicloDatos" Type="Self.MesocicloDatos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mesociclo">
+        <PropertyRef Name="IdMesociclo" />
+      </Principal>
+      <Dependent Role="MesocicloDatos">
+        <PropertyRef Name="IdMesociclo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ObjetivosMacrociclo_AnalisisMacrociclo">
+    <End Role="AnalisisMacrociclo" Type="Self.AnalisisMacrociclo" Multiplicity="0..1" />
+    <End Role="ObjetivosMacrociclo" Type="Self.ObjetivosMacrociclo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnalisisMacrociclo">
+        <PropertyRef Name="IdMacroAnterior" />
+      </Principal>
+      <Dependent Role="ObjetivosMacrociclo">
+        <PropertyRef Name="IdMacroAnterior" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ocupacion_Deportistas">
+    <End Role="Deportistas" Type="Self.Deportistas" Multiplicity="0..1" />
+    <End Role="Ocupacion" Type="Self.Ocupacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Deportistas">
+        <PropertyRef Name="IdDeportista" />
+      </Principal>
+      <Dependent Role="Ocupacion">
+        <PropertyRef Name="IdDeportista" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Permisos_TipoPermiso">
+    <End Role="TipoPermiso" Type="Self.TipoPermiso" Multiplicity="0..1" />
+    <End Role="Permisos" Type="Self.Permisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoPermiso">
+        <PropertyRef Name="CodPermiso" />
+      </Principal>
+      <Dependent Role="Permisos">
+        <PropertyRef Name="TipoPermiso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlanAnalisisMacro_AnalisisMacrociclo">
+    <End Role="AnalisisMacrociclo" Type="Self.AnalisisMacrociclo" Multiplicity="0..1" />
+    <End Role="PlanAnalisisMacro" Type="Self.PlanAnalisisMacro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnalisisMacrociclo">
+        <PropertyRef Name="IdMacroAnterior" />
+      </Principal>
+      <Dependent Role="PlanAnalisisMacro">
+        <PropertyRef Name="IdMacroAnterior" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlanGraficoDatos_PlanGrafico">
+    <End Role="PlanGrafico" Type="Self.PlanGrafico" Multiplicity="0..1" />
+    <End Role="PlanGraficoDatos" Type="Self.PlanGraficoDatos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PlanGrafico">
+        <PropertyRef Name="IdPlanGrafico" />
+      </Principal>
+      <Dependent Role="PlanGraficoDatos">
+        <PropertyRef Name="IdPlanGrafico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlanSemanalDias_PlanSemanalMicrociclo">
+    <End Role="PlanSemanalMicrociclo" Type="Self.PlanSemanalMicrociclo" Multiplicity="0..1" />
+    <End Role="PlanSemanalDias" Type="Self.PlanSemanalDias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PlanSemanalMicrociclo">
+        <PropertyRef Name="IdPlanSemanal" />
+      </Principal>
+      <Dependent Role="PlanSemanalDias">
+        <PropertyRef Name="IdPlanSemanal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Rol1">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="CodRol" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="CodRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BIOMEDICOModelStoreContainer">
+    <EntitySet Name="ActividadUnidadEntrenamiento" EntityType="Self.ActividadUnidadEntrenamiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnalisisMacrociclo" EntityType="Self.AnalisisMacrociclo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AsesoriasEntrenadores" EntityType="Self.AsesoriasEntrenadores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ASignarPermisos" EntityType="Self.ASignarPermisos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CronogramaActividades" EntityType="Self.CronogramaActividades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CuadroMedallero" EntityType="Self.CuadroMedallero" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DatosFamiliares" EntityType="Self.DatosFamiliares" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Deporte" EntityType="Self.Deporte" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Deportistas" EntityType="Self.Deportistas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Elemento" EntityType="Self.Elemento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Entrenadores" EntityType="Self.Entrenadores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EstudiosEntrenadores" EntityType="Self.EstudiosEntrenadores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EvaluacionEquipoVisitaCompetencia" EntityType="Self.EvaluacionEquipoVisitaCompetencia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EvaluacionVisitaCompetencia" EntityType="Self.EvaluacionVisitaCompetencia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GymColiseo" EntityType="Self.GymColiseo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GymEstadio" EntityType="Self.GymEstadio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HorarioEntrenadores" EntityType="Self.HorarioEntrenadores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mesociclo" EntityType="Self.Mesociclo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MesocicloDatos" EntityType="Self.MesocicloDatos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Microciclo" EntityType="Self.Microciclo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ObjetivosMacrociclo" EntityType="Self.ObjetivosMacrociclo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ocupacion" EntityType="Self.Ocupacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Permisos" EntityType="Self.Permisos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlanAnalisisMacro" EntityType="Self.PlanAnalisisMacro" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlanEntrenamientoMensual" EntityType="Self.PlanEntrenamientoMensual" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlanGrafico" EntityType="Self.PlanGrafico" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlanGraficoDatos" EntityType="Self.PlanGraficoDatos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlanSemanalDias" EntityType="Self.PlanSemanalDias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlanSemanalMicrociclo" EntityType="Self.PlanSemanalMicrociclo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RolDeporte" EntityType="Self.RolDeporte" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoPermiso" EntityType="Self.TipoPermiso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UnidadEntrenamiento" EntityType="Self.UnidadEntrenamiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UnidadMesociclo" EntityType="Self.UnidadMesociclo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VisitaCompetencias" EntityType="Self.VisitaCompetencias" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ActividadUnidadEntrenamiento_UnidadEntrenamiento" Association="Self.FK_ActividadUnidadEntrenamiento_UnidadEntrenamiento">
+      <End Role="UnidadEntrenamiento" EntitySet="UnidadEntrenamiento" />
+      <End Role="ActividadUnidadEntrenamiento" EntitySet="ActividadUnidadEntrenamiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASignar permisos_Permisos1" Association="Self.FK_ASignar permisos_Permisos1">
+      <End Role="Permisos" EntitySet="Permisos" />
+      <End Role="ASignarPermisos" EntitySet="ASignarPermisos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASignar permisos_Rol1" Association="Self.FK_ASignar permisos_Rol1">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="ASignarPermisos" EntitySet="ASignarPermisos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DatosFamiliares_Deportistas" Association="Self.FK_DatosFamiliares_Deportistas">
+      <End Role="Deportistas" EntitySet="Deportistas" />
+      <End Role="DatosFamiliares" EntitySet="DatosFamiliares" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EstudiosEntrenadores_Entrenadores" Association="Self.FK_EstudiosEntrenadores_Entrenadores">
+      <End Role="Entrenadores" EntitySet="Entrenadores" />
+      <End Role="EstudiosEntrenadores" EntitySet="EstudiosEntrenadores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EvaluacionEquipoVisitaCompetencia_VisitaCompetencias" Association="Self.FK_EvaluacionEquipoVisitaCompetencia_VisitaCompetencias">
+      <End Role="VisitaCompetencias" EntitySet="VisitaCompetencias" />
+      <End Role="EvaluacionEquipoVisitaCompetencia" EntitySet="EvaluacionEquipoVisitaCompetencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EvaluacionVisitaCompetencia_VisitaCompetencias" Association="Self.FK_EvaluacionVisitaCompetencia_VisitaCompetencias">
+      <End Role="VisitaCompetencias" EntitySet="VisitaCompetencias" />
+      <End Role="EvaluacionVisitaCompetencia" EntitySet="EvaluacionVisitaCompetencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MesocicloDatos_Mesociclo" Association="Self.FK_MesocicloDatos_Mesociclo">
+      <End Role="Mesociclo" EntitySet="Mesociclo" />
+      <End Role="MesocicloDatos" EntitySet="MesocicloDatos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ObjetivosMacrociclo_AnalisisMacrociclo" Association="Self.FK_ObjetivosMacrociclo_AnalisisMacrociclo">
+      <End Role="AnalisisMacrociclo" EntitySet="AnalisisMacrociclo" />
+      <End Role="ObjetivosMacrociclo" EntitySet="ObjetivosMacrociclo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ocupacion_Deportistas" Association="Self.FK_Ocupacion_Deportistas">
+      <End Role="Deportistas" EntitySet="Deportistas" />
+      <End Role="Ocupacion" EntitySet="Ocupacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Permisos_TipoPermiso" Association="Self.FK_Permisos_TipoPermiso">
+      <End Role="TipoPermiso" EntitySet="TipoPermiso" />
+      <End Role="Permisos" EntitySet="Permisos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlanAnalisisMacro_AnalisisMacrociclo" Association="Self.FK_PlanAnalisisMacro_AnalisisMacrociclo">
+      <End Role="AnalisisMacrociclo" EntitySet="AnalisisMacrociclo" />
+      <End Role="PlanAnalisisMacro" EntitySet="PlanAnalisisMacro" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlanGraficoDatos_PlanGrafico" Association="Self.FK_PlanGraficoDatos_PlanGrafico">
+      <End Role="PlanGrafico" EntitySet="PlanGrafico" />
+      <End Role="PlanGraficoDatos" EntitySet="PlanGraficoDatos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlanSemanalDias_PlanSemanalMicrociclo" Association="Self.FK_PlanSemanalDias_PlanSemanalMicrociclo">
+      <End Role="PlanSemanalMicrociclo" EntitySet="PlanSemanalMicrociclo" />
+      <End Role="PlanSemanalDias" EntitySet="PlanSemanalDias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Rol1" Association="Self.FK_Usuarios_Rol1">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

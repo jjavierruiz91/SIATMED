@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cb5b5bd990d84e29bb64744b167a343a" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="BIOMEDICOModel.ASignarPermisos" Width="1.5" PointX="3" PointY="1.875" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.Deporte" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.Permisos" Width="1.5" PointX="0.75" PointY="6.375" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.Rol" Width="1.5" PointX="0.75" PointY="3" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.TipoPermiso" Width="1.5" PointX="1.5" PointY="11" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.Usuarios" Width="1.5" PointX="3" PointY="5.25" />
+        <AssociationConnector Association="BIOMEDICOModel.FK_ASignar_permisos_Permisos1" />
+        <AssociationConnector Association="BIOMEDICOModel.FK_ASignar_permisos_Rol1" />
+        <AssociationConnector Association="BIOMEDICOModel.FK_Permisos_TipoPermiso" />
+        <AssociationConnector Association="BIOMEDICOModel.FK_Usuarios_Rol1" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.DatosFamiliares" Width="1.5" PointX="7.625" PointY="4.375" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.Deportistas" Width="1.5" PointX="5.375" PointY="7" />
+        <AssociationConnector Association="BIOMEDICOModel.FK_DatosFamiliares_Deportistas" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.Ocupacion" Width="1.5" PointX="7.625" PointY="11.875" />
+        <AssociationConnector Association="BIOMEDICOModel.FK_Ocupacion_Deportistas" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.Entrenadores" Width="1.5" PointX="10.375" PointY="4.125" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.EstudiosEntrenadores" Width="1.5" PointX="12.625" PointY="5.375" />
+        <AssociationConnector Association="BIOMEDICOModel.FK_EstudiosEntrenadores_Entrenadores" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.ActividadUnidadEntrenamiento" Width="1.5" PointX="3" PointY="15.25" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.AsesoriasEntrenadores" Width="2.625" PointX="15.75" PointY="6.75" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.EvaluacionEquipoVisitaCompetencia" Width="1.5" PointX="13" PointY="16.75" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.EvaluacionVisitaCompetencia" Width="1.5" PointX="13" PointY="11.25" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.PlanEntrenamientoMensual" Width="2.75" PointX="17.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.UnidadEntrenamiento" Width="1.5" PointX="0.75" PointY="15.125" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.VisitaCompetencias" Width="2.25" PointX="10" PointY="12.625" />
+        <AssociationConnector Association="BIOMEDICOModel.FK_ActividadUnidadEntrenamiento_UnidadEntrenamiento" />
+        <AssociationConnector Association="BIOMEDICOModel.FK_EvaluacionEquipoVisitaCompetencia_VisitaCompetencias" />
+        <AssociationConnector Association="BIOMEDICOModel.FK_EvaluacionVisitaCompetencia_VisitaCompetencias" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.AnalisisMacrociclo" Width="1.5" PointX="15.375" PointY="20.625" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.ObjetivosMacrociclo" Width="1.5" PointX="17.625" PointY="27.125" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.PlanAnalisisMacro" Width="1.5" PointX="17.625" PointY="13.75" />
+        <AssociationConnector Association="BIOMEDICOModel.FK_ObjetivosMacrociclo_AnalisisMacrociclo" />
+        <AssociationConnector Association="BIOMEDICOModel.FK_PlanAnalisisMacro_AnalisisMacrociclo" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.Categoria" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.CronogramaActividades" Width="2.625" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.Elemento" Width="2.625" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.Microciclo" Width="2.625" PointX="19.375" PointY="10.75" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.GymColiseo" Width="1.5" PointX="5.375" PointY="18.75" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.GymEstadio" Width="1.5" PointX="19.375" PointY="6.75" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.HorarioEntrenadores" Width="2.875" PointX="20.375" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.UnidadMesociclo" Width="2.75" PointX="21.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.Mesociclo" Width="1.5" PointX="7.375" PointY="22.125" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.MesocicloDatos" Width="1.5" PointX="9.625" PointY="21.125" />
+        <AssociationConnector Association="BIOMEDICOModel.FK_MesocicloDatos_Mesociclo" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.PlanSemanalDias" Width="2" PointX="3" PointY="23.875" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.PlanSemanalMicrociclo" Width="2" PointX="0.75" PointY="23" />
+        <AssociationConnector Association="BIOMEDICOModel.FK_PlanSemanalDias_PlanSemanalMicrociclo" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.PlanGrafico" Width="1.5" PointX="20.375" PointY="24.75" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.PlanGraficoDatos" Width="1.5" PointX="22.625" PointY="32" />
+        <AssociationConnector Association="BIOMEDICOModel.FK_PlanGraficoDatos_PlanGrafico" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.RolDeporte" Width="1.5" PointX="20.375" PointY="13.75" />
+        <EntityTypeShape EntityType="BIOMEDICOModel.CuadroMedallero" Width="2.25" PointX="12.375" PointY="21.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
